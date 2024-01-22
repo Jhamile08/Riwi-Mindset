@@ -1,5 +1,4 @@
-
-
+import { estudiantes } from "./bd.js"
 
 // inyeccion de los estudiantes 
 
@@ -8,7 +7,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 });
 
 function injectionCoderHtml(coders){
-    inyeccionCoders = document.querySelector("#container-users");
+    let inyeccionCoders = document.querySelector("#container-users");
     coders.forEach((estudiantes)=>{
         /* destructuring */
     const {foto, nombre} = estudiantes

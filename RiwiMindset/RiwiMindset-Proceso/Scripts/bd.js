@@ -71,7 +71,7 @@
 
 
 
-let estudiantes = [
+export let estudiantes = [
   {
     id: 1,
     foto: "../Images/fondoLogin1.png",
