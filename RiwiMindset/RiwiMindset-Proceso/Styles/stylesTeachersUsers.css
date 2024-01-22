@@ -128,3 +128,8 @@
     border-radius: 50%;
     cursor: pointer;
   }
+
+   /* clase nueva  */
+   .buscador {
+    display: none;
+  }
