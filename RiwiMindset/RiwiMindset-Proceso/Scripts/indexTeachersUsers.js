@@ -2,9 +2,8 @@ import { estudiantes } from "./bd.js"
 
 // inyeccion de los estudiantes 
 
-document.addEventListener("DOMContentLoaded", ()=>{
-    injectionCoderHtml(estudiantes);
-});
+injectionCoderHtml(estudiantes);
+
 
 function injectionCoderHtml(coders){
     let inyeccionCoders = document.querySelector("#container-users");
@@ -15,7 +14,7 @@ function injectionCoderHtml(coders){
         coderHtml.innerHTML= `
         <div class="estudents" class="" >
             <p id="nombre">${nombre}</p>
-            <a href="./IndexTeachersUsers-register.html">Actualizar</a>
+            <a class= "actualizar" href="">Actualizar</a>
             <a>Entrevista</a>
             <img src="${foto}" alt=""></img>
         </div>
@@ -49,4 +48,25 @@ function nombre(apellido){
 })}
 
 
+// evento para guardar datos en el local storage 
 
+
+const actualizar = document.querySelectorAll('.actualizar');
+
+
+
+actualizar.forEach(elemento =>{
+    let name = ""
+    elemento.addEventListener('click',()=>{
+        const {nombre} = estudiantes 
+        name = `${nombre.value}`
+        console.log(name);
+        captura(name)
+    })
+})
+
+
+
+function captura(datos){
+    localStorage.setItem('coder',JSON.stringify(datos));
+};  

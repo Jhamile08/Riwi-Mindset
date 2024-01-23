@@ -1,15 +1,27 @@
 export let estudiantes = [
   {
   "id": 1,
+  "edad": 20,
   "nombre": "lily",
   "foto": "../Images/fondoLogin1.png",
   "cedula": 123,
   "correo": "lili",
   "admin": true,
+  "recomendaciones": [
+    {
+      
+    }
+  ],
+  "observaciones": [
+    {
+      
+    }
+  ],
   "contrasena": 333
 },
 {
   "id": "",
+  "edad": 20,
   "nombre": "Jhamile Andrea Dominguez Rendon",
   "foto": "../Images/fondoLogin1.png",
   "cedula": 2,
@@ -29,6 +41,7 @@ export let estudiantes = [
 },
 {
   "id": "",
+  "edad": 20,
   "nombre": "Daniel Parra",
   "foto": "../Images/fondoLogin1.png",
   "cedula": 100636133,
@@ -47,6 +60,7 @@ export let estudiantes = [
 },
 {
   "id": "",
+  "edad": 20,
   "nombre": "e",
   "foto": "../Images/fondoLogin1.png",
   "cedula": 1040571136,
