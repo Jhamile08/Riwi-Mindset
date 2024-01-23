@@ -40,3 +40,46 @@ table {
     text-align: center;
     margin-bottom: 30px;
   }
+
+.hi-slide{
+  position: relative;
+  width: 754px;
+  height: 292px;
+  border-radius: 50px;
+  margin: 115px auto 0;
+}  
+
+.hi-slide .hi-next,
+.hi-silde .hi-prev{
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  border-radius: 50px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  transition: all 0.7s;
+  font-size: 20px;
+  font-weight: bold;
+}
+.h1-slide .hi-next:hover,
+.h1-slide .hi-prev:hover{
+  opacity: 1;
+  background-color: white;
+}
+.hi-slide .hi-prev{
+  left: 59px;
+}
+.h1-slide .hi-prev::before{
+  content: '<';
+}
+.h1-slide .hi-next::before{
+  content: '>';
+}
+.hi-slide .hi-next{
+  left: 59px;
+}

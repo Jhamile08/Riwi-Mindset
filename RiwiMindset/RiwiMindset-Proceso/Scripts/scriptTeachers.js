@@ -15,3 +15,6 @@ document.getElementById('input').addEventListener('change',()=>{
         navbar.classList.remove('dark')
     }
 })
+
+// Swipper cards users table registrers
+
