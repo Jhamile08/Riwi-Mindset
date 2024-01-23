@@ -51,7 +51,7 @@
 
 .registroEspecifico button {
   position: relative;
-  left: 80%;
+  left: 79%;
   background-color: rgb(210, 210, 210);
   border: none;
   color: black;
@@ -103,7 +103,7 @@
   left: 91.2%;
   bottom: 4%;
   border-color: #6f1fcf;  
-  padding: 4px 22px;
+  padding: 9px;
   cursor: pointer;
   border-radius: 5px;
 }
@@ -151,4 +151,17 @@
 
 .edadUsuario{
   color: rgb(78, 78, 78);
+}
+
+/* Modal de Ver más: contiene recomendaciones y registros (Solo ver) */
+
+.btn1 {
+  position: relative;
+  background-color: #7f00ff;
+  left: 80.3%;
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
 }
