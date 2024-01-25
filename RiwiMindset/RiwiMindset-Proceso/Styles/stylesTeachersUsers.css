@@ -130,6 +130,10 @@
   }
 
    /* clase nueva  */
-   .buscador {
+  .buscador {
     display: none;
   }
+
+.none{
+  display: none;
+}

@@ -2,6 +2,10 @@ import { estudiantes } from "./bd.js"
 
 // inyeccion de los estudiantes 
 
+estudiantes.forEach((estudiantes)=>{
+    console.log(estudiantes);
+})
+
 injectionCoderHtml(estudiantes);
 
 
@@ -9,20 +13,28 @@ function injectionCoderHtml(coders){
     let inyeccionCoders = document.querySelector("#container-users");
     coders.forEach((estudiantes)=>{
         /* destructuring */
-    const {foto, nombre} = estudiantes
+    const {foto, nombre,edad,recomendaciones,observaciones,fecha} = estudiantes
         const coderHtml = document.createElement("p");
         coderHtml.innerHTML= `
-        <div class="estudents" class="" >
+        <div class="estudents">
             <p id="nombre">${nombre}</p>
-            <a class= "actualizar" href="">Actualizar</a>
+            <a href="/Html/IndexTeachersUsers-register.html" type="submit" class= "actualizar">Actualizar</a>
             <a>Entrevista</a>
-            <img src="${foto}" alt=""></img>
+            <img src="${foto}" alt="" id="foto"></img>
         </div>
 
+        <div class="none">
+            <p id="edad">${edad}</p>
+            <p id="recomendaciones">${recomendaciones[0]}</p>
+            <p id="observaciones">${observaciones[0]}</p>
+            <p id="fecha">${fecha[0]}</p>
+            <img src="${foto}" alt="" id="fotos">${foto}</img>
+        </div>
         `;
         inyeccionCoders.appendChild(coderHtml);
+
     })
-};
+
 
 // evento input para guardar el nombre a buscar 
 
@@ -46,27 +58,28 @@ function nombre(apellido){
             e.parentNode.classList.add('buscador')
         }
 })}
+};
+
+/* Captura de datos y envio al local storage */
+
+const actualizar = document.querySelector('.actualizar')
+
+actualizar.addEventListener('click',()=>{
+    console.log("captura");
+    captura();
+}) 
 
 
-// evento para guardar datos en el local storage 
+function captura(){
+        
+    const nombre = document.querySelector('#nombre').textContent;
+    const edad = document.querySelector('#edad').textContent;    
+    const fecha = document.querySelector('#fecha').textContent;
+    const recomendaciones = document.querySelector('#recomendaciones').textContent;
+    const observaciones = document.querySelector('#observaciones').textContent;
+    const foto = document.getElementById('foto')
 
+    let registro = [nombre,edad,fecha,recomendaciones,observaciones,foto.src]
+    localStorage.setItem("gente",JSON.stringify(registro))  
 
-const actualizar = document.querySelectorAll('.actualizar');
-
-
-
-actualizar.forEach(elemento =>{
-    let name = ""
-    elemento.addEventListener('click',()=>{
-        const {nombre} = estudiantes 
-        name = `${nombre.value}`
-        console.log(name);
-        captura(name)
-    })
-})
-
-
-
-function captura(datos){
-    localStorage.setItem('coder',JSON.stringify(datos));
-};  
+};
