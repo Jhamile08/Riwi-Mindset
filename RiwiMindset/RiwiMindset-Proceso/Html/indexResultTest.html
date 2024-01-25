@@ -2,95 +2,97 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Teachers | Schedule</title>
-    <link rel="stylesheet" href="../Styles/stylesRegistrers.css">
-    <link rel="stylesheet" href="../Styles/generalStyles.css">
-    <link rel="stylesheet" href="../Styles/styleResultTest.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-    <!-- Swipper cards test -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" integrity="sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teachers | Schedule</title>
+  <link rel="stylesheet" href="../Styles/stylesRegistrers.css">
+  <link rel="stylesheet" href="../Styles/generalStyles.css">
+  <link rel="stylesheet" href="../Styles/styleResultTest.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+  <!-- Swipper cards test -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    integrity="sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body class="bodyTeachers">
-    <nav class="navbar">
-        <div class="imagenLogo">
-            <span class="image">
-                <img src="../Images/logoImagen.png" alt="" />
-            </span>
+  <nav class="navbar">
+    <div class="imagenLogo">
+      <span class="image">
+        <img src="../Images/logoImagen.png" alt="" />
+      </span>
+    </div>
+
+    <div class="nav">
+      <a>
+        <li><i class="fa-solid fa-house"></i>Home</li>
+      </a>
+      <a href="../Html/indexTeachersHome.html">
+        <li class="iconActive"><i class="fa-solid fa-user"></i>Users</li>
+      </a>
+      <a href="./indexTeachersSchedule.html">
+        <li><i class="fa-solid fa-calendar "></i>Schedule</li>
+      </a>
+    </div>
+
+    <div class="containerSwitch">
+      <label class="switch">
+        <input type="checkbox" id="input">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </nav>
+
+  <div class="container-right">
+    <div class="headers">
+      <div class="header1">
+
+      </div>
+      <div class="header2">
+        <h3>Liliana Montoya</h3>
+        <i class="fa-solid fa-arrow-down"></i>
+        <img src="../Images/logoImagen.png" alt="" />
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="perfil">
+        <div class="data-user">
+          <img src="../Images/estudent.jpeg" alt="imagenUsuario" />
+          <p class="nombreUsuario">Camilo Tejada</p>
+          <p class="edadUsuario">27 años</p>
         </div>
-
-        <div class="nav">
-            <a >
-                <li><i class="fa-solid fa-house"></i>Home</li>
-            </a>
-            <a href="../Html/indexTeachersHome.html">
-                <li  class="iconActive"><i class="fa-solid fa-user"></i>Users</li>
-            </a>
-            <a href="./indexTeachersSchedule.html">
-                <li><i class="fa-solid fa-calendar "></i>Schedule</li>
-            </a>
+        <div class="secciones">
+          <a href="">
+            <li class="seccionesPerfil"><i class="fa fa-address-card personales"></i> Datos personales</li>
+          </a>
+          <a href="./IndexTeachersUsers-register.html">
+            <li class="seccionesPerfil"><i class="fa fa-archive"></i></i> Registros</li>
+          </a>
+          <a href="./indexResultTest.html">
+            <li class="seccionesPerfil iconActive"><i class="fa fa-pie-chart"></i></i> Resultado test</li>
+          </a>
         </div>
+      </div>
 
-        <div class="containerSwitch">
-            <label class="switch">
-                <input type="checkbox" id="input">
-                <span class="slider"></span>
-            </label>
-        </div>
-    </nav>
+      <hr>
 
-    <div class="container-right">
-        <div class="headers">
-            <div class="header1">
-              
-            </div>
-            <div class="header2">
-                <h3>Liliana Montoya</h3>
-                <i class="fa-solid fa-arrow-down"></i>
-                <img src="../Images/logoImagen.png" alt="" />
-            </div>
-        </div>
+      <div class="result-tests">
 
-        <div class="info">
-        <div class="perfil">
-          <div class="data-user">
-            <img src="../Images/estudent.jpeg" alt="imagenUsuario" />
-            <p class="nombreUsuario">Camilo Tejada</p>
-            <p class="edadUsuario">27 años</p>
-          </div>
-          <div class="secciones">
-            <a href="">
-              <li class="seccionesPerfil"><i class="fa fa-address-card personales"></i> Datos personales</li>
-            </a>
-            <a href="./IndexTeachersUsers-register.html">
-              <li class="seccionesPerfil"><i class="fa fa-archive"></i></i> Registros</li>
-            </a>
-            <a href="./indexResultTest.html">
-              <li class="seccionesPerfil iconActive"><i class="fa fa-pie-chart"></i></i> Resultado test</li>
-            </a>
-          </div>
-        </div>
-
-        <hr>
-
-        <div class="result-tests">
-        
         <h2 class="title-table">Tabla de Resultados Camilo Tejada</h2>
-<<<<<<< HEAD
 
-
-        <div id="carouselExampleDark" class="carousel carousel-dark slide">
+        <div id="carouselExampleIndicators" class="carousel slide">
           <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
           </div>
           <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="10000">
+            <div class="carousel-item active">
               <table class="d-block">
                 <thead>
                   <tr>
@@ -107,30 +109,6 @@
                   </tr>
                 </tbody>
               </table>
-              <div class="carousel-caption d-none d-md-block">
-               
-              </div>
-            </div>
-            <div class="carousel-item" data-bs-interval="2000">
-              <table class="d-block">
-                <thead>
-                  <tr>
-                    <th>intento</th>
-                    <th>Test</th>
-                    <th>Porcentaje</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Logica</td>
-                    <td>10%</td>
-                  </tr>
-                </tbody>
-              </table>
-              <div class="carousel-caption d-none d-md-block">
-  
-              </div>
             </div>
             <div class="carousel-item">
               <table class="d-block">
@@ -147,245 +125,56 @@
                     <td>Logica</td>
                     <td>10%</td>
                   </tr>
-                  <td>1</td>
-                  <td>Logica</td>
-                  <td>10%</td>
-                </tr>
-                <td>1</td>
-                <td>Logica</td>
-                <td>10%</td>
-              </tr>
-=======
-        <div class="slide hi-slide"> 
-          <div class="hi-prev"></div>
-          <div class="hi-next"></div>
-        <ul>
-          <li>
-        <table>
-          <thead>
-            <tr>
-              <th>intento</th>
-              <th>Test</th>
-              <th>Porcentaje</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
->>>>>>> c25e8d191aa3d938970cdcded9d0b87c753a954e
-              <td>1</td>
-              <td>Logica</td>
-              <td>10%</td>
-            </tr>
-<<<<<<< HEAD
                 </tbody>
               </table>
-              <div class="carousel-caption d-none d-md-block">
-              </div>
+            </div>
+            <div class="carousel-item">
+              <table class="d-block">
+                <thead>
+                  <tr>
+                    <th>intento</th>
+                    <th>Test</th>
+                    <th>Porcentaje</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Logica</td>
+                    <td>10%</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-=======
-            <tr>
-              <td>1</td>
-              <td>Ingles</td>
-              <td>25%</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Logica</td>
-                <td>10%</td>
-              </tr>
-            <tr>
-                <td>1</td>
-                <td>Salud mental</td>
-                <td>50%</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Ingles</td>
-                <td>25%</td>
-              </tr>
-              <tr>
-                  <td>2</td>
-                  <td>Logica</td>
-                  <td>10%</td>
-                </tr>
-              <tr>
-                  <td>1</td>
-                  <td>Salud mental</td>
-                  <td>50%</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Ingles</td>
-                  <td>25%</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Logica</td>
-                    <td>10%</td>
-                  </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Salud mental</td>
-                    <td>50%</td>
-                  </tr>
-            <!-- Repite este bloque para más filas -->
-          </tbody>
-        </table>
-      </li>
-      <li>
-        <table >
-          <thead>
-            <tr>
-              <th>intento</th>
-              <th>Test</th>
-              <th>Porcentaje</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Logica</td>
-              <td>10%</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Ingles</td>
-              <td>25%</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Logica</td>
-                <td>10%</td>
-              </tr>
-            <tr>
-                <td>1</td>
-                <td>Salud mental</td>
-                <td>50%</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Ingles</td>
-                <td>25%</td>
-              </tr>
-              <tr>
-                  <td>2</td>
-                  <td>Logica</td>
-                  <td>10%</td>
-                </tr>
-              <tr>
-                  <td>1</td>
-                  <td>Salud mental</td>
-                  <td>50%</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Ingles</td>
-                  <td>25%</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Logica</td>
-                    <td>10%</td>
-                  </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Salud mental</td>
-                    <td>50%</td>
-                  </tr>
-            <!-- Repite este bloque para más filas -->
-          </tbody>
-        </table>
-      </li>
-      <li>
-        <table class="carousel-item">
-          <thead>
-            <tr>
-              <th>intento</th>
-              <th>Test</th>
-              <th>Porcentaje</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Logica</td>
-              <td>10%</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Ingles</td>
-              <td>25%</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Logica</td>
-                <td>10%</td>
-              </tr>
-            <tr>
-                <td>1</td>
-                <td>Salud mental</td>
-                <td>50%</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Ingles</td>
-                <td>25%</td>
-              </tr>
-              <tr>
-                  <td>2</td>
-                  <td>Logica</td>
-                  <td>10%</td>
-                </tr>
-              <tr>
-                  <td>1</td>
-                  <td>Salud mental</td>
-                  <td>50%</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Ingles</td>
-                  <td>25%</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Logica</td>
-                    <td>10%</td>
-                  </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Salud mental</td>
-                    <td>50%</td>
-                  </tr>
-            <!-- Repite este bloque para más filas -->
-          </tbody>
-        </table>
-      </li>
-      </ul>
 
-      </div>
->>>>>>> c25e8d191aa3d938970cdcded9d0b87c753a954e
+       
+
         <div class="btnes">
-          <a href="./indexTeachersUsers.html"><button class="btnatras"><img src="../SVG/FlechaAtras.svg" alt=""></button></a>
+          <a href="./indexTeachersUsers.html"><button class="btnatras"><img src="../SVG/FlechaAtras.svg"
+                alt=""></button></a>
         </div>
       </div>
     </div>
-    </div>
-    <!-- bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script type="module" src="../Scripts/scriptTeachers.js"></script>
-    <script src="https://kit.fontawesome.com/bb0a767d46.js" crossorigin="anonymous"></script>
-    
+  </div>
+  <!-- bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script type="module" src="../Scripts/scriptTeachers.js"></script>
+  <script src="https://kit.fontawesome.com/bb0a767d46.js" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
