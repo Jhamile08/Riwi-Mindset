@@ -18,16 +18,17 @@
 }
 
 table {
-    width: 50%;
+    width: 500px;
     margin: 20px auto;
     border-collapse: collapse;
-    margin-top: 25px;
+    margin-top: 100px;
   }
 
   th, td {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: center;
+   
   }
 
   th {
@@ -43,28 +44,28 @@ table {
   }
   .main-1{
     width: 400px;
+    display: flex;
+    justify-content: center;
   }
   /* // tabla */
   .main {
-    width: 950px;
+    width: 800px;
     height: 600px;
     position: absolute;
     top: 20%;
-    left: 40%;
+    left: 45%;
  
   }
   
   .slide {
-      width: 800px;
+      width: 500px;
       height: 600px;
       position: absolute;
     opacity: 0;
     transition: opacity .3s ease;
       top: 50%;
     left: 50%;
-    transform:translate(-50%, -50%);
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  
+    transform:translate(-50%, -50%)
   }
   
   .slide-1 {
@@ -79,13 +80,7 @@ table {
     background-image: url(http://i.space.com/images/i/000/010/331/wS1/milky-way-echinopsis-atacamensis-1600.jpg?1308606679);
   }
   
-  .slide-4 {
-    background-image: url(http://ousterhout.net/gallery/slideshows/hst/The%20Milky%20Way%20Galaxy.jpg);
-  }
-  
-  .slide-5 {
-    background-image: url(http://www.mpifr-bonn.mpg.de/2965076/zoom.jpg);
-  }
+
   
   .prev, .next {
     position: absolute;
@@ -168,7 +163,7 @@ table {
    transform: translate(26px,2px);
   }
   
-  #control-1:checked ~ label[for="control-5"].prev, #control-1:checked ~ label[for="control-2"].next  {
+  #control-1:checked ~ label[for="control-3"].prev, #control-1:checked ~ label[for="control-2"].next  {
     display: inline-block;
   }
   
@@ -185,7 +180,7 @@ table {
     opacity: 1;
   }
   
-  #control-3:checked ~ label[for="control-2"].prev, #control-3:checked ~ label[for="control-4"].next {
+  #control-3:checked ~ label[for="control-2"].prev, #control-3:checked ~ label[for="control-1"].next {
     display: inline-block;
   }
   
@@ -193,18 +188,3 @@ table {
     opacity: 1;
   }
   
-  #control-4:checked ~ label[for="control-3"].prev, #control-4:checked ~ label[for="control-5"].next {
-    display: inline-block;
-  }
-  
-  #control-4:checked ~ .slide-4 {
-    opacity: 1;
-  }
-  
-  #control-5:checked ~ label[for="control-4"].prev, #control-5:checked ~ label[for="control-1"].next {
-    display: inline-block;
-  }
-  
-  #control-5:checked ~ .slide-5 {
-    opacity: 1;
-  }
