@@ -22,13 +22,13 @@ document.addEventListener("DOMContentLoaded", function () {
   var calendar = new FullCalendar.Calendar(calendarEl, {
     locale: "es",
     initialView: "dayGridMonth",
-    initialDate: moment().format('YYYY-MM-DD'), // Utiliza moment() para obtener la fecha actual
+    initialDate: new Date(),
     headerToolbar: {
       left: "prev,next today",
       center: "title",
       right: "dayGridMonth,timeGridWeek,timeGridDay"
     },
-    events: [],
+    events: fetchEvents, // Utiliza una función para cargar eventos
     buttonText: {
       today: 'Hoy',
       month: 'Mes',
@@ -36,38 +36,53 @@ document.addEventListener("DOMContentLoaded", function () {
       day: 'Día'
     },
   });
-  
 
   calendar.render();
 
   const eventForm = document.getElementById("eventForm");
-  eventForm.addEventListener("submit", function (e) {
+  eventForm.addEventListener("submit", async function (e) {
     e.preventDefault();
 
     const eventName = document.getElementById("eventName").value;
     const eventDate = document.getElementById("eventDate").value;
-    const eventTimeSelect = document.getElementById("eventTime");
+    const eventTime = document.getElementById("eventTime").value;
 
-    // Obtener el valor seleccionado del select
-    const selectedTime = eventTimeSelect.value;
+    const formattedTime = `${eventTime}:00`;
 
     // Verificar si el horario está disponible
-    if (!isTimeSlotOccupied(calendar, `${eventDate}T${selectedTime}`)) {
-      const newEvent = {
-        title: eventName,
-        start: moment(`${eventDate}T${selectedTime}`).format(),
-        end: moment(`${eventDate}T${selectedTime}`).add(1, 'hour').format(),
-      };
+    try {
+      if (!await isTimeSlotOccupied(calendar, `${eventDate}T${formattedTime}`)) {
+        const newEvent = {
+          title: eventName,
+          start: moment(`${eventDate}T${formattedTime}`).format(),
+          end: moment(`${eventDate}T${formattedTime}`).add(1, 'hour').format(),
+        };
 
-      calendar.addEvent(newEvent);
-      eventForm.reset();
-    } else {
-      alert("¡Este horario ya está reservado! Por favor, elige otro.");
+        // Cargar el archivo JSON existente
+        const data = await fetchEvents();
+
+        // Agregar el nuevo evento al array de eventos
+        data.events.push(newEvent);
+
+        // Guardar el JSON actualizado en el archivo
+        await saveEvents(data);
+
+        // Recargar los eventos en FullCalendar
+        calendar.refetchEvents();
+
+        // Limpiar el formulario
+        eventForm.reset();
+      } else {
+        alert("¡Este horario ya está reservado! Por favor, elige otro.");
+      }
+    } catch (error) {
+      console.error('Error al agregar evento:', error);
+      alert('Hubo un error al agregar el evento. Por favor, intenta de nuevo.');
     }
   });
 
 
-  function isTimeSlotOccupied(calendar, startTime) {
+  async function isTimeSlotOccupied(calendar, startTime) {
     // Obtener todos los eventos en el calendario
     const allEvents = calendar.getEvents();
 
@@ -100,8 +115,23 @@ document.addEventListener("DOMContentLoaded", function () {
     return exactMatch || overlapping;
   }
 
+  async function fetchEvents() {
+    // Cargar el archivo JSON existente
+    const response = await fetch('Scripts/data.json');
+    if (!response.ok) {
+      throw new Error(`Error al cargar eventos. Estado: ${response.status}`);
+    }
+    return await response.json();
+  }
 
+  async function saveEvents(data) {
+    // Convertir el objeto actualizado a JSON
+    const updatedDataJSON = JSON.stringify(data);
 
+    // Guardar el JSON actualizado en el archivo
+    const blob = new Blob([updatedDataJSON], { type: 'application/json' });
+    return saveAs(blob, 'Scripts/data.json');
+  }
 
   /* Ajustar tamaño a la pantalla del calendario view Header y Body */
   const calendarHeader = document.querySelector(".fc-col-header");
