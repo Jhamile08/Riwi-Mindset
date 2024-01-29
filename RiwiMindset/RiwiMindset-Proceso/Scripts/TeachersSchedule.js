@@ -77,10 +77,11 @@ document.addEventListener("DOMContentLoaded", function () {
       // verificamos si el horario seleccionado no esta ocupado segun la funcion isTimeSlotOccupied
       if (!await isTimeSlotOccupied(calendar, `${eventDate}T${formattedTime}`)) {
         // creamos el evento con propiedades especificas del calendar
-        const newEvent = {
+          const newEvent = {
           title: eventName,
           start: moment(`${eventDate}T${formattedTime}`).format(),
           end: moment(`${eventDate}T${formattedTime}`).add(1, 'hour').format(),
+          reason: 'Ansiedad',
         };
         // Enviar el nuevo evento al servidor usando fetch con una solicitud POST al servidor JSON.
         const response = await fetch('http://localhost:4002/events', {
