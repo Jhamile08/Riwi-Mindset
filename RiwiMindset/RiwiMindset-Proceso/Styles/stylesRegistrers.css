@@ -49,7 +49,7 @@
   margin: 0 0 0 2%;
 }
 
-.registroEspecifico button {
+/* .registroEspecifico button {
   position: relative;
   left: 79%;
   background-color: rgb(210, 210, 210);
@@ -58,7 +58,7 @@
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
-}
+} */
 
 .registroEspecifico {
   margin: 0 2% 0 2%;
@@ -155,13 +155,43 @@
 
 /* Modal de Ver más: contiene recomendaciones y registros (Solo ver) */
 
-.btn1 {
+#btnfuera {
   position: relative;
-  background-color: #7f00ff;
+  background-color: #d2d2d2;
   left: 80.3%;
   border: none;
-  color: rgb(255, 255, 255);
+  color: rgb(10, 10, 10);
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
+}
+
+#btnfuera:hover{
+  background-color: #7f00ff;
+  color: #ffff;
+}
+#btnfuera1 {
+  position: relative;
+  background-color: #d2d2d2;
+  color: rgb(10, 10, 10);
+  padding: 10px 20px;
+  cursor: pointer;
+
+}
+
+#btnfuera1:hover{
+  background-color: #7f00ff;
+  color: #ffff;
+}
+
+.modalDos {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  z-index: 1000;
 }

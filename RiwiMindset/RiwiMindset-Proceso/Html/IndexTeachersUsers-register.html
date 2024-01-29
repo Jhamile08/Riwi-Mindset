@@ -83,15 +83,15 @@
             repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum
 
           </p>
-
           <style>
             .btn1{
-              background-color: #8626ff;
-              border:  #8626ff;
+              background-color: #d2d2d2;
+              
             }
 
             .btn1:hover{
               background-color: #7f00ff;
+              color: #ffff;
             }
           </style>
 
@@ -102,13 +102,14 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalToggleLabel">Registros</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <button type="button" class="btn-close btn3" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint doloremque natus voluptas dolorum veniam illum laboriosam culpa. Itaque cupiditate maxime earum quod perferendis doloribus, eveniet quo, ut, voluptatibus at deserunt.
+                <div id="miModal" class="modal-body modalDos">
+                    <textarea id="contenidoTextarea" rows="4" cols="50" placeholder="Escribe un registro..."></textarea>
+                    <button onclick="guardarContenido()">Guardar Contenido</button>
                 </div>
                 <div class="modal-footer">
-                  <button class="btn btn1" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Ver recomendaciones</button>
+                  <button class="btn btn1 btn3" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" onclick="abrirModal1()">Ver recomendaciones</button>
                 </div>
               </div>
             </div>
@@ -119,128 +120,68 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalToggleLabel2">Recomendaciones</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <button type="button" class="btn-close btn3" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique inventore sunt explicabo ducimus at nulla iusto. Ullam dicta officiis modi exercitationem cum ad! Numquam, quaerat. Officia minus quis dolore accusantium? Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque impedit doloribus unde quas perspiciatis nostrum. Magni dolorum hic voluptatem ex corporis earum, perspiciatis molestiae veniam exercitationem. Eum commodi quasi tempora.
+                <div id="miModal1" class="modal-body modalDos">
+                  <textarea id="contenidoTextarea1" rows="4" cols="50" placeholder="Escribe una recomendación..."></textarea>
+                  <button onclick="guardarContenido1()">Guardar Contenido</button>
+                </div>
                 </div>
                 <div class="modal-footer">
-                  <button class="btn btn1" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Ver registros</button>
+                  <button class="btn btn1 btn3" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" onclick="abrirModal()">Ver registros</button>
                 </div>
               </div>
             </div>
           </div>
-          <a class="btn btn1" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Ver más</a>
-          <a class="btn btn1" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Ver más</a>
-
-
+          <a id="btnfuera" class="btn btn1" data-bs-toggle="modal" href="#exampleModalToggle" role="button" onclick="abrirModal()">Editar</a>
         </div>
-        <div class="registroEspecifico">
-          <p class="fechaEntrevista"><b>Fecha entrevista:</b> 07/05/2001</p>
-          <p class="registroInfo">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor porro sapiente
-            repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum
-            a, in veritatis.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor
-            porro sapiente
-            repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum
-            a, in veritatis.
-          </p>
-          <button class="btnEditar">Editar</button>
-          <button class="btn">Ver más</button>
-        </div>
-        <div class="registroEspecifico">
-          <p class="fechaEntrevista"><b>Fecha entrevista:</b> 07/05/2001</p>
-          <p class="registroInfo">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor porro sapiente
-            repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum
-            a, in veritatis.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor
-            porro sapiente
-            repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum
-            a, in veritatis.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor
-            porro sapiente
-            repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum
-            a, in veritatis.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor
-            porro sapiente
-            repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum
-            a, in veritatis.
-          </p>
-          <button class="btnEditar">Editar</button>
-          <button class="btn">Ver más</button>
-        </div>
-        <div class="registroEspecifico">
-          <p class="fechaEntrevista"><b>Fecha entrevista:</b> 07/05/2001</p>
-          <p class="registroInfo">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor porro sapiente
-            repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum
-            a, in veritatis.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor
-            porro sapiente
-            repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum
-            a, in veritatis.
-          </p>
-          <button class="btnEditar">Editar</button>
-          <button class="btn">Ver más</button>
-        </div>
-        <div class="registroEspecifico">
-          <p class="fechaEntrevista"><b>Fecha entrevista:</b> 07/05/2001</p>
-          <p class="registroInfo">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor porro sapiente
-            repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum
-            a, in veritatis.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor
-            porro sapiente
-            repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum
-            a, in veritatis.
-          </p>
-          <button class="btnEditar">Editar</button>
-          <button class="btn">Ver más</button>
-        </div>
-        <div class="registroEspecifico">
-          <p class="fechaEntrevista"><b>Fecha entrevista:</b> 07/05/2001</p>
-          <p class="registroInfo">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor porro sapiente
-            repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum
-            a, in veritatis.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor
-            porro sapiente
-            repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum
-            a, in veritatis.
-          </p>
-          <button class="btnEditar">Editar</button>
-          <button class="btn">Ver más</button>
-        </div>
-        <div class="registroEspecifico">
-          <p class="fechaEntrevista"><b>Fecha entrevista:</b> 07/05/2001</p>
-          <p class="registroInfo">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor porro sapiente
-            repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum
-            a, in veritatis.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor
-            porro sapiente
-            repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum
-            a, in veritatis.
-          </p>
-          <button class="btnEditar">Editar</button>
-          <button class="btn">Ver más</button>
-        </div>
-        <div class="registroEspecifico">
-          <p class="fechaEntrevista"><b>Fecha entrevista:</b> 07/05/2001</p>
-          <p class="registroInfo">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor porro sapiente
-            repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum
-            a, in veritatis.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor
-            porro sapiente
-            repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum
-            a, in veritatis.
-          </p>
-          <button class="btnEditar">Editar</button>
-          <button class="btn">Ver más</button>
+        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+            tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalToggleLabel">Registros</h5>
+                  <button type="button" class="btn-close btn3" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p id="pResultadoRegistro">Contenido guardado: </p>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn1 btn3" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Ver recomendaciones</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+            tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalToggleLabel2">Recomendaciones</h5>
+                  <button type="button" class="btn-close btn3" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p id="pResultadoRecomendaciones">Contenido guardado: </p>
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn1 btn3" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Ver registros</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a id="btnfuera1" class="btn btn1" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Ver más</a>
         </div>
         <div class="btnes">
           <button class="btnCrearRegistro" onclick="crearElementos()">Crear Registro</button>
           <a href="./indexTeachersUsers.html"><button class="btnatras"><img src="../SVG/FlechaAtras.svg"
                 alt=""></button></a>
+          
         </div>
       </div>
     </div>
   </div>
   <script src="../Scripts/scriptTeachers.js"></script>
+  <script src="../Scripts/registros.js"></script>
   <script src="https://kit.fontawesome.com/bb0a767d46.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
