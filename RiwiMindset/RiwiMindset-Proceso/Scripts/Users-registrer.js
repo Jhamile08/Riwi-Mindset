@@ -4,6 +4,7 @@
 
 const datos = JSON.parse(localStorage.getItem("gente"))
 console.log(datos);
+console.log(datos[5[0]]);
 
 
 
@@ -14,9 +15,9 @@ function inyect(){
 
     const coderUser = document.createElement('div')
     coderUser.innerHTML= `
-        <img src="${datos[5]}" alt="" id="foto";></img>
-        <p id="nombre">${datos[0]}</p>
-        <p id="nombre">  edad: ${datos[1]}</p>
+        <img src="${datos.foto}" alt="" id="foto";></img>
+        <p id="nombre">${datos.nombre}</p>
+        <p id="nombre">  edad: ${datos.edad}</p>
         
     `;
     user.appendChild(coderUser);
@@ -24,13 +25,13 @@ function inyect(){
     /* inyectar fecha */
 
     const agenda = document.querySelector('.fechaEntrevista');
-    agenda.textContent = datos[2]
+    agenda.textContent = datos.fecha[0]
 
 
     /* inyectar observaciones */
 
     const recomendaciones = document.querySelector('.registroInfo');
-    recomendaciones.textContent = datos[4]
+    recomendaciones.textContent = datos.recomendaciones[0]
 }
 
 inyect(datos)
