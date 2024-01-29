@@ -59,28 +59,22 @@
         </div>
         <div class="secciones">
           <a href="">
-            <li class="seccionesPerfil"><i class="fa fa-address-card personales"></i> Datos personales</li>
-          </a>
-          <a href="">
             <li class="seccionesPerfil iconActive"><i class="fa fa-archive"></i></i> Registros</li>
           </a>
           <a href="./indexResultTest.html">
             <li class="seccionesPerfil"><i class="fa fa-pie-chart"></i></i> Resultado test</li>
+          </a>
+          <a href="./Remisiones.html">
+            <li class="seccionesPerfil"><i class="fa fa-address-card personales"></i> Remisiones</li>
           </a>
         </div>
       </div>
 
       <hr />
 
-      <div class="registros">
+      <div class="registros" id = "registro">
         <p class="historialRegistro"><b>Historial de registros:</b></p>
-        <div class="registroEspecifico">
-          <p class="fechaEntrevista"><b></b></p>
-          <p class="registroInfo">
-            
-          </p>
-          <button>Editar</button>
-          <button>Ver más</button>
+          <!-- inyeccion historias y fecha  -->
         <div class="btnes">
           <button class="btnCrearRegistro" onclick="crearElementos()">Crear Registro</button>
           <a href="./indexTeachersUsers.html"><button class="btnatras"><img src="../SVG/FlechaAtras.svg" alt=""></button></a>
@@ -88,9 +82,8 @@
       </div>
     </div>
   </div>
-  <script src="../Scripts/scriptTeachers.js"></script>
-  <script src="../Scripts/registros.js"></script>
-  <script src="../Scripts/Users-registrer.js"></script>
+
+  <script type= "module" src="../Scripts/Users-registrer.js"></script>
   <script src="https://kit.fontawesome.com/bb0a767d46.js" crossorigin="anonymous"></script>
 
 </body>
