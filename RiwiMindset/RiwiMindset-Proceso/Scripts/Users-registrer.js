@@ -3,8 +3,7 @@
 
 
 const datos = JSON.parse(localStorage.getItem("gente"))
-console.log(datos);
-console.log(datos[5[0]]);
+
 
 
 
