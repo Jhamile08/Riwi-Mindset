@@ -76,9 +76,6 @@
   padding: 1%;
 }
 
-.fc .fc-daygrid-day.fc-day-today{
-  background-color: rgba(16, 176, 194, 0.2); 
-}
 
 /* Cambiar el color de los botones del encabezado */
 .fc .fc-button-primary {
@@ -102,4 +99,31 @@
   border-color: var(--background-btn-primary-hover);
   color: var(--fc-button-text-color);
   background-color: var(--background-btn-primary-hover);
+}
+
+
+/* Cambiar el color de fondo del día seleccionado */
+
+.fc .fc-daygrid-day.fc-day-today {
+  background-color: rgba(16, 176, 194, 0.2);
+}
+
+.fc .fc-dayGridDay.fc-day.fc-day-selected {
+  background-color: black;
+}
+
+/* Cambiar el color de fondo de la hora seleccionada en la vista de día */
+.fc .fc-time-grid .fc-highlight {
+  background-color: black;
+}
+
+/* Cambiar el color de fondo de la hora seleccionada en la vista de semana */
+.fc .fc-time-grid .fc-highlight {
+  background-color: black;
+}
+
+/* Cambiar el color de fondo de la hora seleccionada en la vista de semana y día */
+.fc-highlight {
+  background-color: rgba(16, 176, 194, 0.2);
+  /* Reemplaza con el color que desees */
 }
