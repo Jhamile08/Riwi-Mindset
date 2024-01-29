@@ -73,70 +73,76 @@ export let estudiantes = [
 
 
 
-// <script src="../Scripts/indexTeachersUsers.js"></script>
-// import { estudiantes } from "../Scripts/bd.js";
-// Por ahora solo con objeto
+// test
+
+export const preguntas= [
+  {
+    "id": 1,
+    "contenido": "1¿Cuáles de los siguientes son colores primarios?",
+    "respuestas": [
+      {
+        "id": 101,
+        "contenido": "Rojo",
+        "correcta": true
+      },
+      {
+        "id": 102,
+        "contenido": "Verde",
+        "correcta": true
+      },
+      {
+        "id": 103,
+        "contenido": "Azul",
+        "correcta": true
+      }
   
-
-
-
-
-// export let estudiantes = [
-//   {
-//     "id": 1,
-//     "foto": "../Images/fondoLogin1.png",
-//     "nombre": "Andres Ospina",
-//     "cedula": 1,
-//     "correo": "",
-//     "admin": true,
-//     "contrasena": 1,
-//   },
-//   {
-//     "id": 2,
-//     "foto": "../Images/logoImagen.png",
-//     "nombre": "lily",
-//     "cedula": 2,
-//     "correo": "",
-//     "admin": true,
-//     "contrasena": 2
-//   },
-//   {
-//     "id": 1,
-//     "foto": "../Images/fondoLogin1.png",
-//     "nombre": "Andres Ospina",
-//     "cedula": 1,
-//     "correo": "",
-//     "admin": true,
-//     "contrasena": 1,
-//   },
-//   {
-//     "id": 2,
-//     "foto": "../Images/logoImagen.png",
-//     "nombre": "lily",
-//     "cedula": 2,
-//     "correo": "",
-//     "admin": true,
-//     "contrasena": 2
-//   },
-//   {
-//     "id": 1,
-//     "foto": "../Images/fondoLogin1.png",
-//     "nombre": "Andres Ospina",
-//     "cedula": 1,
-//     "correo": "",
-//     "admin": true,
-//     "contrasena": 1,
-//   },
-//   {
-//     "id": 2,
-//     "foto": "../Images/logoImagen.png",
-//     "nombre": "lily",
-//     "cedula": 2,
-//     "correo": "",
-//     "admin": true,
-//     "contrasena": 2
-//   },
-// ]
+    ]
+  },
+  {
+    "id": 1,
+    "contenido": "2¿Cuáles de los siguientes son colores primarios?",
+    "respuestas": [
+      {
+        "id": 101,
+        "contenido": "Rojo",
+        "correcta": true
+      },
+      {
+        "id": 102,
+        "contenido": "Verde",
+        "correcta": true
+      },
+      {
+        "id": 103,
+        "contenido": "Azul",
+        "correcta": true
+      }
+  
+    ]
+  },
+  {
+    "id": 1,
+    "contenido": "3¿Cuáles de los siguientes son colores primarios?",
+    "respuestas": [
+      {
+        "id": 101,
+        "contenido": "Rojo",
+        "correcta": true
+      },
+      {
+        "id": 102,
+        "contenido": "Verde",
+        "correcta": true
+      },
+      {
+        "id": 103,
+        "contenido": "Azul",
+        "correcta": true
+      }
+  
+    ]
+  },
+]
 
 
 
