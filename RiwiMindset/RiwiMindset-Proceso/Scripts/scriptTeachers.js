@@ -38,15 +38,15 @@ function getDataJsonArray() {
         });
 };
 
-function showHTMLArray({title, start,reason, eventDate}) {
+function showHTMLArray({title,reason, date, time}) {
     const contain = document.querySelector('.cards-home');
     const eventHTML = document.createElement('div');
     eventHTML.classList.add("card-home");
     eventHTML.innerHTML =
         `
         <div class="card-home-text">
-          <h3>${eventDate}</h3>
-          <h4>${start}</h4>
+          <h3>${date}</h3>
+          <h4>${time}</h4>
           <p>${title}</p>
           <p><b>Motivo: </b>${reason}</p>
 

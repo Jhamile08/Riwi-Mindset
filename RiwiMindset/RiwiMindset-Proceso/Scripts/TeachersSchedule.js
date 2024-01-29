@@ -82,6 +82,8 @@ document.addEventListener("DOMContentLoaded", function () {
           start: moment(`${eventDate}T${formattedTime}`).format(),
           end: moment(`${eventDate}T${formattedTime}`).add(1, 'hour').format(),
           reason: 'Ansiedad',
+          date: eventDate,
+          time: eventTime
         };
         // Enviar el nuevo evento al servidor usando fetch con una solicitud POST al servidor JSON.
         const response = await fetch('http://localhost:4002/events', {

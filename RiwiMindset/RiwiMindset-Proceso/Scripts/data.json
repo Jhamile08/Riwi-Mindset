@@ -63,81 +63,22 @@
   "psychologists": [],
   "events": [
     {
-      "id": "ccf7",
+      "id": "c1d5",
       "title": "Daniel",
       "start": "2024-01-30T08:00:00-05:00",
       "end": "2024-01-30T09:00:00-05:00",
-      "reason": "frustracion"
+      "reason": "Ansiedad",
+      "date": "2024-01-30",
+      "time": "08:00"
     },
     {
-      "id": "1bd8",
-      "title": "e",
-      "start": "2024-01-31T15:00:00-05:00",
-      "end": "2024-01-31T16:00:00-05:00",
-      "reason": "Ansiedad"
-    },
-    {
-      "id": "fc0e",
-      "title": "efd",
-      "start": "2024-01-31T16:00:00-05:00",
-      "end": "2024-01-31T17:00:00-05:00",
-      "reason": "Ansiedad"
-    },
-    {
-      "id": "ba87",
-      "title": "fsdfs",
-      "start": "2024-02-01T08:00:00-05:00",
-      "end": "2024-02-01T09:00:00-05:00",
-      "reason": "Ansiedad"
-    },
-    {
-      "id": "b9f1",
-      "title": "fsdfs",
-      "start": "2024-01-30T16:00:00-05:00",
-      "end": "2024-01-30T17:00:00-05:00",
-      "reason": "Ansiedad"
-    },
-    {
-      "id": "ee27",
-      "title": "fsdfsdf",
-      "start": "2024-02-03T08:00:00-05:00",
-      "end": "2024-02-03T09:00:00-05:00",
-      "reason": "Ansiedad"
-    },
-    {
-      "id": "f9e7",
-      "title": "dsad",
-      "start": "2024-02-01T10:00:00-05:00",
-      "end": "2024-02-01T11:00:00-05:00",
-      "reason": "Ansiedad"
-    },
-    {
-      "id": "8ee8",
-      "title": "ffdf",
-      "start": "2024-01-30T18:00:00-05:00",
-      "end": "2024-01-30T19:00:00-05:00",
-      "reason": "Ansiedad"
-    },
-    {
-      "id": "80ba",
-      "title": "ffdf",
-      "start": "2024-02-01T18:00:00-05:00",
-      "end": "2024-02-01T19:00:00-05:00",
-      "reason": "Ansiedad"
-    },
-    {
-      "id": "20d8",
-      "title": "fsdfsd",
-      "start": "2024-02-02T12:00:00-05:00",
-      "end": "2024-02-02T13:00:00-05:00",
-      "reason": "Ansiedad"
-    },
-    {
-      "id": "8691",
-      "title": "dfsdf",
-      "start": "2024-02-02T14:00:00-05:00",
-      "end": "2024-02-02T15:00:00-05:00",
-      "reason": "Ansiedad"
+      "id": "cd8c",
+      "title": "Esteban",
+      "start": "2024-01-31T13:00:00-05:00",
+      "end": "2024-01-31T14:00:00-05:00",
+      "reason": "Ansiedad",
+      "date": "2024-01-31",
+      "time": "13:00"
     }
   ]
 }
