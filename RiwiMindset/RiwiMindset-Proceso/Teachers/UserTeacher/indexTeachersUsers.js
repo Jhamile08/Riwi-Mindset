@@ -1,4 +1,4 @@
-import { estudiantes } from "./bd.js"
+import { estudiantes } from "../Scripts/bd.js"
 
 // inyeccion de los estudiantes 
 
