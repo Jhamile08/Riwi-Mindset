@@ -2,7 +2,7 @@ export let estudiantes = [
   {
   "id": 1,
   "nombre": "lily",
-  "foto": "../Images/fondoLogin1.png",
+  "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
   "cedula": 123,
   "correo": "lili",
   "admin": true,
@@ -11,7 +11,7 @@ export let estudiantes = [
 {
   "id": "",
   "nombre": "Jhamile Andrea Dominguez Rendon",
-  "foto": "../Images/fondoLogin1.png",
+  "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
   "cedula": 2,
   "correo": "",
   "admin": false,
@@ -30,7 +30,7 @@ export let estudiantes = [
 {
   "id": "",
   "nombre": "Daniel Parra",
-  "foto": "../Images/fondoLogin1.png",
+  "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
   "cedula": 100636133,
   "correo": "",
   "recomendaciones": [
@@ -48,7 +48,7 @@ export let estudiantes = [
 {
   "id": "",
   "nombre": "e",
-  "foto": "../Images/fondoLogin1.png",
+  "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
   "cedula": 1040571136,
   "correo": "",
   "recomendaciones": [

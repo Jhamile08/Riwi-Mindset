@@ -1,4 +1,4 @@
-import { estudiantes } from "../Scripts/bd.js"
+import { estudiantes } from "/General/Data/bd.js"
 
 // inyeccion de los estudiantes 
 
@@ -15,7 +15,7 @@ function injectionCoderHtml(coders){
         coderHtml.innerHTML= `
         <div class="estudents" class="" >
             <p id="nombre">${nombre}</p>
-            <a href="./IndexTeachersUsers-register.html">Actualizar</a>
+            <a href="/Teachers/UserTeacher/Registrer/IndexTeachersUsers-register.html">Actualizar</a>
             <a>Entrevista</a>
             <img src="${foto}" alt=""></img>
         </div>

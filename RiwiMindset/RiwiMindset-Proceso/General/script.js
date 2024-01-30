@@ -1,4 +1,4 @@
-import { estudiantes } from "./bd.js"
+import { estudiantes } from "./Data/bd.js"
 
 // Selectors
 const container = document.getElementById('container')
@@ -55,9 +55,14 @@ function validateFormLogin(){
     if(cedula == 1 && password == 1){
         setTimeout(function() {
             // Cambia la URL a la que quieres redirigirte
-            window.location.href = "../Html/indexTeachersHome.html"
+            window.location.href = "/Teachers/HomeTeachers/indexTeachersHome.html"
           }, 100); // 10000 milisegundos = 10 segundos
-        }
+        }else if(cedula == 2 && password == 2){
+            setTimeout(function() {
+                // Cambia la URL a la que quieres redirigirte
+                window.location.href = "/Students/HomeStudents/indexHomeEstudents.html"
+              }, 100); // 10000 milisegundos = 10 segundos
+            }
         
     }
 
