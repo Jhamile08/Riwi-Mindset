@@ -1,0 +1,50 @@
+@import url(generalStyles.css);
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    height: 100%;
+}
+
+.container-down {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.users {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+}
+
+
+
+
+/* test */
+
+#container-test{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content-test{
+    background-color: beige;
+    border-radius: 20px;
+    width: 600px;
+    height: 300px;
+    padding: 50px;
+}
+.pregunta-test{
+    font-size: 28px;
+
+}
+.respuesta-test{
+    font-size: 25px;
+    background-color: aqua;
+}
