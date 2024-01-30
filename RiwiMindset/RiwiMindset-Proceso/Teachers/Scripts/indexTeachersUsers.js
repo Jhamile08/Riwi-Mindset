@@ -25,9 +25,9 @@ function injectionCoderHtml(coders){
 
         <div class="none">
             <p id="edad">${edad}</p>
-            <p id="recomendaciones">${recomendaciones[0]}</p>
-            <p id="observaciones">${observaciones[0]}</p>
-            <p id="fecha">${fecha[0]}</p>
+            <p id="recomendaciones">${recomendaciones}</p>
+            <p id="observaciones">${observaciones}</p>
+            <p id="fecha">${fecha}</p>
             <img src="${foto}" alt="" id="fotos">${foto}</img>
         </div>
         `;

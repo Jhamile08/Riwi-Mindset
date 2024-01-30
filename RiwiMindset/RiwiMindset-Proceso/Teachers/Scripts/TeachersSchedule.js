@@ -1,4 +1,4 @@
-const search = document.getElementById("search");
+/* const search = document.getElementById("search");
 const students = document.getElementById("students");
 
 search.addEventListener("keyup", () => {
@@ -12,17 +12,16 @@ search.addEventListener("keyup", () => {
       li[i].style.display = "none";
     }
   }
-});
-
+}); */
 
 
 
 /* ------------CALENDAR----------------- */
 
 document.addEventListener("DOMContentLoaded", function () {
-  var calendarEl = document.getElementById("calendar");
+  let calendarEl = document.getElementById("calendar");
   /* inicializacion del calendario con dos argumentos "CalendarEl que es el contenedor y segundo un objeto de opciones para la config del calendario" */
-  var calendar = new FullCalendar.Calendar(calendarEl, {
+  let calendar = new FullCalendar.Calendar(calendarEl, {
     /* idioma del calendario espanol */
     locale: "es",
     /* vista inicial en mes */
@@ -74,11 +73,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const formattedTime = `${eventTime}:00`;
     // Formatea la fecha y hora para comparación
     const currentDateTime = moment();
-    const selectedDateTime = moment(`${eventDate} ${eventTime}`,"YYYY-MM-DD HH:mm");
+    const selectedDateTime = moment(`${eventDate} ${eventTime}`, "YYYY-MM-DD HH:mm");
     // Verificar si la fecha seleccionada es anterior a la fecha y hora actuales
     if (selectedDateTime.isBefore(currentDateTime)) {
       alert("No puedes reservar citas en fechas anteriores a la actual.");
-      return;}
+      return;
+    }
     // Verificar si el horario está disponible - empezamos con un bloque try-catch para manejar posibles errores durante la ejecución del código
     try {
       // verificamos si el horario seleccionado no esta ocupado segun la funcion isTimeSlotOccupied
@@ -127,103 +127,93 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-
-  // iniciamos la funcion con dos parámetros: calendar (la instancia del calendario FullCalendar) y startTime (el momento de inicio del intervalo de tiempo que se va a verificar).
-  async function isTimeSlotOccupied(calendar, startTime) {
-    // Obtener todos los eventos en el calendario
-    const allEvents = calendar.getEvents();
-    // Convertir startTime a objeto Moment
-    const startMoment = moment(startTime);
-    // Calcular el horario de finalización (1 hora después)
-    const endMoment = startMoment.clone().add(1, 'hour');
-    // Verificar si hay algún evento que coincide exactamente con el nuevo horario
-    const exactMatch = allEvents.some(event => {
-      const eventStartMoment = moment(event.start);
-      const eventEndMoment = moment(event.end);
-      return (
-        eventStartMoment.isSame(startMoment, 'minute') &&
-        eventEndMoment.isSame(endMoment, 'minute')
-      );
-    });
-    // Verificar si hay algún evento que se superpone con el nuevo horario
-    const overlapping = allEvents.some(event => {
-      const eventStartMoment = moment(event.start);
-      const eventEndMoment = moment(event.end);
-      return (
-        (eventStartMoment.isBefore(endMoment) && eventEndMoment.isAfter(startMoment)) ||
-        (eventStartMoment.isSame(startMoment) && eventEndMoment.isSame(endMoment))
-      );
-    });
-    // Devuelve true si hay una coincidencia exacta o superposición, indicando que el intervalo de tiempo está ocupado. Devuelve false si no hay coincidencias y el intervalo de tiempo está disponible.
-    return exactMatch || overlapping;
-  };
-
-
-
-
-
-  // funcion para obtener events de la base de datos data.json que esta guardada en el json-server
-  async function fetchEventsFromServer(info, successCallback, failureCallback) {
-    try {
-      // Realizar una solicitud (fetch) a la URL del servidor que contiene los eventos
-      const response = await fetch('http://localhost:4002/events');
-      // Verificar si la solicitud fue exitosa (código de estado 200)
-      if (response.ok) {
-        // Si la respuesta fue exitosa, convierte el cuerpo de la respuesta a formato JSON
-        const events = await response.json();
-        // Llama a la función de retorno de éxito (successCallback) y pasa los eventos
-        successCallback(events);
-      } else {
-        // Si la respuesta no es exitosa, imprime un mensaje de error en la consola
-        console.error('Error al obtener eventos desde el servidor:', response.status);
-        // Llama a la función de retorno de fallo (failureCallback) con un mensaje de error
-        failureCallback('Hubo un error al obtener los eventos desde el servidor.');
-      }
-    } catch (error) {
-      // Capturar cualquier error que pueda ocurrir durante el proceso y mostrarlo en la consola
-      console.error('Error al obtener eventos desde el servidor:', error);
-      failureCallback('Hubo un error al obtener los eventos desde el servidor.');
-    }
-  };
-  
-
-
-
-
-  // funcion que se encarga de eliminar un evento del servidor
-  async function deleteEventFromServer(eventId) {
-    try {
-      // Realizar una solicitud (fetch) al servidor para eliminar el evento específico
-      const response = await fetch(`http://localhost:4002/events/${eventId}`, {
-        method: 'DELETE',
-      });
-      // Verifica si la solicitud fue exitosa (código de estado 200)
-      if (response.ok) {
-        // Si la respuesta es exitosa, recarga los eventos en FullCalendar después de eliminar el evento
-        calendar.refetchEvents();
-      } else {
-        // Si la respuesta no es exitosa, imprime un mensaje de error en la consola
-        console.error('Error al eliminar evento:', response.status);
-        // Mostrar una alerta al usuario sobre el error al eliminar el evento
-        alert('Hubo un error al eliminar el evento. Por favor, intenta de nuevo.');
-      }
-    } catch (error) {
-      // Captura cualquier error que pueda ocurrir durante el proceso y mostrarlo en la consola y al usuario
-      console.error('Error al eliminar evento:', error);
-      alert('Hubo un error al eliminar el evento. Por favor, intenta de nuevo.');
-    }
-  };
-  
-
-
-
-
-
   /* Ajustar tamaño a la pantalla del calendario view Header y Body */
   const calendarHeader = document.querySelector(".fc-col-header");
   calendarHeader.style.width = "100%";
 
   const calendarBody = document.querySelector(".fc-scrollgrid-sync-table");
   calendarBody.style.width = "100%";
+
 });
+
+
+
+// iniciamos la funcion con dos parámetros: calendar (la instancia del calendario FullCalendar) y startTime (el momento de inicio del intervalo de tiempo que se va a verificar).
+export async function isTimeSlotOccupied(calendar, startTime) {
+  // Obtener todos los eventos en el calendario
+  const allEvents = calendar.getEvents();
+  // Convertir startTime a objeto Moment
+  const startMoment = moment(startTime);
+  // Calcular el horario de finalización (1 hora después)
+  const endMoment = startMoment.clone().add(1, 'hour');
+  // Verificar si hay algún evento que coincide exactamente con el nuevo horario
+  const exactMatch = allEvents.some(event => {
+    const eventStartMoment = moment(event.start);
+    const eventEndMoment = moment(event.end);
+    return (
+      eventStartMoment.isSame(startMoment, 'minute') &&
+      eventEndMoment.isSame(endMoment, 'minute')
+    );
+  });
+  // Verificar si hay algún evento que se superpone con el nuevo horario
+  const overlapping = allEvents.some(event => {
+    const eventStartMoment = moment(event.start);
+    const eventEndMoment = moment(event.end);
+    return (
+      (eventStartMoment.isBefore(endMoment) && eventEndMoment.isAfter(startMoment)) ||
+      (eventStartMoment.isSame(startMoment) && eventEndMoment.isSame(endMoment))
+    );
+  });
+  // Devuelve true si hay una coincidencia exacta o superposición, indicando que el intervalo de tiempo está ocupado. Devuelve false si no hay coincidencias y el intervalo de tiempo está disponible.
+  return exactMatch || overlapping;
+};
+
+
+
+// funcion para obtener events de la base de datos data.json que esta guardada en el json-server
+export async function fetchEventsFromServer(info, successCallback, failureCallback) {
+  try {
+    // Realizar una solicitud (fetch) a la URL del servidor que contiene los eventos
+    const response = await fetch('http://localhost:4002/events');
+    // Verificar si la solicitud fue exitosa (código de estado 200)
+    if (response.ok) {
+      // Si la respuesta fue exitosa, convierte el cuerpo de la respuesta a formato JSON
+      const events = await response.json();
+      // Llama a la función de retorno de éxito (successCallback) y pasa los eventos
+      successCallback(events);
+    } else {
+      // Si la respuesta no es exitosa, imprime un mensaje de error en la consola
+      console.error('Error al obtener eventos desde el servidor:', response.status);
+      // Llama a la función de retorno de fallo (failureCallback) con un mensaje de error
+      failureCallback('Hubo un error al obtener los eventos desde el servidor.');
+    }
+  } catch (error) {
+    // Capturar cualquier error que pueda ocurrir durante el proceso y mostrarlo en la consola
+    console.error('Error al obtener eventos desde el servidor:', error);
+    failureCallback('Hubo un error al obtener los eventos desde el servidor.');
+  }
+};
+
+
+
+// funcion que se encarga de eliminar un evento del servidor
+export async function deleteEventFromServer(eventId) {
+  try {
+    // Realizar una solicitud (fetch) al servidor para eliminar el evento específico
+    const response = await fetch(`http://localhost:4002/events/${eventId}`, {
+      method: 'DELETE',
+    });
+    // Verifica si la solicitud fue exitosa (código de estado 200)
+    if (response.ok) {
+      // Si la respuesta es exitosa, recarga los eventos en FullCalendar después de eliminar el evento
+      calendar.refetchEvents();
+    } else {
+      // Si la respuesta no es exitosa, imprime un mensaje de error en la consola
+      console.error('Error al eliminar evento:', response.status);
+      // Mostrar una alerta al usuario sobre el error al eliminar el evento
+      alert('Hubo un error al eliminar el evento. Por favor, intenta de nuevo.');
+    }
+  } catch (error) {
+
+  }
+};

@@ -1,3 +1,5 @@
+import { deleteEventFromServer } from "./TeachersSchedule.js";
+
 document.getElementById("input").addEventListener("change", () => {
   if (document.body.className.indexOf("dark") === -1) {
     document.body.classList.add("dark");
@@ -18,7 +20,10 @@ document.getElementById("input").addEventListener("change", () => {
 
 /* Inyectar citas de la base de datos json */
 
+
+
 getDataJsonArray();
+
 
 function getDataJsonArray() {
   fetch("http://localhost:4002/events")
@@ -38,12 +43,13 @@ function getDataJsonArray() {
         showHTMLArray(element);
       });
     });
-}
+};
 
-function showHTMLArray({ title, reason, date, time }) {
+function showHTMLArray({ id, title, reason, date, time }) {
   const contain = document.querySelector(".cards-home");
   const eventHTML = document.createElement("div");
   eventHTML.classList.add("card-home");
+  eventHTML.dataset.eventId = id;
   // Obtener el día de la semana a partir de la fecha
   moment.locale('es');
   const dayOfWeek = moment(date, "YYYY-MM-DD").format("dddd");
@@ -60,6 +66,25 @@ function showHTMLArray({ title, reason, date, time }) {
           <button class="delete-appointment">Eliminar cita</button>
         </div>
     `;
-    
-    contain.appendChild(eventHTML);
+
+  contain.appendChild(eventHTML);
+
+  const deleteButton = eventHTML.querySelector('.delete-appointment');
+  deleteButton.addEventListener('click', () => {
+    const eventId = eventHTML.dataset.eventId;
+    deleteAppointment(eventId);
+  });
+
 };
+
+
+
+function deleteAppointment(eventId) {
+  // Confirmar antes de eliminar
+  if (confirm('¿Estás seguro de que quieres eliminar esta cita?')) {
+    // Eliminar el evento del servidor
+    deleteEventFromServer(eventId);
+  }
+};
+
+
