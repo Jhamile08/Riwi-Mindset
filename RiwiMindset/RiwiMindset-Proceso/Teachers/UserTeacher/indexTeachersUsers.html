@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teachers | Users</title>
+  <link rel="stylesheet" href="/General/generalStylesTeachers.css">
+  <link rel="stylesheet" href="./stylesTeachersUsers.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+
+<body class="bodyTeachers">
+  <nav class="navbar">
+    <div class="imagenLogo">
+      <span class="image">
+        <img src="/General/Images/ImagesTeachers/logoImagen.png" alt="" />
+      </span>
+    </div>
+
+      <div class="nav">
+        <a href="/Teachers/HomeTeachers/indexTeachersHome.html">
+          <li><i class="fa-solid fa-house"></i>Home</li>
+        </a>
+        <a href="/Teachers/UserTeacher/indexTeachersUsers.html">
+          <li class="iconActive"><i class="fa-solid fa-user"></i>Users</li>
+        </a>
+        <a href="/Teachers/SheduleTeachers/indexTeachersSchedule.html">
+          <li><i class="fa-solid fa-calendar"></i>Schedule</li>
+        </a>
+      </div>
+      
+      <div class="containerSwitch">
+        <label class="switch">
+          <input type="checkbox" id="input">
+          <span class="slider"></span>
+        </label>
+      </div>
+  </nav>
+
+  <div class="container-right">
+    <div class="headers">
+      <div class="header1">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <h3>Estudiantes</h3>
+        </div>
+        <div class="header2">
+          <h3>Liliana Montoya</h3>
+          <i class="fa-solid fa-arrow-down"></i>
+          <img src="/General/Images/ImagesTeachers/fondoLogin1.png" alt="" />
+        </div>
+      </div>  
+      <div class="search">
+        <input type="text" placeholder="Name....">
+        <button id="buttonSearch"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+      </div>
+      <div class="information">
+        <h3 class="titleInformation">
+          Todos
+        </h3>
+      </div>
+  <div class="container-users" id="container-users">
+    <!--  inteccion de estudiantes  -->
+  </div>
+
+  <script type="module" src="/Teachers/HomeTeachers/scriptTeachers.js"></script>
+  <script type="module" src="./indexTeachersUsers.js"></script>
+  <script type="module" src="/General/Data/bd.js"></script>
+  <script type="module" src="https://kit.fontawesome.com/bb0a767d46.js" crossorigin="anonymous"></script>
+</body>
+</html>
