@@ -1,8 +1,21 @@
-import { preguntas } from "/General/Data/bd.js";
+import { preguntasIngles  } from "../../General/Data/bdQuestions.js";
+//selectores
+
 
 document.addEventListener("DOMContentLoaded", () => {
   let preguntaActual = 0; // pregunta actual
+
+  let  valueIngles = document.querySelector("#ingles")
+  let  valueLogicas = document.querySelector("#logicas")
+  let  valueMentales = document.querySelector("#mentales")
+  console.log(valueIngles)
+  valueIngles.addEventListener('click', reconocerclik)
+  function reconocerclik(){
+    window.location.href="/Students/TestStudents/indexTestsEstudents.html"; 
+  }
+  
   injectionPreguntaHtml(preguntas[preguntaActual]);
+  
 
   const btnSiguiente = document.querySelector(".btn-siguiente");
   const inputs = document.querySelector(".content-test input")
@@ -29,6 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+
+
+
 
 function injectionPreguntaHtml(pregunta) {
   let inyeccionPreguntas = document.querySelector("#container-test");
