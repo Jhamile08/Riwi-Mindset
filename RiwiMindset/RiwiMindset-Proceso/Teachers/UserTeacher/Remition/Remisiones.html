@@ -79,6 +79,7 @@
                 <!-- inyeccion PDF -->
                 <div class="PDF-content">
 
+                    <div class="pdf-boton"> 
                         <section id="PDF">
                             <h3>Remision Psicologica</h3> 
                             <img src="" alt=""> <!-- imagen riwi -->
@@ -111,8 +112,8 @@
                             <strong> Celular: <input type="text" name="" id="edad-rem">  </strong> <br>
                             <strong> parentezco: <input type="text" name="" id="edad-rem">  </strong> <hr>
                         
-                            <p><b> Motivo de la consulta: </b></p>
-                            <p contenteditable="true"></p>
+                            <p><b> Motivo de la consulta: <input type="text" id="consulta"> </b></p> <!-- input para los codigos de las enfermedades -->
+                            <p contenteditable="true"></p> <!-- texto para poner el motivo de la consulta -->
                         
                             <hr>
                         
@@ -123,17 +124,33 @@
                             <strong> Tarjeta Profesional: <input type="text" name="" id="edad-rem">  </strong> <hr>
                             
                         
-                        </section> <br>
-                            
+                        </section> <br>    
+                        
                         <strong>Presiona el siguiente botón para crear un PDF:</strong>
-                        <button id="btnCrearPdf">Click aquí</button>
+                            <button id="btnCrearPdf">Click aquí</button>
+                    </div>
+
+                    <div class="buscador">
+                            <div class="search-efermedades">
+                                <input type="text" placeholder="nombre o codigo de la enfermedad">
+                            </div>
+                            <div class="information">
+                                <h4 class="titleInformation">
+                                  Todas:
+                                </h4>
+                            </div>
+                            <div class="cont-enfermedades" id="cont-enfermedades">
+                            <!--  inteccion enfermedades  -->
+                            </div>                      
+                    </div>            
+                        
                 </div>   
 
             <a href="/Teachers/UserTeacher/indexTeachersUsers.html"><button class="btnatras"><img src="/General/Images/ImagesTeachers/SVG/FlechaAtras.svg" alt=""></button></a>
             </div>
         </div>
     </div>
-    <script src="./Remisiones.js"></script> <!-- nuevo script --> 
+    <script type="module" src="./Remisiones.js"></script> <!-- nuevo script --> 
     <script src="https://kit.fontawesome.com/bb0a767d46.js" crossorigin="anonymous"></script>
 
 </body>

@@ -113,6 +113,12 @@
 
 /* CSS FORMULARIO */
 
+.PDF-content{
+  display: flex;
+  flex-direction: row;
+  gap: 1%;
+}
+
 input, textarea, select{
     border: none;
     background-color: white;
@@ -122,4 +128,44 @@ textarea{
     
     text-align: justify;
     text-justify: inter-word;
+}
+
+#PDF{
+  width: 100%;
+  border: solid;
+}
+
+
+.pdf-boton{
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  height: 100%;
+}
+
+
+/* css enfermedades */
+
+
+.buscador{
+  display: flex;
+  flex-direction: column;
+  border: solid;
+  max-width: 30%;
+  max-height: 40%;
+  overflow: auto;
+}
+
+.dms{
+  width: 80%;
+}
+
+.cont-enfermedades{
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.consulta .placeholder{
+  width: "200px";
 }

@@ -1,9 +1,11 @@
 
+import { enfermedades } from "./enfermedades.js"
 const datos = JSON.parse(localStorage.getItem("gente"))
 
+    /* inyectar foto y card */
 function inyect(){
 
-    /* inyectar foto y card */
+
     const user = document.querySelector('#data-user');
 
     const coderUser = document.createElement('div')
@@ -14,13 +16,8 @@ function inyect(){
         
     `;
     user.appendChild(coderUser);
-
-    /* inyectar fecha */
-
     
 }
-
-inyect(datos);
 
 /* Inyeccion del PDF */ 
 
@@ -35,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         html2pdf()
             .set({
-                margin: 1,
+                margin: 0.5,
                 filename: `${datos.nombre}.pdf`,
                 image: {
                     type: 'jpeg',
@@ -60,3 +57,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 });
+
+
+/* inyeccion buscador */
+
+
+document.addEventListener("DOMContentLoaded",() =>{
+        inyect(datos);
+        injectionBuscador(enfermedades);
+        
+        
+        const motivo = document.querySelectorAll(".codigo")
+
+        motivo.forEach((coder) =>{
+            coder.addEventListener('click',(e)=>{
+                e.preventDefault()
+                let consulta = document.querySelector('#consulta')
+                
+                consulta.value = e.target.text 
+            })
+        })
+    
+})
+
+function injectionBuscador(codigos){
+    let mostrar = document.querySelector("#cont-enfermedades");
+    
+    codigos.forEach((enfermedades)=>{
+        const {nombre,codigo,especifico} = enfermedades
+        /* destructuring */
+        const aEnfermedad = document.createElement("p");
+        aEnfermedad.innerHTML= `
+        <div class="dms">
+        <a width: 30%; href="" class="codigo"> > ${codigo} - ${nombre} (${especifico})  </a>
+        </div>
+        
+        `;
+        mostrar.appendChild(aEnfermedad);  
+        
+    })}
+
+
+
+
