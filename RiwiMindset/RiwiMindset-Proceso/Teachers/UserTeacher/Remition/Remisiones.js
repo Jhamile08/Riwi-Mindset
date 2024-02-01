@@ -6,10 +6,11 @@ function inyect() {
   const user = document.querySelector("#data-user");
 
   const coderUser = document.createElement("div");
-  coderUser.innerHTML = `
-        <img src="${datos.foto}" alt="" id="foto";></img>
-        <p id="nombre">${datos.nombre}</p>
-        <p id="nombre">  edad: ${datos.edad}</p>
+  coderUser.innerHTML = `<div class= perfil >
+    <img src="${datos.foto}" alt="" id="foto";></img> <br>
+    <p id="nombre">${datos.nombre}</p> <br>
+    <p id="nombre">  edad: ${datos.edad}</p>
+  </div>
         
     `;
   user.appendChild(coderUser);
@@ -98,7 +99,7 @@ patologia.addEventListener("input", (e) => {
   nombre(patologia);
 });
 
-// funcion para buscar coders (se usa CSS)
+// funcion para buscar enfermedades (se usa CSS)
 
 function nombre(patologia) {
   const name = document.querySelectorAll(".codigo");

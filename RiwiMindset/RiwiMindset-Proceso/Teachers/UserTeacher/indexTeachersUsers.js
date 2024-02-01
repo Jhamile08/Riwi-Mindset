@@ -13,21 +13,24 @@ function injectionCoderHtml(coders) {
   let inyeccionCoders = document.querySelector("#container-users");
 
   coders.forEach((estudiantes) => {
-    const { id, foto, nombre, edad, recomendaciones, observaciones, fecha } =
+    const { id, clan, foto, nombre, edad, recomendaciones, observaciones, fecha } =
       estudiantes;
     /* destructuring */
     const coderHtml = document.createElement("p");
+    /* la clase nombre no se muestra, es solo para el buscador */
     coderHtml.innerHTML = `
-        <div class="estudents">
-            <p id="nombre">${nombre}</p>
-            <a href="/Teachers/UserTeacher/Registrer/IndexTeachersUsers-register.html" type="submit" id ="${id}" class= "actualizar">Actualizar</a>
-            <a>Entrevista</a>
+        <div class="estudents actualizar">
+            <p id="">${nombre} </p>
+            <p class="borrar" id="nombre">${nombre} ${clan}</p> 
+            <p id="">${clan} </p>
+            <a href="/Teachers/UserTeacher/Registrer/IndexTeachersUsers-register.html" type="submit" id ="${id}" class= "actualizar">ver perfil</a>
             <img src="${foto}" alt="" id="foto"></img>
         </div>
 
         `;
     inyeccionCoders.appendChild(coderHtml);
     const data = {
+      clan,
       id,
       foto,
       nombre,
@@ -63,21 +66,25 @@ function injectionCoderHtml(coders) {
     nombre(apellido);
   });
 
-  // funcion para buscar coders (se usa CSS)
+  // funcion para buscar coders y clan (se usa CSS)
 
   function nombre(apellido) {
     const name = document.querySelectorAll("#nombre");
     console.log(name);
     name.forEach((e) => {
-      if (
-        e.textContent.toLocaleLowerCase().includes(apellido.toLocaleLowerCase())
-      ) {
-        console.log("coincide");
-        e.parentElement.classList.remove("buscador");
-      } else {
-        console.log("no coincide");
-        e.parentNode.classList.add("buscador");
-      }
+      
+        console.log("nad");
+        console.log(e.textContent);
+        if (e.textContent.toLocaleLowerCase().includes(apellido.toLocaleLowerCase())) {
+          console.log("coincide");
+          e.parentElement.classList.remove("buscador");
+        }
+        else {
+          console.log("no coincide");
+          e.parentNode.classList.add("buscador");
+        }
     });
-  }
-}
+  }}
+
+
+

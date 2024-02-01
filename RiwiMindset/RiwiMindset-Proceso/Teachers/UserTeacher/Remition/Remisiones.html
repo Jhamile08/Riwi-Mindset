@@ -75,20 +75,23 @@
         <hr />
 
         <div class="registros" id="registro">
-            <p class="historialRegistro"><b>PDF para remisiones:</b></p> 
-                <!-- inyeccion PDF -->
+                <p class="historialRegistro"><b>PDF para remisiones:</b></p> 
+               
                 <div class="PDF-content">
-
-                    <div class="pdf-boton"> 
+                    
+                    <div class="pdfboton"> 
                         <section id="PDF">
-                            <h3>Remision Psicologica</h3> 
+                            <!-- inyeccion PDF -->
+                            <p></p> <br>
+                            <h2>Remision Psicologica</h2> 
                             <img src="" alt=""> <!-- imagen riwi -->
-                            <strong> fecha: <input type="text" name="" id="fecha-rem">  </strong> <hr>
-                            <strong> identificacion: <input type="text" name="" id="cedula-rem">  </strong> <hr>
+                            <strong> fecha: <input type="text" name="" id="fecha-rem">  </strong> <br> 
+                            <p></p><hr>
+                            
                         
-                            <p><b> Datos personales </b></p>
-                            <strong> Nombre: <input type="text" name="" id="nombre-rem">  </strong> <br>
-                            <strong> Edad: <input type="text" name="" id="edad-rem">  </strong> <br>
+                            <h3>Datos personales </h3> <br>
+                            <strong> Nombre: <input type="text" name="" id="nombre-rem">  </strong> <br> 
+                            <strong> Edad: <input type="text" name="" id="edad-rem">  </strong> <br> 
                         
                             <label for="" class="block text-sky-900 font-bold">
                                 <b> Tipo de documento: </b>
@@ -107,32 +110,41 @@
                             <strong> Correo: <input type="text" name="" id="edad-rem">  </strong> <br>
                             <strong> Celular: <input type="text" name="" id="edad-rem">  </strong> <hr>
                         
-                            <p><b> Contacto de emergencia </b></p> 
+                            <h3>Contacto de emergencia </h3> <br> 
                             <strong> Nombre: <input type="text" name="" id="edad-rem">  </strong> <br>
                             <strong> Celular: <input type="text" name="" id="edad-rem">  </strong> <br>
-                            <strong> parentezco: <input type="text" name="" id="edad-rem">  </strong> <hr>
+                            <strong> parentezco: <input type="text" name="" id="edad-rem">  </strong> <br> 
+                            <p></p><hr>
                         
-                            <p><b> Motivo de la consulta: <input class="texto-consulta" type="text" id="consulta"> </b></p> <!-- input para los codigos de las enfermedades -->
+                            <p><b> Motivo de la consulta: <input class="texto-consulta" type="text" id="consulta"> </b></p> <br> <!-- input para los codigos de las enfermedades -->
                             <p contenteditable="true"></p> <!-- texto para poner el motivo de la consulta -->
                         
                             <hr>
+
+                            <div>
+
+                            </div>
                         
-                            <strong> Nombre de la profesional: <input type="text" name="" id="edad-rem">  </strong> <hr> <br>
+                            <strong> Nombre de la profesional: <input type="text" name="" id="edad-rem">  </strong> <br> 
+                            <p></p><hr>
                         
-                            <strong> FIRMA: <input type="text" name="" id="edad-rem">  </strong> <br>
-                            <strong> Cargo: <input type="text" name="" id="edad-rem">  </strong> <br>
-                            <strong> Tarjeta Profesional: <input type="text" name="" id="edad-rem">  </strong> <hr>
+                            <strong> FIRMA: <input type="text" name="" id="edad-rem">  </strong> <br> <br> <br> 
+                            <strong> Cargo: <input type="text" name="" id="edad-rem">  </strong> <br> <br>
+                            <strong> Tarjeta Profesional: <input type="text" name="" id="edad-rem">  </strong> <br>
+                            <p></p>
                             
                         
                         </section> <br>    
                         
-                        <strong>Presiona el siguiente botón para crear un PDF:</strong>
-                            <button id="btnCrearPdf">Click aquí</button>
+                        <div class="btnCrearPdf">
+                            <button id="btnCrearPdf" >Descargar PDF</button>
+                        </div>
                     </div>
+                        
 
                     <div class="buscador">
                             <div class="search-efermedades">
-                                <input id="patologia" placeholder=" nombre codigo de la enfermedad"> <br><!-- input para buscar enfermedades -->
+                                <input id="patologia" placeholder=" nombre o codigo de la enfermedad"> <br><!-- input para buscar enfermedades -->
                             </div>
                             
                             <div class="information">
@@ -153,7 +165,6 @@
                 </div>   
 
             <a href="/Teachers/UserTeacher/indexTeachersUsers.html"><button class="btnatras"><img src="/General/Images/ImagesTeachers/SVG/FlechaAtras.svg" alt=""></button></a>
-            </div>
         </div>
     </div>
     <script type="module" src="./Remisiones.js"></script> <!-- nuevo script --> 
