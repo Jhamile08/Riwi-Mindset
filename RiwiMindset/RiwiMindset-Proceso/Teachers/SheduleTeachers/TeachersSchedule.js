@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     /* idioma del calendario espanol */
     locale: "es",
     /* vista inicial en mes */
-    initialView: "dayGridMonth",
+    initialView: "timeGridWeek",
     /* la fecha inicial del calendario sera la fecha actual segun la libreria moment */
     initialDate: moment().format('YYYY-MM-DD'),
     /* posicion de botones en el header del calendario */
@@ -46,13 +46,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     eventClick: function (info) {
       // Verificar si la vista es de estudiantes
       const isStudentView = document.body.classList.contains('student-view');
-
       // Si es vista de estudiantes, no realizar la acción de eliminación
       if (isStudentView) {
-        alert('No tienes permiso para eliminar eventos.');
         return;
       }
-
       // Si no es vista de estudiantes, realizar la acción de eliminación
       if (confirm('¿Estás seguro de que quieres eliminar este evento?')) {
         deleteEventFromServer(info.event.id);
@@ -72,11 +69,88 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 
 
+
+  /* Se selecciona el form */
+  const eventFormTeacher = document.getElementById("eventFormTeacher");
+  /* un evento que escucha el envio del formulario  */
+  eventFormTeacher.addEventListener("submit", async function (e) {
+    /* Previene el comportamiento predeterminado del formulario, que es recargar la página cuando se envía. */
+    e.preventDefault();
+    /* Obtener valores de los inputs del formulario */
+    const eventDate = document.getElementById("eventDate").value;
+    const startTime = document.getElementById("starTime").value;
+    const endTime = document.getElementById("endTime").value;
+    /* Formatea la hora para que coincida con el formato esperado en el calendar (añadiendo ":00" al final) */
+    const formattedStartTime = `${eventDate}T${startTime}:00`;
+    const formattedEndTime = `${eventDate}T${endTime}:00`;
+
+
+  // Formatea la fecha y hora para comparación
+  const currentDateTime = moment();
+  const selectedDateTime = moment(`${eventDate} ${startTime}`, "YYYY-MM-DD HH:mm");
+
+  // Verifica si la fecha seleccionada es posterior o igual a la fecha y hora actuales
+  if (selectedDateTime.isSameOrAfter(currentDateTime)) {
+     try {
+      // Verifica si el horario está disponible
+      if (
+        !(await isTimeSlotOccupied(calendar, formattedStartTime)) &&
+        !(await isTimeSlotOccupied(calendar, formattedEndTime))
+      ) {
+        const newEvent = {
+          title: 'Bloqueado',
+          start: moment(formattedStartTime).format(),
+          end: moment(formattedEndTime).format(),
+          date: eventDate,
+          time: `${startTime} - ${endTime}`,
+        };
+
+        // Envia el nuevo evento al servidor
+        const response = await fetch("http://localhost:4002/events", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newEvent),
+        });
+
+        if (response.ok) {
+          calendar.refetchEvents();
+          eventFormTeacher.reset();
+        } else {
+          console.error("Error al agregar evento:", response.status);
+          alert(
+            "Hubo un error al agregar el evento. Por favor, intenta de nuevo."
+          );
+        }
+      } else {
+        alert("¡Este horario ya está reservado! Por favor, elige otro.");
+      }
+    } catch (error) {
+      console.error("Error al agregar evento:", error);
+      alert(
+        "Hubo un error al agregar el evento. Por favor, intenta de nuevo."
+      );
+    }
+  } else {
+    alert("No puedes reservar citas en fechas anteriores a la actual.");
+  }
+  });
+
+
+
+
+
+
+
+
+
+
+
 // iniciamos la funcion con dos parámetros: calendar (la instancia del calendario FullCalendar) y startTime (el momento de inicio del intervalo de tiempo que se va a verificar).
 export async function isTimeSlotOccupied(calendar, startTime) {
   // Obtener todos los eventos en el calendario
   const allEvents = calendar.getEvents();
-  console.log(allEvents);
   // Convertir startTime a objeto Moment
   const startMoment = moment(startTime);
   // Calcular el horario de finalización (1 hora después)
@@ -112,7 +186,7 @@ export async function fetchEventsFromServer(info, successCallback, failureCallba
      const isStudentView = document.body.classList.contains('student-view');
     // Realizar una solicitud (fetch) a la URL del servidor que contiene los eventos
     const response = await fetch('http://localhost:4002/events');
-    // Verificar si la solicitud fue exitosa (código de estado 200)
+    // Verifica si la solicitud fue exitosa (código de estado 200)
     if (response.ok) {
       // Si la respuesta fue exitosa, convierte el cuerpo de la respuesta a formato JSON
       const events = await response.json();
