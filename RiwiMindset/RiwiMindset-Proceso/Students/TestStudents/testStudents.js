@@ -1,19 +1,45 @@
 import { preguntasIngles  } from "../../General/Data/bdQuestions.js";
-//selectores
-
 
 document.addEventListener("DOMContentLoaded", () => {
+  selectorCard()
   let preguntaActual = 0; // pregunta actual
 
-  let  valueIngles = document.querySelector("#ingles")
-  let  valueLogicas = document.querySelector("#logicas")
-  let  valueMentales = document.querySelector("#mentales")
-  console.log(valueIngles)
-  valueIngles.addEventListener('click', reconocerclik)
+  let  testButton = document.querySelector("#testButton")
+
+  testButton.addEventListener('click', reconocerclik)
   function reconocerclik(){
     window.location.href="/Students/TestStudents/indexTestsEstudents.html"; 
+   
   }
   
+// info sobre el test en el modal
+  let contentInfo = document.querySelector(".contentInfoTest")
+  let containerInfo = document.querySelector(".modal-body")
+// funcion para saber que card se escogio
+  function selectorCard() {
+    let containerCards = document.querySelector(".container-cards")
+    containerCards.addEventListener('click', loadDetails);
+}
+function loadDetails(e) {
+  let titleModal = ""
+  let totalQuestions = 22;
+  let valueCards = document.querySelector(".cards")
+  console.log(valueCards)
+  if(valueCards == ingles){
+    titleModal = "test ingles"
+    return titleModal
+  }
+
+  containerInfo.innerHTML= `
+  <p>${titleModal}</p>
+  <p>${totalQuestions}</p>
+  `;
+  containerInfo.appendChild(contentInfo)
+}
+  
+
+// llamar a la funcion de agregar preguntas
+
   injectionPreguntaHtml(preguntas[preguntaActual]);
   
 

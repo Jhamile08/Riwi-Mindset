@@ -2,6 +2,7 @@ html {
     background: rgba(27, 0, 50, 1);
 }
 
+
 /* container para las waves */
 .container-wave{
     position: relative;
@@ -11,7 +12,7 @@ html {
 .content-wave{
     background-color: rgb(57, 1, 131);
     width: 100%;
-    height: 500px;
+    height: 60vh;
     display: flex;
     justify-content: center;
 }
@@ -25,6 +26,7 @@ html {
 
 .container-down{
     width: 100%;
+    background-color: rgba(27, 0, 50, 1);
 }
 
 .title-test{
