@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           title: 'Bloqueado',
           start: moment(formattedStartTime).format(),
           end: moment(formattedEndTime).format(),
+          reason: 'Bloqueado',
           date: eventDate,
           time: `${startTime} - ${endTime}`,
         };

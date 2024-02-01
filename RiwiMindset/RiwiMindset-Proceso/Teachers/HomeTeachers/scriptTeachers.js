@@ -28,23 +28,31 @@ getDataJsonArray();
 
 function getDataJsonArray() {
   fetch("http://localhost:4002/events")
-    .then((responseJsonArray) => {
-      return responseJsonArray.json();
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
     })
-    .then((dataJsonArray) => {
-      // Ordena el array de eventos por fecha y hora
+    .then(dataJsonArray => {
       dataJsonArray.sort((a, b) => {
         const dateA = moment(`${a.date} ${a.time}`, "YYYY-MM-DD HH:mm");
         const dateB = moment(`${b.date} ${b.time}`, "YYYY-MM-DD HH:mm");
         return dateA - dateB;
       });
-
+      
       // Muestra los eventos ordenados
       dataJsonArray.forEach((element) => {
         showHTMLArray(element);
       });
+      // Llama a la función de informe con los datos del evento
+      console.log(dataJsonArray);
+      generateReport(dataJsonArray);
+    })
+    .catch(error => {
+      console.error("Error al obtener y parsear el JSON:", error);
     });
-};
+}
 
 function showHTMLArray({ id, title, reason, date, time }) {
   const contain = document.querySelector(".cards-home");
@@ -88,3 +96,46 @@ function deleteAppointment(eventId) {
   }
 };
 
+
+// Función para generar el informe
+function generateReport(events) {
+  // Contadores
+  let totalCitas = events.length;
+  let motivesCount = {};
+
+  // Iterar sobre los eventos
+  events.forEach(event => {
+    const reason = event.reason;
+
+    // Incrementar el contador del motivo actual
+    if (motivesCount[reason]) {
+      motivesCount[reason]++;
+    } else {
+      motivesCount[reason] = 1;
+    }
+  });
+
+  // Determinar la mayor y menor razón
+  const motives = Object.keys(motivesCount);
+  const counts = Object.values(motivesCount);
+
+  const maxCount = Math.max(...counts);
+  const minCount = Math.min(...counts);
+
+  const maxReason = motives[counts.indexOf(maxCount)];
+  const minReason = motives[counts.indexOf(minCount)];
+
+  // Inyectar datos en la tabla
+  const reportTable = document.querySelector('.table-report-home');
+  const row = reportTable.insertRow(1); // Asumiendo que la primera fila es para la información total
+  const cell1 = row.insertCell(0);
+  const cell2 = row.insertCell(1);
+  const cell3 = row.insertCell(2);
+
+  cell1.textContent = totalCitas;
+  cell2.textContent = maxReason;
+  cell3.textContent = minReason;
+}
+
+// Llamar a la función con los datos del evento
+generateReport(events);
