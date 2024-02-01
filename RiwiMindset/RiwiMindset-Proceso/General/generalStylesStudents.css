@@ -3,6 +3,13 @@
   padding: 0px;
 }
 
+body{
+  background: linear-gradient(31deg,
+      rgba(0, 0, 0, 1) 40%,
+      rgba(27, 0, 50, 1) 100vh,
+      rgba(34, 0, 80, 1) 100%);  
+}
+
 #sidebar {
   display: flex;
   flex-direction: column;
