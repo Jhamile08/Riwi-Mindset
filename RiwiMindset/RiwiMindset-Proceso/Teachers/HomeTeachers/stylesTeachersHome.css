@@ -102,6 +102,9 @@ td {
     background-color: #b1afaf;
 }
 
+#search{
+    display: none;
+}
 
 
 /* Responsive para Telefonos */
