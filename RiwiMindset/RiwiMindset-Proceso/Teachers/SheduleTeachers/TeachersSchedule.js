@@ -12,16 +12,16 @@ search.addEventListener("keyup", () => {
       li[i].style.display = "none";
     }
   }
-}); */
-
+});  */
 
 
 /* ------------CALENDAR----------------- */
+let calendar;
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
   let calendarEl = document.getElementById("calendar");
   /* inicializacion del calendario con dos argumentos "CalendarEl que es el contenedor y segundo un objeto de opciones para la config del calendario" */
-  let calendar = new FullCalendar.Calendar(calendarEl, {
+  calendar = new FullCalendar.Calendar(calendarEl, {
     /* idioma del calendario espanol */
     locale: "es",
     /* vista inicial en mes */
@@ -44,88 +44,22 @@ document.addEventListener("DOMContentLoaded", function () {
     /* inyectar a events del calendar la extraccion del json-server */
     events: fetchEventsFromServer,
     eventClick: function (info) {
-      // Mostrar confirmación antes de eliminar el evento
+      // Verificar si la vista es de estudiantes
+      const isStudentView = document.body.classList.contains('student-view');
+
+      // Si es vista de estudiantes, no realizar la acción de eliminación
+      if (isStudentView) {
+        alert('No tienes permiso para eliminar eventos.');
+        return;
+      }
+
+      // Si no es vista de estudiantes, realizar la acción de eliminación
       if (confirm('¿Estás seguro de que quieres eliminar este evento?')) {
-        // Eliminar el evento del servidor
         deleteEventFromServer(info.event.id);
       }
-    }
+    },
   });
-
-
-  /* renderizar el calendario en el html segun las configuraciones */
   calendar.render();
-
-
-
-  /* Se selecciona el form */
-  const eventForm = document.getElementById("eventForm");
-  /* un evento que escucha el envio del formulario  */
-  eventForm.addEventListener("submit", async function (e) {
-    /* Previene el comportamiento predeterminado del formulario, que es recargar la página cuando se envía. */
-    e.preventDefault();
-    /* Obtener valores de los inputs del formulario */
-    const eventName = document.getElementById("eventName").value;
-    const eventDate = document.getElementById("eventDate").value;
-    const eventTime = document.getElementById("eventTime").value;
-    const reason = document.getElementById("reason").value;
-    /* Formatea la hora para que coincida con el formato esperado en el calendar (añadiendo ":00" al final) */
-    const formattedTime = `${eventTime}:00`;
-    // Formatea la fecha y hora para comparación
-    const currentDateTime = moment();
-    const selectedDateTime = moment(`${eventDate} ${eventTime}`, "YYYY-MM-DD HH:mm");
-    // Verificar si la fecha seleccionada es anterior a la fecha y hora actuales
-    if (selectedDateTime.isBefore(currentDateTime)) {
-      alert("No puedes reservar citas en fechas anteriores a la actual.");
-      return;
-    }
-    // Verificar si el horario está disponible - empezamos con un bloque try-catch para manejar posibles errores durante la ejecución del código
-    try {
-      // verificamos si el horario seleccionado no esta ocupado segun la funcion isTimeSlotOccupied
-      if (
-        !(await isTimeSlotOccupied(calendar, `${eventDate}T${formattedTime}`))
-      ) {
-        // creamos el evento con propiedades especificas del calendar
-        const newEvent = {
-          title: eventName,
-          start: moment(`${eventDate}T${formattedTime}`).format(),
-          end: moment(`${eventDate}T${formattedTime}`).add(1, "hour").format(),
-          reason: reason,
-          date: eventDate,
-          time: eventTime,
-        };
-        // Enviar el nuevo evento al servidor usando fetch con una solicitud POST al servidor JSON.
-        const response = await fetch("http://localhost:4002/events", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(newEvent),
-        });
-        // Verifica si la respuesta del servidor indica que la solicitud fue exitosa (estado 200-299). Si es así, recarga los eventos en FullCalendar y limpia el formulario. De lo contrario, muestra un mensaje de error.
-        if (response.ok) {
-          // Recargar los eventos en FullCalendar después de agregar el nuevo evento
-          calendar.refetchEvents();
-          // Limpiar el formulario
-          eventForm.reset();
-          // Captura cualquier error que pueda ocurrir durante la ejecución del bloque try y muestra un mensaje de error.
-        } else {
-          console.error("Error al agregar evento:", response.status);
-          alert(
-            "Hubo un error al agregar el evento. Por favor, intenta de nuevo."
-          );
-        }
-      } else {
-        alert("¡Este horario ya está reservado! Por favor, elige otro.");
-      }
-    } catch (error) {
-      console.error("Error al agregar evento:", error);
-      alert("Hubo un error al agregar el evento. Por favor, intenta de nuevo.");
-    }
-  });
-
-
-
 
   /* Ajustar tamaño a la pantalla del calendario view Header y Body */
   const calendarHeader = document.querySelector(".fc-col-header");
@@ -142,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
 export async function isTimeSlotOccupied(calendar, startTime) {
   // Obtener todos los eventos en el calendario
   const allEvents = calendar.getEvents();
+  console.log(allEvents);
   // Convertir startTime a objeto Moment
   const startMoment = moment(startTime);
   // Calcular el horario de finalización (1 hora después)
@@ -173,14 +108,22 @@ export async function isTimeSlotOccupied(calendar, startTime) {
 // funcion para obtener events de la base de datos data.json que esta guardada en el json-server
 export async function fetchEventsFromServer(info, successCallback, failureCallback) {
   try {
+     // Determina el tipo de vista
+     const isStudentView = document.body.classList.contains('student-view');
     // Realizar una solicitud (fetch) a la URL del servidor que contiene los eventos
     const response = await fetch('http://localhost:4002/events');
     // Verificar si la solicitud fue exitosa (código de estado 200)
     if (response.ok) {
       // Si la respuesta fue exitosa, convierte el cuerpo de la respuesta a formato JSON
       const events = await response.json();
+
+       // Procesa los eventos según el tipo de vista
+       const processedEvents = isStudentView
+       ? events.map(event => ({ ...event, title: 'Reservado' }))
+       : events;
+
       // Llama a la función de retorno de éxito (successCallback) y pasa los eventos
-      successCallback(events);
+      successCallback(processedEvents);
     } else {
       // Si la respuesta no es exitosa, imprime un mensaje de error en la consola
       console.error('Error al obtener eventos desde el servidor:', response.status);
@@ -217,3 +160,5 @@ export async function deleteEventFromServer(eventId) {
 
   }
 };
+
+export { calendar };
