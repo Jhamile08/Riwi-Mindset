@@ -112,7 +112,7 @@
                             <strong> Celular: <input type="text" name="" id="edad-rem">  </strong> <br>
                             <strong> parentezco: <input type="text" name="" id="edad-rem">  </strong> <hr>
                         
-                            <p><b> Motivo de la consulta: <input type="text" id="consulta"> </b></p> <!-- input para los codigos de las enfermedades -->
+                            <p><b> Motivo de la consulta: <input class="texto-consulta" type="text" id="consulta"> </b></p> <!-- input para los codigos de las enfermedades -->
                             <p contenteditable="true"></p> <!-- texto para poner el motivo de la consulta -->
                         
                             <hr>
@@ -132,16 +132,22 @@
 
                     <div class="buscador">
                             <div class="search-efermedades">
-                                <input type="text" placeholder="nombre o codigo de la enfermedad">
+                                <input id="patologia" placeholder=" nombre codigo de la enfermedad"> <br><!-- input para buscar enfermedades -->
                             </div>
+                            
                             <div class="information">
                                 <h4 class="titleInformation">
-                                  Todas:
+                                    Todas:
                                 </h4>
                             </div>
                             <div class="cont-enfermedades" id="cont-enfermedades">
                             <!--  inteccion enfermedades  -->
-                            </div>                      
+                            </div> 
+                            <div class="information">
+                                <h4 class="titleInformation">
+                                    
+                                </h4>
+                            </div>                     
                     </div>            
                         
                 </div>   
