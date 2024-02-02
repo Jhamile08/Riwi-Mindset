@@ -8,7 +8,7 @@ export const preguntasIngles= [
         {
           "id": 222,
           "contenido": "Rojo",
-          "correcta": true
+          "correcta": false
         },
         {
           "id": 102,
@@ -207,10 +207,21 @@ export const preguntasIngles= [
   ]
 
 
-export let ingles = {
-  "nombre": "test ingles",
-  "duracion": "duracion"
-}
+  export  let ingles = {
+    "nombre": "Test de ingles",
+    "preguntas": "20preguntas",
+    "duracion": "20min"
+  }
+export  let mentales = {
+    "nombre": "Test de logicas",
+    "preguntas": "20preguntas",
+    "duracion": "40min"
+  }
+export let logicas = {
+    "nombre": "Test de mentales",
+    "preguntas": "20preguntas",
+    "duracion": "30min"
+  }
 
 export let resultados = {
   "buenas": 0,
