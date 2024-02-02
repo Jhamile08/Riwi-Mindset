@@ -3,32 +3,35 @@
     padding: 0;
 }
 
-.container {
-    width: 100vh;
-    height: 100vh;
+
+.containerForms {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
-.container #containerFormEstudents {
+.containerForms #containerFormEstudents {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
 }
 
-.container #containerFormEstudents .containerForms1 {
+.containerForms #containerFormEstudents .containerForms1 {
     display: flex;
     width: 100%;
 }
 
-.container #containerFormEstudents form .typeForm1 {
+.containerForms #containerFormEstudents form .typeForm1 {
     display: flex;
-    flex-direction: column;
 }
 
-.container #containerFormEstudents form .typeForm2 {
+.containerForms #containerFormEstudents form .typeForm2 {
     display: flex;
-    flex-direction: column;
-    width: 100%;
+
 }
