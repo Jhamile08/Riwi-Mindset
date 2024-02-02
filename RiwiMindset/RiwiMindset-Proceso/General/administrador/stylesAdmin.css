@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100vh;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.container #containerFormEstudents {
+    display: flex;
+    flex-direction: column;
+}
+
+.container #containerFormEstudents .containerForms1 {
+    display: flex;
+    width: 100%;
+}
+
+.container #containerFormEstudents form .typeForm1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.container #containerFormEstudents form .typeForm2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
