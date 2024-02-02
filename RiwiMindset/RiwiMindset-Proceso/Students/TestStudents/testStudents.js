@@ -1,84 +1,81 @@
-import { preguntasIngles, ingles  } from "../../General/Data/bdQuestions.js";
+import { preguntasIngles, ingles, preguntasLogicas, resultados } from "../../General/Data/bdQuestions.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  selectorCard()
   let preguntaActual = 0; // pregunta actual
 
-  let  testButton = document.querySelector("#testButton")
+  let testButton = document.querySelector("#testButton")
 
-  testButton.addEventListener('click', reconocerclik)
-  function reconocerclik(){
-    window.location.href="/Students/TestStudents/indexTestsEstudents.html"; 
-   
-  }
-  
-// info sobre el test en el modal
+  // info sobre el test en el modal
   let contentInfo = document.querySelector(".contentInfoTest")
   let containerInfo = document.querySelector(".modal-body")
   let selectIngles = document.querySelector("#ingles")
   let selectMentales = document.querySelector("#mentales")
   let selectLogicas = document.querySelector("#logicas")
-// funcion para saber que card se escogio
- selectIngles.addEventListener('click', loadDetails)
-function loadDetails() {
+  // funcion para saber que card se escogio
+  //  selectIngles.addEventListener('click', ()=>{
+  //   contentInfo.innerHTML= `
+  //   <p>${ingles.nombre}</p>
+  //   <p>${ingles.duracion}</p>
+  //   `;
+  //   containerInfo.appendChild(contentInfo)
+  //  })
 
-  contentInfo.innerHTML= `
-  <p>${titleModal}</p>
-  <p>${totalQuestions}</p>
-  `;
-  containerInfo.appendChild(contentInfo)
-}
-  
 
-// llamar a la funcion de agregar preguntas
+  // llamar a la funcion de agregar preguntas
 
-  injectionPreguntaHtml(preguntas[preguntaActual]);
-  
+  injectionPreguntaHtml(preguntasIngles[preguntaActual]);
+
 
   const btnSiguiente = document.querySelector(".btn-siguiente");
   const inputs = document.querySelector(".content-test input")
 
   // hay que saber que selecciono para la siguiente pregunta
   inputs.addEventListener('click', () => {
-    
-    console.log(inputs.value)} )
+
+    console.log(inputs.value)
+  })
 
   btnSiguiente.addEventListener("click", () => {
-    preguntaActual++;
-    console.log(inputs.value)
-    if (preguntaActual < preguntas.length) {
-      // en caso de que no haya seleccionado lance error
-      if (inputs.value == null) {
-        alert("vacio")
-      }else{
+    const inputs = document.querySelectorAll(".content-test input:checked");
 
-        injectionPreguntaHtml(preguntas[preguntaActual]);
-      }
+    if (inputs.length === 0) {
+      alert("Por favor, selecciona una respuesta antes de continuar.");
+      return; // input vacio, lazar error
+    }
+    // Acceder a la respuesta seleccionada para guardar el valor
+    const respuestaSeleccionada = inputs[0].value
+    if (respuestaSeleccionada) {
+      resultados.buenas++;
     } else {
-      // inyectar funcion para cuando termine el formulario
+      resultados.malas++;
+    }
+    console.log(resultados.buenas)
+
+    preguntaActual++;
+
+    if (preguntaActual < preguntasIngles.length) {
+      injectionPreguntaHtml(preguntasIngles[preguntaActual]);
+    } else {
       console.log("¡Fin del cuestionario!");
     }
+
   });
 });
 
 
 
-
-
 function injectionPreguntaHtml(pregunta) {
-  let inyeccionPreguntas = document.querySelector("#container-test");
-  inyeccionPreguntas.innerHTML = ""; 
+  let inyeccionPreguntas = document.querySelector("#container-test");// container creado en el html
+  inyeccionPreguntas.innerHTML = "";
 
   const coderHtml = document.createElement("div");
   coderHtml.classList.add("content-test");
-  
+
   coderHtml.innerHTML = `
     <p class="pregunta-test">${pregunta.contenido}</p>
-    <label><input type="radio" name="r${pregunta.id}" value="${pregunta.respuestas[0].id}">${pregunta.respuestas[0].contenido}, Correcta: ${pregunta.respuestas[0].correcta}</label><br>
-    <label><input type="radio" name="r${pregunta.id}" value="${pregunta.respuestas[1].id}">${pregunta.respuestas[1].contenido}, Correcta: ${pregunta.respuestas[1].correcta}</label><br>
-    <label><input type="radio" name="r${pregunta.id}" value="${pregunta.respuestas[2].id}">${pregunta.respuestas[2].contenido}, Correcta: ${pregunta.respuestas[2].correcta}</label>
-   
-    
+    <label><input type="radio" name="r${pregunta.id}" value="${pregunta.respuestas[0].correcta} ">${pregunta.respuestas[0].contenido}, Correcta: ${pregunta.respuestas[0].correcta}</label><br>
+    <label><input type="radio" name="r${pregunta.id}" value="${pregunta.respuestas[1].correcta}">${pregunta.respuestas[1].contenido}, Correcta: ${pregunta.respuestas[1].correcta}</label><br>
+    <label><input type="radio" name="r${pregunta.id}" value="${pregunta.respuestas[2].correcta}">${pregunta.respuestas[2].contenido}, Correcta: ${pregunta.respuestas[2].correcta}</label>
    
   `;
 

@@ -2,11 +2,11 @@
 
 export const preguntasIngles= [
     {
-      "id": 1,
+      "id": 2,
       "contenido": "1¿Cuáles de los siguientes son colores primarios?",
       "respuestas": [
         {
-          "id": 101,
+          "id": 222,
           "contenido": "Rojo",
           "correcta": true
         },
@@ -210,4 +210,9 @@ export const preguntasIngles= [
 export let ingles = {
   "nombre": "test ingles",
   "duracion": "duracion"
+}
+
+export let resultados = {
+  "buenas": 0,
+  "malas": 0
 }
