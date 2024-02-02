@@ -207,3 +207,7 @@ export const preguntasIngles= [
   ]
 
 
+export let ingles = {
+  "nombre": "test ingles",
+  "duracion": "duracion"
+}

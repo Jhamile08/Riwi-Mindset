@@ -1,4 +1,4 @@
-import { preguntasIngles  } from "../../General/Data/bdQuestions.js";
+import { preguntasIngles, ingles  } from "../../General/Data/bdQuestions.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   selectorCard()
@@ -15,22 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
 // info sobre el test en el modal
   let contentInfo = document.querySelector(".contentInfoTest")
   let containerInfo = document.querySelector(".modal-body")
+  let selectIngles = document.querySelector("#ingles")
+  let selectMentales = document.querySelector("#mentales")
+  let selectLogicas = document.querySelector("#logicas")
 // funcion para saber que card se escogio
-  function selectorCard() {
-    let containerCards = document.querySelector(".container-cards")
-    containerCards.addEventListener('click', loadDetails);
-}
-function loadDetails(e) {
-  let titleModal = ""
-  let totalQuestions = 22;
-  let valueCards = document.querySelector(".cards")
-  console.log(valueCards)
-  if(valueCards == ingles){
-    titleModal = "test ingles"
-    return titleModal
-  }
+ selectIngles.addEventListener('click', loadDetails)
+function loadDetails() {
 
-  containerInfo.innerHTML= `
+  contentInfo.innerHTML= `
   <p>${titleModal}</p>
   <p>${totalQuestions}</p>
   `;
