@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Teachers | Users</title>
-  <link rel="stylesheet" href="../Styles/generalStyles.css">
-  <link rel="stylesheet" href="../Styles/stylesTeachersUsers.css">
+  <link rel="stylesheet" href="/General/generalStylesTeachers.css">
+  <link rel="stylesheet" href="./stylesTeachersUsers.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 </head>
@@ -15,18 +15,18 @@
   <nav class="navbar">
     <div class="imagenLogo">
       <span class="image">
-        <img src="../Images/logoImagen.png" alt="" />
+        <img src="/General/Images/ImagesTeachers/logoImagen.png" alt="" />
       </span>
     </div>
 
       <div class="nav">
-        <a href="../Html/indexTeachersHome.html">
+        <a href="/Teachers/HomeTeachers/indexTeachersHome.html">
           <li><i class="fa-solid fa-house"></i>Home</li>
         </a>
-        <a href="">
+        <a href="/Teachers/UserTeacher/indexTeachersUsers.html">
           <li class="iconActive"><i class="fa-solid fa-user"></i>Users</li>
         </a>
-        <a href="../Html/indexTeachersSchedule.html">
+        <a href="/Teachers/SheduleTeachers/indexTeachersSchedule.html">
           <li><i class="fa-solid fa-calendar"></i>Schedule</li>
         </a>
       </div>
@@ -48,12 +48,12 @@
         <div class="header2">
           <h3>Liliana Montoya</h3>
           <i class="fa-solid fa-arrow-down"></i>
-          <img src="../Images/logoImagen.png" alt="" />
+          <img src="/General/Images/ImagesTeachers/fondoLogin1.png" alt="" />
         </div>
       </div>  
       <div class="search">
         <input type="text" placeholder="Name....">
-        <button id="buttonSearch"><i class="fa-solid fa-magnifying-glass" id="buscar"></i>Search</button>
+        <button id="buttonSearch"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
       </div>
       <div class="information">
         <h3 class="titleInformation">
@@ -64,9 +64,9 @@
     <!--  inteccion de estudiantes  -->
   </div>
 
-  <script type="module" src="../Scripts/scriptTeachers.js"></script>
-  <script type="module" src="../Scripts/indexTeachersUsers.js"></script>
-  <script type="module" src="../Scripts/bd.js"></script>
+  <script type="module" src="/Teachers/HomeTeachers/scriptTeachers.js"></script>
+  <script type="module" src="./indexTeachersUsers.js"></script>
+  <script type="module" src="/General/Data/bd.js"></script>
   <script type="module" src="https://kit.fontawesome.com/bb0a767d46.js" crossorigin="anonymous"></script>
 </body>
 </html>
