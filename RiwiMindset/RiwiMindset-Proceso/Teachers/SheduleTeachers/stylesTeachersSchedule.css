@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Ubuntu", sans-serif;
+  text-decoration: none;
 }
 
 .container-down {
@@ -69,6 +70,7 @@
   font-size: 120%;
   width: 100%;
   height: 100%;
+  text-decoration: none;
 }
 
 .fc-header-toolbar {
@@ -102,6 +104,13 @@
   background-color: var(--background-btn-primary-hover);
 }
 
+/* Cambiar el color del texto del header */
+
+.fc .fc-col-header-cell-cushion{
+  text-decoration: none;
+  color: var(--letter-color-main-dark);
+}
+
 
 /* Cambiar el color de fondo del día seleccionado */
 
@@ -133,5 +142,4 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2%;
 }
