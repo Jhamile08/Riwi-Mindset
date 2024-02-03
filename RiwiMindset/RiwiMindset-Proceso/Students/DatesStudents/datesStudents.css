@@ -1,5 +1,13 @@
 @import url(/General/generalStylesTeachers.css);
 
+.containerHome{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 3%;
+  gap: 2%;
+}
+
 /* Calendario */
 
 .schedule-config {
@@ -95,6 +103,23 @@
   .fc-highlight {
     background-color: rgba(16, 176, 194, 0.2);
     /* Reemplaza con el color que desees */
+  }
+
+#reservationForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  } 
+
+  .titleForm{
+    text-align: center;
+  }
+
+  #eventForm{
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
   }
 
   #eventFormTeacher{

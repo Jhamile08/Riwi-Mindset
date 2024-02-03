@@ -18,6 +18,8 @@
   flex-direction: column;
 }
 
+
+
 .title-user {
   color: var(--letter-color-main-dark);
 }
@@ -32,7 +34,7 @@
   display: flex;
   flex-direction: column;
   list-style-type: none;
-  padding: 0;
+  padding: 5% 0;
   text-align: center;
   overflow: auto;
   height: 50vh;
@@ -125,4 +127,11 @@
 .fc-highlight {
   background-color: rgba(16, 176, 194, 0.2);
   /* Reemplaza con el color que desees */
+}
+
+#reservationForm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
 }

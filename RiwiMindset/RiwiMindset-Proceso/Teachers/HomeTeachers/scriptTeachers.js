@@ -71,7 +71,6 @@ function showHTMLArray({ id, title, reason, date, time }) {
           <p><b>Motivo: </b>${reason}</p>
         </div>
         <div class="buttons">
-          <button class="reschedule">Reagendar</button>
           <button class="delete-appointment">Eliminar cita</button>
         </div>
     `;

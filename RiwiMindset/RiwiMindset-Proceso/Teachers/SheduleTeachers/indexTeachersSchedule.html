@@ -83,6 +83,7 @@
                 <button href="" class="schedule-config">Configurar espacio</button>
 
             </div>
+            
             <div class="schedule">
                 <div id='calendar'></div>
             </div>
@@ -91,15 +92,15 @@
 
         <div id="reservationForm">
             
-            <form id="eventFormTeacher">
+            <form class="form-control" id="eventFormTeacher">
 
                 <h2>Bloquear Horarios: </h2>
 
                 <label for="eventDate">Fecha:</label>
-                <input type="date" id="eventDate" required>
+                <input class="form-control" type="date" id="eventDate" required>
 
                 <label for="startTime">Hora Inicio:</label>
-                <select id="starTime" required>
+                <select class="form-select" id="starTime" required>
                     <!-- <option value="00:00">12:00 am</option>
                         <option value="01:00">1:00 am</option>
                         <option value="02:00">2:00 am</option>
@@ -127,7 +128,7 @@
                 </select>
 
                 <label for="endTime">Hora Final:</label>
-                <select id="endTime" required>
+                <select class="form-select" id="endTime" required>
                     <!-- <option value="00:00">12:00 am</option>
                         <option value="01:00">1:00 am</option>
                         <option value="02:00">2:00 am</option>
@@ -154,7 +155,7 @@
                         <option value="23:00">11:00 pm</option> -->
                 </select>
 
-                <button type="submit">Bloquear</button>
+                <button class="btn btn-primary" type="submit">Bloquear</button>
 
             </form>
         </div>
