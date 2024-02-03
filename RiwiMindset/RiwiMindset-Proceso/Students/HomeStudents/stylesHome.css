@@ -40,10 +40,6 @@ body {
     opacity: 0;
 }
 
-.panel:hover{
-    flex:2;
-}
-
 .panel.active {
     flex: 3;
 }
