@@ -34,9 +34,25 @@ document.addEventListener("DOMContentLoaded", async function () {
         return;
       }
       // Si no es vista de estudiantes, realizar la acción de eliminación
-      if (confirm('¿Estás seguro de que quieres eliminar este evento?')) {
-        deleteEventFromServer(info.event.id);
-      }
+        Swal.fire({
+          title: "¿Estás segura de que quieres eliminar esta cita?",
+          icon: "info",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Si, eliminar"
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire({
+              title: "Borrado",
+              text: "La cita ha sido eliminada exitosamente",
+              icon: "success"
+            });
+            deleteEventFromServer(info.event.id);
+          }
+        })
+        
+      
     },
   });
   calendar.render();
@@ -103,21 +119,29 @@ document.addEventListener("DOMContentLoaded", async function () {
           eventFormTeacher.reset();
         } else {
           console.error("Error al agregar evento:", response.status);
-          alert(
-            "Hubo un error al agregar el evento. Por favor, intenta de nuevo."
-          );
+          Swal.fire({
+            title: "Hubo un error al agregar el evento. Por favor, intenta de nuevo",
+            icon: "error"
+          });
         }
       } else {
-        alert("¡Este horario ya está reservado! Por favor, elige otro.");
+        Swal.fire({
+          title: "¡Este horario ya está reservado! Por favor, elige otro",
+          icon: "warning"
+        });
       }
     } catch (error) {
       console.error("Error al agregar evento:", error);
-      alert(
-        "Hubo un error al agregar el evento. Por favor, intenta de nuevo."
-      );
+      Swal.fire({
+        title: "Hubo un error al agregar el evento. Por favor, intenta de nuevo",
+        icon: "error"
+      });
     }
   } else {
-    alert("No puedes reservar citas en fechas anteriores a la actual.");
+    Swal.fire({
+      title: "No puedes reservar citas en fechas anteriores a la actual",
+      icon: "warning"
+    });
   }
   });
 
@@ -191,6 +215,10 @@ export async function fetchEventsFromServer(info, successCallback, failureCallba
   } catch (error) {
     // Capturar cualquier error que pueda ocurrir durante el proceso y mostrarlo en la consola
     console.error('Error al obtener eventos desde el servidor:', error);
+    Swal.fire({
+      title: "Hubo un error al eliminar el evento. Por favor, intenta de nuevo",
+      icon: "error"
+    });
     failureCallback('Hubo un error al obtener los eventos desde el servidor.');
   }
 };
@@ -212,7 +240,10 @@ export async function deleteEventFromServer(eventId) {
       // Si la respuesta no es exitosa, imprime un mensaje de error en la consola
       console.error('Error al eliminar evento:', response.status);
       // Mostrar una alerta al usuario sobre el error al eliminar el evento
-      alert('Hubo un error al eliminar el evento. Por favor, intenta de nuevo.');
+      Swal.fire({
+        title: "Hubo un error al eliminar el evento. Por favor, intenta de nuevo",
+        icon: "error"
+      });
     }
   } catch (error) {
 
