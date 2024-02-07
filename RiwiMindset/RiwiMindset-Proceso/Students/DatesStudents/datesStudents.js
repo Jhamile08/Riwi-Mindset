@@ -19,7 +19,10 @@ eventForm.addEventListener("submit", async function (e) {
   const selectedDateTime = moment(`${eventDate} ${eventTime}`, "YYYY-MM-DD HH:mm");
   // Verificar si la fecha seleccionada es anterior a la fecha y hora actuales
   if (selectedDateTime.isBefore(currentDateTime)) {
-    alert("No puedes reservar citas en fechas anteriores a la actual.");
+    Swal.fire({
+      title: "No puedes reservar citas en fechas anteriores a la actual",
+      icon: "warning"
+    });
     return;
   }
   // Verificar si el horario está disponible - empezamos con un bloque try-catch para manejar posibles errores durante la ejecución del código
@@ -55,16 +58,23 @@ eventForm.addEventListener("submit", async function (e) {
         // Captura cualquier error que pueda ocurrir durante la ejecución del bloque try y muestra un mensaje de error.
       } else {
         console.error("Error al agregar evento:", response.status);
-        alert(
-          "Hubo un error al agregar el evento. Por favor, intenta de nuevo."
-        );
+        Swal.fire({
+          title: "Hubo un error al agregar el evento. Por favor, intenta de nuevo",
+          icon: "error"
+        });
       }
     } else {
-      alert("¡Este horario ya está reservado! Por favor, elige otro.");
+      Swal.fire({
+        title: "¡Este horario ya está reservado! Por favor, elige otro",
+        icon: "warning"
+      });
     }
   } catch (error) {
     console.error("Error al agregar evento:", error);
-    alert("Hubo un error al agregar el evento. Por favor, intenta de nuevo.");
+    Swal.fire({
+      title: "Hubo un error al agregar el evento. Por favor, intenta de nuevo",
+      icon: "error"
+    });
   }
 });
 

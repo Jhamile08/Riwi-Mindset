@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/General/generalStylesTeachers.css" />
+    <link rel="stylesheet" href="./Remisiones.css" />
+    <link rel="stylesheet" href="/Teachers/UserTeacher/Registrer/modalStyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> <!-- script para pdf -->
+</head>
+
+<body class="bodyTeachers">
+    <nav class="navbar">
+        <div class="imagenLogo">
+        <span class="image">
+            <img src="/General/Images/ImagesTeachers/logoImagen.png" alt="" />
+        </span>
+        </div>
+
+        <div class="nav">
+            <a href="/Teachers/HomeTeachers/indexTeachersHome.html">
+                <li><i class="fa-solid fa-house"></i>Home</li>
+              </a>
+              <a href="/Teachers/UserTeacher/indexTeachersUsers.html">
+                <li class="iconActive"><i class="fa-solid fa-user"></i>Users</li>
+              </a>
+              <a href="/Teachers/SheduleTeachers/indexTeachersSchedule.html">
+                <li><i class="fa-solid fa-calendar"></i>Schedule</li>
+              </a>
+        </div>
+
+        <div class="containerSwitch">
+        <label class="switch">
+            <input type="checkbox" id="input">
+            <span class="slider"></span>
+        </label>
+        </div>
+    </nav>
+    <div class="container-right">
+        <div class="headers">
+        <div class="header1">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <h3>Estudiantes</h3>
+        </div>
+        <div class="header2">
+            <h3>Liliana Montoya</h3>
+            <i class="fa-solid fa-arrow-down"></i>
+            <img src="/General/Images/ImagesTeachers/fondoLogin1.png" alt="" />
+        </div>
+        </div>
+        <div class="info">
+        <div class="perfil">
+            <div class="data-user" id="data-user">
+
+            <!-- inyeccion foto edad y nombre  -->
+
+            </div>
+            <div class="secciones">
+            <a href="/Teachers/UserTeacher/Remition/Remisiones.html">
+                <li class="seccionesPerfil iconActive"><i class="fa fa-address-card personales"></i> Remisiones </li> 
+            </a>
+            <a href="/Teachers/UserTeacher/Registrer/IndexTeachersUsers-register.html">
+                <li class="seccionesPerfil"><i class="fa fa-archive"></i></i> Registros</li>
+            </a>
+            <a href="/Teachers/UserTeacher/ResultTest/indexResultTest.html">
+                <li class="seccionesPerfil"><i class="fa fa-pie-chart"></i></i> Resultado test</li>
+            </a>
+            </div>
+        </div>
+
+        <hr/>
+
+        <div class="registros" id="registro">
+                <p class="historialRegistro"><b>PDF para remisiones:</b></p> 
+               
+                <div class="PDF-content">
+                    
+                    <div class="pdfboton"> 
+                        <section id="PDF">
+                            <!-- inyeccion PDF -->
+                            <p></p> <br>
+                            <h2>Remision Psicologica</h2> 
+                            <img src="" alt=""> <!-- imagen riwi -->
+                            <strong> fecha: <input type="text" name="" id="fecha-rem">  </strong> <br> 
+                            <p></p><hr>
+                            
+                        
+                            <h3>Datos personales </h3> <br>
+                            <strong> Nombre: <input type="text" name="" id="nombre-rem">  </strong> <br> 
+                            <strong> Edad: <input type="text" name="" id="edad-rem">  </strong> <br> 
+                        
+                            <label for="" class="block text-sky-900 font-bold">
+                                <b> Tipo de documento: </b>
+                            </label>
+                                <select name="type" class="block w-full p-3 border-2 border-sky-700 bg-sky-50 rounded">
+                                    <option> Cedula de ciudadania </option>
+                                    <option> Tarjeta de identidad </option>
+                                    <option> Cedula de extranjeria </option>
+                                    <option> Pasaporte </option>
+                                    <option> Permiso especial de permanencia </option>
+                                    <option> Permiso de proteccion temporal </option>
+                        
+                                </select> <br>
+                            <strong> Direccion: <input type="text" name="" id="edad-rem">  </strong> <br>
+                            <strong> Telefono fijo: <input type="text" name="" id="edad-rem">  </strong> <br>
+                            <strong> Correo: <input type="text" name="" id="edad-rem">  </strong> <br>
+                            <strong> Celular: <input type="text" name="" id="edad-rem">  </strong> <hr>
+                        
+                            <h3>Contacto de emergencia </h3> <br> 
+                            <strong> Nombre: <input type="text" name="" id="edad-rem">  </strong> <br>
+                            <strong> Celular: <input type="text" name="" id="edad-rem">  </strong> <br>
+                            <strong> parentezco: <input type="text" name="" id="edad-rem">  </strong> <br> 
+                            <p></p><hr>
+                        
+                            <p><b> Motivo de la consulta: <input class="texto-consulta" type="text" id="consulta"> </b></p> <br> <!-- input para los codigos de las enfermedades -->
+                            <p contenteditable="true"></p> <!-- texto para poner el motivo de la consulta -->
+                        
+                            <hr>
+
+                            <div>
+
+                            </div>
+                        
+                            <strong> Nombre de la profesional: <input type="text" name="" id="edad-rem">  </strong> <br> 
+                            <p></p><hr>
+                        
+                            <strong> FIRMA: <input type="text" name="" id="edad-rem">  </strong> <br> <br> <br> 
+                            <strong> Cargo: <input type="text" name="" id="edad-rem">  </strong> <br> <br>
+                            <strong> Tarjeta Profesional: <input type="text" name="" id="edad-rem">  </strong> <br>
+                            <p></p>
+                            
+                        
+                        </section> <br>    
+                        
+                        <div class="btnCrearPdf">
+                            <button id="btnCrearPdf" >Descargar PDF</button>
+                        </div>
+                    </div>
+                        
+
+                    <div class="buscador">
+                            <div class="search-efermedades">
+                                <input id="patologia" placeholder=" nombre o codigo de la enfermedad"> <br><!-- input para buscar enfermedades -->
+                            </div>
+                            
+                            <div class="information">
+                                <h4 class="titleInformation">
+                                    Todas:
+                                </h4>
+                            </div>
+                            <div class="cont-enfermedades" id="cont-enfermedades">
+                            <!--  inteccion enfermedades  -->
+                            </div> 
+                            <div class="information">
+                                <h4 class="titleInformation">
+                                    
+                                </h4>
+                            </div>                     
+                    </div>            
+                        
+                </div>   
+
+            <a href="/Teachers/UserTeacher/indexTeachersUsers.html"><button class="btnatras"><img src="/General/Images/ImagesTeachers/SVG/FlechaAtras.svg" alt=""></button></a>
+        </div>
+    </div>
+    <script type="module" src="./Remisiones.js"></script> <!-- nuevo script --> 
+    <script src="https://kit.fontawesome.com/bb0a767d46.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

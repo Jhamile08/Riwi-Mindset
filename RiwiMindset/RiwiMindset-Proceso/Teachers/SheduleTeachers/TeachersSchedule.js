@@ -34,26 +34,38 @@ document.addEventListener("DOMContentLoaded", async function () {
         return;
       }
       // Si no es vista de estudiantes, realizar la acción de eliminación
-        Swal.fire({
-          title: "¿Estás segura de que quieres eliminar esta cita?",
-          icon: "info",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Si, eliminar"
-        }).then((result) => {
-          if (result.isConfirmed) {
-            Swal.fire({
-              title: "Borrado",
-              text: "La cita ha sido eliminada exitosamente",
-              icon: "success"
-            });
+      Swal.fire({
+        title: "¿Estás segura de que quieres eliminar esta cita?",
+        icon: "info",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Si, eliminar",
+        // Configuración para hacer que la alerta sea modal
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        allowEnterKey: false,
+        focusConfirm: false
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Muestra una segunda alerta como modal
+          Swal.fire({
+            title: "Borrado",
+            text: "La cita ha sido eliminada exitosamente",
+            icon: "success",
+            // Configuración para hacer que la segunda alerta sea modal
+            allowOutsideClick: true,
+            allowEscapeKey: true,
+            allowEnterKey: true,
+            focusConfirm: true
+          }).then(() => {
+            // Después de que el usuario interactúa con la segunda alerta, elimina el evento
             deleteEventFromServer(info.event.id);
-          }
-        })
-        
-      
-    },
+          });
+        }
+      });
+    }
+    , 
   });
   calendar.render();
 
@@ -90,12 +102,21 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   // Verifica si la fecha seleccionada es posterior o igual a la fecha y hora actuales
   if (selectedDateTime.isSameOrAfter(currentDateTime)) {
-     try {
-      // Verifica si el horario está disponible
-      if (
-        !(await isTimeSlotOccupied(calendar, formattedStartTime)) &&
-        !(await isTimeSlotOccupied(calendar, formattedEndTime))
-      ) {
+    try {
+      // Obtén todos los eventos en el calendario
+      const allEvents = calendar.getEvents();
+  
+      // Verifica si hay alguna superposición con el nuevo bloque de horario
+      const overlapping = allEvents.some(event => {
+        const eventStartMoment = moment(event.start);
+        const eventEndMoment = moment(event.end);
+        return (
+          (eventStartMoment.isBefore(moment(formattedEndTime)) && eventEndMoment.isAfter(moment(formattedStartTime))) ||
+          (eventStartMoment.isSame(moment(formattedStartTime)) && eventEndMoment.isSame(moment(formattedEndTime)))
+        );
+      });
+  
+      if (!overlapping) {
         const newEvent = {
           title: 'Bloqueado',
           start: moment(formattedStartTime).format(),
@@ -104,7 +125,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           date: eventDate,
           time: `${startTime} - ${endTime}`,
         };
-
+  
         // Envia el nuevo evento al servidor
         const response = await fetch("http://localhost:4002/events", {
           method: "POST",
@@ -113,7 +134,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           },
           body: JSON.stringify(newEvent),
         });
-
+  
         if (response.ok) {
           calendar.refetchEvents();
           eventFormTeacher.reset();
@@ -143,6 +164,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       icon: "warning"
     });
   }
+  
   });
 
 
