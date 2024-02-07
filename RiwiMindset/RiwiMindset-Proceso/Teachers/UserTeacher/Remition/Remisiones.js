@@ -6,12 +6,10 @@ function inyect() {
   const user = document.querySelector("#data-user");
 
   const coderUser = document.createElement("div");
-  coderUser.innerHTML = `<div class= perfil >
+  coderUser.innerHTML = `
     <img src="${datos.foto}" alt="" id="foto";></img> <br>
     <p id="nombre">${datos.nombre}</p> <br>
     <p id="nombre">  edad: ${datos.edad}</p>
-  </div>
-        
     `;
   user.appendChild(coderUser);
 }

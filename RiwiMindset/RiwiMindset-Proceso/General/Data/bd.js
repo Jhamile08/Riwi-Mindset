@@ -42,7 +42,7 @@ export let estudiantes = [
   "contrasena": 333,
 },
 {
-  "id": 1,
+  "id": 4,
   "clan": "meta",
   "edad": 20,
   "nombre": "lily",
@@ -56,7 +56,7 @@ export let estudiantes = [
   "contrasena": 333,
 },
 {
-  "id": 2,
+  "id": 5,
   "clan": "meta",
   "edad": 20,
   "nombre": "Jhamile Andrea Dominguez Rendon",
@@ -70,10 +70,10 @@ export let estudiantes = [
   "contrasena": 333,
 },
 {
-  "id": 3,
+  "id": 6,
   "clan": "meta",
   "edad": 20,
-  "nombre": "Daniel Parra",
+  "nombre": "Daniel Esteban Parra Bedoya",
   "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
   "cedula": 100636133,
   "correo": "",

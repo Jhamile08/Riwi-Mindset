@@ -23,43 +23,47 @@
 
 /* General Styles */
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Ubuntu', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
 }
-
 
 .bodyTeachers {
   display: flex;
   height: 100vh;
   background-color: var(--background-color);
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
-.navbar {
+.nav-bar {
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 300px;
-  background-color: var(--background-color-navbar);
+  background-color: var(--background-color-nav-bar);
 }
 
-.navbar .image {
+.nav {
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-bar .image {
   min-width: 60px;
   display: flex;
   align-items: center;
 }
 
-.navbar .imagenLogo img {
+.nav-bar .imagenLogo img {
   width: 100%;
   border-radius: 25px;
   padding: 15px;
   max-height: 170px;
 }
 
-.navbar .nav li {
+.nav-bar .nav li {
   list-style: none;
   padding: 25px 10px;
   color: var(--letter-color-subtitle);
@@ -68,30 +72,38 @@
   transition: all ease 0.2s;
 }
 
-.navbar .nav li:hover {
+.nav-bar .nav li:hover {
   background-color: var(--background-btn-primary);
   color: #ffff;
   transition: all ease 0.2s;
 }
 
-.navbar .nav li.iconActive {
+.nav-bar .nav li.iconActive {
   background-color: var(--background-btn-primary);
   color: white;
   transition: all ease 0.2s;
 }
 
-.navbar .nav li.iconActive:hover {
+.nav-bar .nav li.iconActive:hover {
   background-color: var(--background-btn-primary-hover);
   transition: all ease 0.2s;
 }
 
-.navbar .nav li i {
-  padding: 0 20px;
-  font-size: 20px;
+.nav-bar .nav li svg {
+  margin: 0 20px;
 }
 
-.navbar .nav a {
+.nav-bar .nav a {
   text-decoration: none;
+  width: 100%;
+}
+
+.cap {
+  color: var(--background-btn-primary);
+}
+
+hr {
+  border: solid 1px black;
 }
 
 .containerSwitch {
@@ -121,7 +133,6 @@
   opacity: 0;
   width: 0;
   height: 0;
-
 }
 
 .slider {
@@ -139,7 +150,7 @@
 
 .slider::before {
   position: absolute;
-  content: '';
+  content: "";
   height: 26px;
   width: 26px;
   left: 4px;
@@ -150,36 +161,36 @@
   transition: 0.4s;
 }
 
-input:checked+.slider {
+input:checked + .slider {
   background-color: #ffdb70;
 }
 
-input:focus+.slider {
+input:focus + .slider {
   box-shadow: 0 0 1px #ffdb70;
 }
 
-input:checked+.slider::before {
+input:checked + .slider::before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
 
-/* Container Right Teachers */ 
-.container-right{
+/* Container Right Teachers */
+.container-right {
   display: flex;
   flex-direction: column;
   width: 100%;
   padding: 0 25px;
-  box-shadow: -4px 0px 7px -3px rgba(64,62,64,15%);
+  box-shadow: -4px 0px 7px -3px rgba(64, 62, 64, 15%);
 }
 
-.headers{
+.headers {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
 
-.headers .header1{
+.headers .header1 {
   display: flex;
   width: 100%;
   height: 125px;
@@ -188,17 +199,17 @@ input:checked+.slider::before {
   gap: 9px;
 }
 
-.headers .header1 i{
+.headers .header1 i {
   color: var(--background-btn-primary);
   font-size: 35px;
 }
 
-.headers h3{
+.headers h3 {
   font-size: 23px;
   color: var(--letter-color-main-dark);
 }
 
-.headers .header2{
+.headers .header2 {
   display: flex;
   width: 100%;
   height: 125px;
@@ -208,14 +219,14 @@ input:checked+.slider::before {
   gap: 15px;
 }
 
-.headers .header2 img{
+.headers .header2 img {
   border-radius: 50%;
   width: 70px;
   height: 70px;
   transition: all ease 0.7s;
 }
 
-.headers .header2 img:hover{
+.headers .header2 img:hover {
   width: 85px;
   height: 85px;
   transition: all ease 0.7s;
