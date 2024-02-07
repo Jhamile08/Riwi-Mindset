@@ -111,12 +111,10 @@
   color: var(--letter-color-main-dark);
 }
 
-
-/* Cambiar el color de fondo del día seleccionado */
-
-.fc .fc-daygrid-day.fc-day-today {
-  background-color: rgba(16, 176, 194, 0.2);
+.fc .fc-daygrid-event-harness{
+  background-color: var(--background-color-navbar);
 }
+
 
 .fc .fc-dayGridDay.fc-day.fc-day-selected {
   background-color: black;
@@ -132,10 +130,9 @@
   background-color: black;
 }
 
-/* Cambiar el color de fondo de la hora seleccionada en la vista de semana y día */
-.fc-highlight {
-  background-color: rgba(16, 176, 194, 0.2);
-  /* Reemplaza con el color que desees */
+.fc .fc-daygrid-day-number{
+  text-decoration: none;
+  color: var(--letter-color-main-dark);
 }
 
 #reservationForm{

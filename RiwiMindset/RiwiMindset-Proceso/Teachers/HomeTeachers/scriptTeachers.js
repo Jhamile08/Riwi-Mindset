@@ -20,9 +20,6 @@ document.getElementById("input").addEventListener("change", () => {
 
 
 /* Inyectar citas de la base de datos json */
-
-
-
 getDataJsonArray();
 
 
@@ -89,10 +86,36 @@ function showHTMLArray({ id, title, reason, date, time }) {
 
 function deleteAppointment(eventId) {
   // Confirmar antes de eliminar
-  if (confirm('¿Estás seguro de que quieres eliminar esta cita?')) {
-    // Eliminar el evento del servidor
-    deleteEventFromServer(eventId);
-  }
+  Swal.fire({
+    title: "¿Estás segura de que quieres eliminar esta cita?",
+    icon: "info",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Si, eliminar",
+    // Configuración para hacer que la alerta sea modal
+    allowOutsideClick: false,
+    allowEscapeKey: false,
+    allowEnterKey: false,
+    focusConfirm: false
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Muestra una segunda alerta como modal
+      Swal.fire({
+        title: "Borrado",
+        text: "La cita ha sido eliminada exitosamente",
+        icon: "success",
+        // Configuración para hacer que la segunda alerta sea modal
+        allowOutsideClick: true,
+        allowEscapeKey: true,
+        allowEnterKey: true,
+        focusConfirm: true
+      }).then(() => {
+            // Eliminar el evento del servidor
+        deleteEventFromServer(eventId);
+      });
+    }
+  });
 };
 
 
