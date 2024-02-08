@@ -12,6 +12,59 @@ export let estudiantes = [
   "recomendaciones": ["primera reco","segunda reco"],
   "observaciones": ["mmmmmm Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor porro sapiente repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum","asdkaposdkaopsdkaopdssoapdk"],
   "contrasena": 333,
+  "puntaje" : {
+    "ingles" : {
+      "begginer" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "middle" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "advance" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+    },
+    "logicas" : {
+      "begginer" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "middle" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "advance" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+    },
+    "mentales" : {
+      "begginer" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "middle" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "advance" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+    },
+  }
 },
 {
   "id": 2,
@@ -26,6 +79,59 @@ export let estudiantes = [
   "recomendaciones": ["sadasda"],
   "observaciones": ["adasdada"],
   "contrasena": 333,
+  "puntaje" : {
+    "ingles" : {
+      "begginer" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "middle" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "advance" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+    },
+    "logicas" : {
+      "begginer" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "middle" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "advance" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+    },
+    "mentales" : {
+      "begginer" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "middle" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "advance" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+    },
+  }
 },
 {
   "id": 3,
@@ -40,9 +146,62 @@ export let estudiantes = [
   "recomendaciones": ["sadasda"],
   "observaciones": ["adasdada"],
   "contrasena": 333,
+  "puntaje" : {
+    "ingles" : {
+      "begginer" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "middle" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "advance" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+    },
+    "logicas" : {
+      "begginer" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "middle" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "advance" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+    },
+    "mentales" : {
+      "begginer" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "middle" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "advance" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+    },
+  }
 },
 {
-  "id": 1,
+  "id": 4,
   "clan": "meta",
   "edad": 20,
   "nombre": "lily",
@@ -54,9 +213,62 @@ export let estudiantes = [
   "recomendaciones": ["primera reco","segunda reco"],
   "observaciones": ["mmmmmm Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor porro sapiente repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum","asdkaposdkaopsdkaopdssoapdk"],
   "contrasena": 333,
+  "puntaje" : {
+    "ingles" : {
+      "begginer" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "middle" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "advance" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+    },
+    "logicas" : {
+      "begginer" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "middle" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "advance" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+    },
+    "mentales" : {
+      "begginer" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "middle" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "advance" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+    },
+  }
 },
 {
-  "id": 2,
+  "id": 5,
   "clan": "meta",
   "edad": 20,
   "nombre": "Jhamile Andrea Dominguez Rendon",
@@ -68,12 +280,65 @@ export let estudiantes = [
   "recomendaciones": ["sadasda"],
   "observaciones": ["adasdada"],
   "contrasena": 333,
+  "puntaje" : {
+    "ingles" : {
+      "begginer" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "middle" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "advance" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+    },
+    "logicas" : {
+      "begginer" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "middle" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "advance" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+    },
+    "mentales" : {
+      "begginer" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "middle" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "advance" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+    },
+  }
 },
 {
-  "id": 3,
+  "id": 6,
   "clan": "meta",
   "edad": 20,
-  "nombre": "Daniel Parra",
+  "nombre": "Daniel Esteban Parra Bedoya",
   "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
   "cedula": 100636133,
   "correo": "",
@@ -82,6 +347,59 @@ export let estudiantes = [
   "recomendaciones": ["sadasda"],
   "observaciones": ["adasdada"],
   "contrasena": 333,
+  "puntaje" : {
+    "ingles" : {
+      "begginer" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "middle" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "advance" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+    },
+    "logicas" : {
+      "begginer" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "middle" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "advance" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+    },
+    "mentales" : {
+      "begginer" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "middle" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+      "advance" : {
+        "intentos" : [],
+        "fecha" : [],
+        "puntaje": [],
+      },
+    },
+  }
 }
 ];
 

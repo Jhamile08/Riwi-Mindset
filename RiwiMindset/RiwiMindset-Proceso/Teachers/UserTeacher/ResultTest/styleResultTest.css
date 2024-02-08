@@ -40,11 +40,7 @@ table {
     text-align: center;
     margin-bottom: 30px;
   }
-  .main-1{
-    width: 400px;
-    display: flex;
-    justify-content: center;
-  }
+
   /* // tabla */
   .main {
     width: 800px;
@@ -52,7 +48,7 @@ table {
     position: absolute;
     top: 20%;
     left: 45%;
- 
+    border: solid 2px green;
   }
   
   .slide {
@@ -76,6 +72,10 @@ table {
   
   .slide-3 {
     background-image: url(http://i.space.com/images/i/000/010/331/wS1/milky-way-echinopsis-atacamensis-1600.jpg?1308606679);
+  }
+
+  .btnes{
+    border: solid 2px red;
   }
   
 

@@ -1,7 +1,31 @@
+/* -----------LISTA DE ESTUDIANTES--------- */
+
+const urlBase = "http://localhost:4002/";
+const listStudents = document.querySelector("#students");
+
+async function getStudent() {
+  const response = await fetch(`${urlBase}students`);
+  const data = response.json();
+  return data;
+};
+
+async function renderStudents() {
+  const students = await getStudent();
+  listStudents.innerHTML = '';
+  students.forEach(student => {
+    listStudents.innerHTML += `
+        <a href="">${student.nombre}</a>
+        `
+  });
+};
+
 /* ------------CALENDAR----------------- */
 let calendar;
 
 document.addEventListener("DOMContentLoaded", async function () {
+
+  renderStudents();
+
   let calendarEl = document.getElementById("calendar");
   /* inicializacion del calendario con dos argumentos "CalendarEl que es el contenedor y segundo un objeto de opciones para la config del calendario" */
   calendar = new FullCalendar.Calendar(calendarEl, {
@@ -77,9 +101,6 @@ document.addEventListener("DOMContentLoaded", async function () {
   calendarBody.style.width = "100%";
 
 });
-
-
-
 
   /* Se selecciona el form */
   const eventFormTeacher = document.getElementById("eventFormTeacher");
@@ -167,16 +188,6 @@ document.addEventListener("DOMContentLoaded", async function () {
   
   });
 
-
-
-
-
-
-
-
-
-
-
 // iniciamos la funcion con dos parámetros: calendar (la instancia del calendario FullCalendar) y startTime (el momento de inicio del intervalo de tiempo que se va a verificar).
 export async function isTimeSlotOccupied(calendar, startTime) {
   // Obtener todos los eventos en el calendario
@@ -206,8 +217,6 @@ export async function isTimeSlotOccupied(calendar, startTime) {
   // Devuelve true si hay una coincidencia exacta o superposición, indicando que el intervalo de tiempo está ocupado. Devuelve false si no hay coincidencias y el intervalo de tiempo está disponible.
   return exactMatch || overlapping;
 };
-
-
 
 // funcion para obtener events de la base de datos data.json que esta guardada en el json-server
 export async function fetchEventsFromServer(info, successCallback, failureCallback) {
@@ -244,8 +253,6 @@ export async function fetchEventsFromServer(info, successCallback, failureCallba
     failureCallback('Hubo un error al obtener los eventos desde el servidor.');
   }
 };
-
-
 
 // funcion que se encarga de eliminar un evento del servidor
 export async function deleteEventFromServer(eventId) {
