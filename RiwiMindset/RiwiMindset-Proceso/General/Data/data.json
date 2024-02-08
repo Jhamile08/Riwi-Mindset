@@ -1,19 +1,28 @@
 {
   "events": [],
-
-  "students" : [
+  
+  "students": [
     {
       "id": 1,
       "clan": "van rosum",
       "edad": 20,
-      "nombre": "lily",
+      "nombre": "Cristian Franco",
       "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
       "cedula": 123,
-      "correo": "lili",
+      "correo": "franco@gmail.com",
       "admin": true,
-      "fecha": ["20/30/2023", "drtdtr"],
-      "recomendaciones": ["primera reco", "segunda reco"],
-      "observaciones": ["mmmmmm Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor porro sapiente repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum", "asdkaposdkaopsdkaopdssoapdk"],
+      "fecha": [
+        "20/30/2023",
+        "drtdtr"
+      ],
+      "recomendaciones": [
+        "primera reco",
+        "segunda reco"
+      ],
+      "observaciones": [
+        "mmmmmm Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor porro sapiente repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum",
+        "asdkaposdkaopsdkaopdssoapdk"
+      ],
       "contrasena": 333,
       "puntaje": {
         "ingles": {
@@ -78,9 +87,15 @@
       "cedula": 2,
       "correo": "",
       "admin": true,
-      "fecha": ["asdadadas"],
-      "recomendaciones": ["sadasda"],
-      "observaciones": ["adasdada"],
+      "fecha": [
+        "asdadadas"
+      ],
+      "recomendaciones": [
+        "sadasda"
+      ],
+      "observaciones": [
+        "adasdada"
+      ],
       "contrasena": 333,
       "puntaje": {
         "ingles": {
@@ -145,9 +160,15 @@
       "cedula": 100636133,
       "correo": "",
       "admin": true,
-      "fecha": ["asdadadas"],
-      "recomendaciones": ["sadasda"],
-      "observaciones": ["adasdada"],
+      "fecha": [
+        "asdadadas"
+      ],
+      "recomendaciones": [
+        "sadasda"
+      ],
+      "observaciones": [
+        "adasdada"
+      ],
       "contrasena": 333,
       "puntaje": {
         "ingles": {
@@ -207,14 +228,23 @@
       "id": 4,
       "clan": "meta",
       "edad": 20,
-      "nombre": "lily",
+      "nombre": "Camilo Tejada",
       "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
       "cedula": 123,
       "correo": "lili",
       "admin": true,
-      "fecha": ["20/30/2023", "drtdtr"],
-      "recomendaciones": ["primera reco", "segunda reco"],
-      "observaciones": ["mmmmmm Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor porro sapiente repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum", "asdkaposdkaopsdkaopdssoapdk"],
+      "fecha": [
+        "20/30/2023",
+        "drtdtr"
+      ],
+      "recomendaciones": [
+        "primera reco",
+        "segunda reco"
+      ],
+      "observaciones": [
+        "mmmmmm Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor porro sapiente repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum",
+        "asdkaposdkaopsdkaopdssoapdk"
+      ],
       "contrasena": 333,
       "puntaje": {
         "ingles": {
@@ -274,14 +304,20 @@
       "id": 5,
       "clan": "meta",
       "edad": 20,
-      "nombre": "Jhamile Andrea Dominguez Rendon",
+      "nombre": "Juan Pablo Sanabria",
       "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
       "cedula": 2,
       "correo": "",
       "admin": true,
-      "fecha": ["asdadadas"],
-      "recomendaciones": ["sadasda"],
-      "observaciones": ["adasdada"],
+      "fecha": [
+        "asdadadas"
+      ],
+      "recomendaciones": [
+        "sadasda"
+      ],
+      "observaciones": [
+        "adasdada"
+      ],
       "contrasena": 333,
       "puntaje": {
         "ingles": {
@@ -341,14 +377,20 @@
       "id": 6,
       "clan": "meta",
       "edad": 20,
-      "nombre": "Daniel Esteban Parra Bedoya",
+      "nombre": "Carlos Sebastian Rivera",
       "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
       "cedula": 100636133,
       "correo": "",
       "admin": true,
-      "fecha": ["asdadadas"],
-      "recomendaciones": ["sadasda"],
-      "observaciones": ["adasdada"],
+      "fecha": [
+        "asdadadas"
+      ],
+      "recomendaciones": [
+        "sadasda"
+      ],
+      "observaciones": [
+        "adasdada"
+      ],
       "contrasena": 333,
       "puntaje": {
         "ingles": {
@@ -518,7 +560,6 @@
           }
         ]
       },
-    
       "preguntasLogicas": {
         "begginer": [
           {
@@ -612,7 +653,6 @@
           }
         ]
       },
-    
       "preguntasMentales": {
         "begginer": [
           {
@@ -672,39 +712,33 @@
           }
         ]
       },
-    
       "ingles": {
         "nombre": "Test de ingles",
         "preguntas": "20 preguntas",
         "duracion": "20 min"
       },
-    
       "mentales": {
         "nombre": "Test de logicas",
         "preguntas": "20 preguntas",
         "duracion": "40 min"
       },
-    
       "logicas": {
         "nombre": "Test de mentales",
         "preguntas": "20 preguntas",
         "duracion": "30 min"
       },
-    
       "resultadosIngles": {
         "fecha": "",
         "buenas": 0,
         "malas": 0,
         "porcentaje": 0
       },
-    
       "resultadosLogicas": {
         "fecha": "",
         "buenas": 0,
         "malas": 0,
         "porcentaje": 0
       },
-    
       "resultadosMentales": {
         "fecha": "",
         "buenas": 0,
