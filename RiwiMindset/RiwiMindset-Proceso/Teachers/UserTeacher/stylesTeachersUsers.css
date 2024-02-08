@@ -91,27 +91,27 @@
     text-decoration: none;
   }
   
-  .estudents :nth-child(2){
+  .estudents :nth-child(4){
     background-color: var(--background-btn-secondary);
     color: var(--letter-color-text);
     border: 1px solid  var(--background-btn-secondary);
     transition: all ease 0.3s;
   }
   
-  .estudents :nth-child(3){
+  .estudents :nth-child(4){
     background-color: var(--background-btn-primary);
     color: var(--letter-color-text);
     border: 1px solid  var(--background-btn-primary);
     transition: all ease 0.3s;
   }
   
-  .estudents :nth-child(2):hover{
+  .estudents :nth-child(4):hover{
     background-color: var(--background-btn-secondary-hover);
     transition: all ease 0.3s;
     cursor: pointer;
   }
   
-  .estudents :nth-child(3):hover{
+  .estudents :nth-child(4):hover{
     background-color: var(--background-btn-primary-hover);
     transition: all ease 0.3s;
     cursor: pointer;
@@ -129,5 +129,9 @@
 
    /* clase nueva  */
    .buscador {
+    display: none;
+  }
+
+  .borrar{
     display: none;
   }

@@ -26,6 +26,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   gap: 20px;
   font-size: 150%;
 }
@@ -127,10 +128,6 @@
   border-radius: 15px;
 }
 
-/* i{
-  color: black;
-} */
-
 .navbar .nav a {
   text-decoration: none;
 }
@@ -148,3 +145,19 @@
 .edadUsuario{
   color: rgb(78, 78, 78);
 }
+
+/* Estilo para el texto que se muestra en Ver Más */
+
+/* .textarea{
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente blanco */
+/*   border: 1px solid #ccc;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra para resaltar */
+/*} */
+
