@@ -1,6 +1,4 @@
 {
-  "events": [],
-  
   "students": [
     {
       "id": 1,
@@ -9,7 +7,7 @@
       "nombre": "Cristian Franco",
       "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
       "cedula": 123,
-      "correo": "franco@gmail.com",
+      "email": "franco@gmail.com",
       "admin": true,
       "fecha": [
         "20/30/2023",
@@ -85,7 +83,7 @@
       "nombre": "Jhamile Andrea Dominguez Rendon",
       "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
       "cedula": 2,
-      "correo": "",
+      "email": "",
       "admin": true,
       "fecha": [
         "asdadadas"
@@ -158,7 +156,7 @@
       "nombre": "Daniel Parra",
       "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
       "cedula": 100636133,
-      "correo": "",
+      "email": "",
       "admin": true,
       "fecha": [
         "asdadadas"
@@ -231,7 +229,7 @@
       "nombre": "Camilo Tejada",
       "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
       "cedula": 123,
-      "correo": "lili",
+      "email": "lili",
       "admin": true,
       "fecha": [
         "20/30/2023",
@@ -307,7 +305,7 @@
       "nombre": "Juan Pablo Sanabria",
       "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
       "cedula": 2,
-      "correo": "",
+      "email": "",
       "admin": true,
       "fecha": [
         "asdadadas"
@@ -380,7 +378,7 @@
       "nombre": "Carlos Sebastian Rivera",
       "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
       "cedula": 100636133,
-      "correo": "",
+      "email": "",
       "admin": true,
       "fecha": [
         "asdadadas"
@@ -445,9 +443,160 @@
           }
         }
       }
+    },
+    {
+      "id": "912d",
+      "clan": "VanRossum",
+      "edad": "2001-09-26",
+      "nombre": "Ana  Maria",
+      "cedula": "123",
+      "email": "anamaria@vanegas.com",
+      "admin": false,
+      "fecha": [
+        0.00032954358213873783,
+        "drtdtr"
+      ],
+      "recomendaciones": [
+        "primera reco",
+        "segunda reco"
+      ],
+      "observaciones": [
+        "mmmmmm Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor porro sapiente repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum",
+        "asdkaposdkaopsdkaopdssoapdk"
+      ],
+      "contrasena": "123",
+      "puntaje": {
+        "ingles": {
+          "begginer": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "middle": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "advance": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          }
+        },
+        "logicas": {
+          "begginer": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "middle": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "advance": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          }
+        },
+        "mentales": {
+          "begginer": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "middle": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "advance": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          }
+        }
+      }
+    },
+    {
+      "id": "80e6",
+      "clan": "VanRossum",
+      "edad": "2001-09-26",
+      "nombre": "Pablo Sanabria",
+      "cedula": "123",
+      "email": "pablo@sanabria.com",
+      "admin": false,
+      "fecha": [
+        0.00032954358213873783,
+        "drtdtr"
+      ],
+      "recomendaciones": [
+        "primera reco",
+        "segunda reco"
+      ],
+      "observaciones": [
+        "mmmmmm Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor porro sapiente repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum",
+        "asdkaposdkaopsdkaopdssoapdk"
+      ],
+      "contrasena": "123",
+      "puntaje": {
+        "ingles": {
+          "begginer": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "middle": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "advance": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          }
+        },
+        "logicas": {
+          "begginer": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "middle": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "advance": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          }
+        },
+        "mentales": {
+          "begginer": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "middle": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "advance": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          }
+        }
+      }
     }
   ],
-
+  "psychologists": [],
+  "events": [],
   "test": [
     {
       "preguntasIngles": {
