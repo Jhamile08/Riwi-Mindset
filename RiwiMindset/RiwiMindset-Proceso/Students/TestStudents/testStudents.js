@@ -5,11 +5,7 @@ import {
   ingles,
   logicas,
   mentales,
-<<<<<<< HEAD
-  resultados
-=======
   resultadosIngles
->>>>>>> developer
 } from "../../General/Data/bdQuestions.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -49,13 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
  inglesCard.addEventListener('click', ()=>{
   modalTitle.textContent = `${ingles.nombre}`
    contentInfo.innerHTML = `
-<<<<<<< HEAD
-        <p>${ingles.duracion}</p>
-        <p>${ingles.preguntas}</p>
-=======
         <p>Duracion aprox: ${ingles.duracion}</p>
         <p>Cantidad de preguntas: ${ingles.preguntas}</p>
->>>>>>> developer
   `;
    containerInfo.appendChild(contentInfo);
      // llamar a la funcion de agregar preguntas
@@ -65,11 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
  logicasCard.addEventListener('click', ()=>{
   modalTitle.textContent = `${logicas.nombre}`
-<<<<<<< HEAD
-  contentInfo.innerHTML = `
-=======
   contentInfo.innerHTML = ` 
->>>>>>> developer
        <p>${logicas.duracion}</p>
        <p>${logicas.preguntas}</p>
  `;
@@ -99,19 +86,6 @@ let preguntaActual = 0; // pregunta actual
     }
     // Acceder a la respuesta seleccionada para guardar el valor
     const respuestaSeleccionada = inputs[0].value
-<<<<<<< HEAD
-    console.log(respuestaSeleccionada)
-    if (respuestaSeleccionada) {
-      resultados.buenas++;
-    } else {
-      resultados.malas++;
-    }
-    console.log(resultados);
-    
-    
-
-  
-=======
 
     if (respuestaSeleccionada == "true") {
       resultadosIngles.buenas++;
@@ -121,23 +95,18 @@ let preguntaActual = 0; // pregunta actual
     console.log(resultadosIngles);
     console.log(typeof resultadosIngles.buenas);
 
->>>>>>> developer
     preguntaActual++;
   
     if (preguntaActual < preguntasIngles.length) {
       injectionPreguntaHtml(preguntasIngles[preguntaActual]);
     } else {
       console.log("¡Fin del cuestionario!");
-<<<<<<< HEAD
-    }
-=======
       //funcion para recomendarle contenido
       recomendacionTest()
     }
     let suma = resultadosIngles.buenas + resultadosIngles.malas
     let porcentajOperacion = suma / resultadosIngles.buenas 
     console.log(suma)
->>>>>>> developer
   
   });
 
@@ -159,12 +128,9 @@ function injectionPreguntaHtml(pregunta) {
 
   inyeccionPreguntas.appendChild(coderHtml);
 }
-<<<<<<< HEAD
-=======
 
 function recomendacionTest() {
   if(resultadosIngles.buenas >  resultadosIngles.malas){
     alert("muchasbuenas")
   }
 }
->>>>>>> developer
