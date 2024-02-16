@@ -66,7 +66,7 @@
   
   .estudents{
     display: grid;
-    grid-template-columns: 65% 15% 15% 15%;
+    grid-template-columns: 40% 45% 10% 10%;
     align-items: center;
     padding: 15px;
     border-bottom: 1px solid grey;
