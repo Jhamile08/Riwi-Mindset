@@ -1,22 +1,36 @@
 import { enfermedades } from "./enfermedades.js";
-const datos = JSON.parse(localStorage.getItem("gente"));
+// Generamos una url base
+const urlBase = "http://localhost:4002/";
+// Obtener el ID del estudiante del localStorage
+const selectedStudentId = localStorage.getItem("selectedStudentId");
 
-/* inyectar foto y card */
-function inyect() {
-  const user = document.querySelector("#data-user");
+async function getStudent(studentId) {
+    const response = await fetch(`${urlBase}students/${studentId}`);
+    const data = await response.json();
+    return data;
+};
 
-  const coderUser = document.createElement("div");
+//Inyeccion del perfil del menu
+async function inyect() {
+  const student = await getStudent(selectedStudentId);
+  // Inyectar foto y card 
+  const user = document.querySelector('#data-user');
+  const coderUser = document.createElement('div');
+
   coderUser.innerHTML = `
-    <img src="${datos.foto}" alt="" id="foto";></img> <br>
-    <p id="nombre">${datos.nombre}</p> <br>
-    <p id="nombre">  edad: ${datos.edad}</p>
-    `;
+      <img src="${student.foto}" alt="" id="foto"></img>
+      <p id="nombre">${student.nombre}</p>
+      <p id="nombre">  edad: ${student.edad}</p>
+  `;
+
   user.appendChild(coderUser);
-}
+};
 
 /* Inyeccion del PDF */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+  const student = await getStudent(selectedStudentId);
+
   // Escuchamos el click del botón
   const $boton = document.querySelector("#btnCrearPdf");
   $boton.addEventListener("click", () => {
@@ -28,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     html2pdf()
       .set({
         margin: 0.5,
-        filename: `${datos.nombre}.pdf`,
+        filename: `${student.nombre}.pdf`,
         image: {
           type: "jpeg",
           quality: 0.98,
@@ -53,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* inyeccion buscador en el pdf */
 
 document.addEventListener("DOMContentLoaded", () => {
-  inyect(datos);
+  inyect();
   injectionBuscador(enfermedades);
 
   const motivo = document.querySelectorAll(".codigo");
