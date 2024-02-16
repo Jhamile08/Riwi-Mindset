@@ -54,25 +54,24 @@ async function mostrarVerMas(i) {
 
     const parrafoRecomendaciones = document.querySelector('.pRecomendaciones');
     parrafoRecomendaciones.innerHTML = `
-            ${student.recomendaciones[i]}
-            <br>
-            ${student.fecha[i]}
+            <p>${student.recomendaciones[i]}</p>
+            <hr>
+            <p>${student.fecha[i]}</p>
             `;
 
     const parrafoObservaciones = document.querySelector('.pObservaciones');
     parrafoObservaciones.innerHTML = `
-            ${student.observaciones[i]}
-            <br>
-            ${student.fecha[i]}
+            <p>${student.observaciones[i]}</p>
+            <hr>
+            <p>${student.fecha[i]}</p>
             `;
 
-    document.querySelector('#editarRecomendaciones').addEventListener('click', async () => {
-        await editar(i);
-    });
 
-    document.querySelector('#editarObservaciones').addEventListener('click', async () => {
-        await editar(i);
-    });
+
+    document.querySelector('#editarRecomendaciones').addEventListener('click', editar(i));
+
+    // Configurar el evento de clic del botón de edición
+    document.querySelector('#editarObservaciones').addEventListener('click', editar(i));
 };
 
 
@@ -80,51 +79,56 @@ async function editar(i) {
     const student = await getStudent(selectedStudentId);
 
     const parrafoRecomendaciones = document.querySelector('.pRecomendaciones');
-    parrafoRecomendaciones.innerHTML = `
-            <textarea style="width: 100%" id="textAreaRecomendaciones">${student.recomendaciones[i]}</textarea>
+        parrafoRecomendaciones.innerHTML= `
+            <textarea style="width: 100%" id="textAreaRecomendaciones" oninput='${edicionReco()}'>${student.recomendaciones[i]}</textarea>
             <br>
             <p>fecha: ${student.fecha[i]}</p>
             <br>
-            `;
+        `;
 
-    const parrafoObservaciones = document.querySelector('.pObservaciones');
-    parrafoObservaciones.innerHTML = `
-            <textarea style="width: 100%" id="textAreaObservaciones">${student.observaciones[i]}</textarea>
+        const parrafoObservaciones = document.querySelector('.pObservaciones');
+        parrafoObservaciones.innerHTML= `
+            <textarea style="width: 100%" id="textAreaObservaciones" oninput='${edicionObs()}'>${student.observaciones[i]}</textarea>
             <br>
             <p> fecha: ${student.fecha[i]}</p>
             <br>
-            `;
+        `;
 };
 
 
-
-/* // Escuchar el evento de clic en el botón de guardar observaciones
-document.querySelector('#editarObservaciones').addEventListener('click', async () => {
-    await edicionObs();
-    // Aquí puedes agregar más acciones después de guardar las observaciones
-    console.log('Observaciones guardadas correctamente');
-});
-
-// Escuchar el evento de clic en el botón de guardar recomendaciones
-document.querySelector('#editarRecomendaciones').addEventListener('click', async () => {
-    await edicionReco();
-    // Aquí puedes agregar más acciones después de guardar las recomendaciones
-    console.log('Recomendaciones guardadas correctamente');
-});
-
-async function edicionObs() {
+async function edicionObs (){
     const student = await getStudent(selectedStudentId);
-    const editObs = document.querySelector('#textAreaObservaciones');
-    student.observaciones = editObs.value;
-};
 
-async function edicionReco() {
+    const editarObservaciones = document.querySelector('#editarObservaciones');
+    editarObservaciones.addEventListener('click', ()=>{
+        console.log("nada");
+
+        const editObs = document.querySelector('#textAreaObservaciones')
+
+        console.log(editObs.textContent);
+
+        student.observaciones = editObs.textContent
+
+        console.log(student.observaciones);
+    });    
+}
+
+async function edicionReco (){
     const student = await getStudent(selectedStudentId);
-    const editReco = document.querySelector('#textAreaRecomendaciones');
-    student.recomendaciones = editReco.value;
-}; */
 
+    const editarRecomendaciones = document.querySelector('#editarRecomendaciones');
+    editarRecomendaciones.addEventListener('click', ()=>{
+        console.log("nada");
 
+        const editReco = document.querySelector('#textAreaRecomendaciones')
+
+        console.log("no",editReco.textContent);
+
+        student.recomendaciones = editReco.textContent
+
+        console.log(student.recomendaciones);
+    });    
+}
 
 
 // Llamada a las funciones

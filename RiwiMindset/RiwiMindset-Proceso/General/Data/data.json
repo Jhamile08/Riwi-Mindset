@@ -14,12 +14,12 @@
         "drtdtr"
       ],
       "recomendaciones": [
-        "cristian",
-        "sframnco"
+        "primera recomendacion",
+        "segunda recomendacion"
       ],
       "observaciones": [
-        "mmmmmm Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor porro sapiente repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum",
-        "asdkaposdkaopsdkaopdssoapdk"
+        "primera observacion",
+        "segunda observacion"
       ],
       "contrasena": 333,
       "puntaje": {
@@ -596,7 +596,9 @@
     }
   ],
   "psychologists": [],
+  
   "events": [],
+
   "test": [
     {
       "preguntasIngles": {
