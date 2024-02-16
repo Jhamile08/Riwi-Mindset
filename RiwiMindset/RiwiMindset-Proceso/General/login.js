@@ -2,18 +2,18 @@ import { estudiantes } from "./Data/bd.js"
 
 // Selectors
 const container = document.getElementById('container')
-const registerBtn = document.getElementById('registrer');
-const loginBtn = document.getElementById('login');
+const inicioProfesor = document.getElementById('inicioProfesor');
+const inicioEstudiante = document.getElementById('inicioEstudiante');
 let buttonRegistrer = document.querySelector('#buttonRegistrer')
 let buttonLogin = document.querySelector('#buttonLogin')
 
 //Script animation Login
 
-registerBtn.addEventListener('click',()=>{
+inicioProfesor.addEventListener('click',()=>{
     container.classList.add('active');
 })
 
-loginBtn.addEventListener('click',()=>{
+inicioEstudiante.addEventListener('click',()=>{
     container.classList.remove('active');
 })
 buttonRegistrer.addEventListener('click', (e)=>{
