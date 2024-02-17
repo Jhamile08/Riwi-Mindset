@@ -29,70 +29,71 @@ buttonLoginStudent.addEventListener('click', (e)=>{
     validateFormLoginStudents()
 })
 async function validateFormLoginStudents(){
-    const response = await fetch(`${URL_STUDENTS}?cedula=${cedulaStudent.value}`);
+    const response = await fetch(`${URL_STUDENTS}?id=${cedulaStudent.value}`);
     const data = await response.json();
 
-    if (!data){
+    if (!data || data.length === 0){
         console.error("Cedula no registrado");
-        alert('Cedula no registrado');
+        Swal.fire({
+            title: "La Cedula que ingresaste no se encuentra registrada",
+            icon: "warning"
+          });
         return;
     }
 
-    if(data[0].contrasena != passwordStudent.value){
+    if(data[0].password != passwordStudent.value){
         console.error("Contrasena incorrecta");
-        alert('Contrasena incorrecta')
+        Swal.fire({
+            title: "Contraseña incorrecta",
+            icon: "error"
+          });
         return;
     }
 
-    localStorage.setItem("student",JSON.stringify(data[0].id));
+    localStorage.setItem("student",data[0].id);
     window.location.href = "../Students/HomeStudents/indexHomeEstudents.html"
 }
 
-/* ----------- LOGIN Psicologas -------- */
+/* ----LOGIN PSICOLOGAS Y ADMIN------- */
 buttonLoginPyschologist.addEventListener('click', (e)=>{
     e.preventDefault();
-    validateFormLoginPsycologist();
-    validateFormLoginAdmin()
+    validateLoginForm();
 })
 
-async function validateFormLoginPsycologist(){
-    const response = await fetch(`${URL_PSYCHOLOGISTS}?cedula=${cedulaProfesor.value}`);
-    const data = await response.json();
-
-    if (!data){
-        console.error("Cedula no registrado");
-        alert('Cedula no registrado');
+async function validateLoginForm() {
+    const responsePsychologists = await fetch(`${URL_PSYCHOLOGISTS}?id=${cedulaProfesor.value}`);
+    const dataPsychologists = await responsePsychologists.json();
+    
+    const responseAdmins = await fetch(`${URL_ADMIN}?id=${cedulaProfesor.value}`);
+    const dataAdmins = await responseAdmins.json();
+    
+    const psychologistsExist = dataPsychologists && dataPsychologists.length > 0;
+    const adminsExist = dataAdmins && dataAdmins.length > 0;
+    
+    if (!psychologistsExist && !adminsExist) {
+        console.error("Cedula no registrada");
+        Swal.fire({
+            title: "La Cedula que ingresaste no se encuentra registrada",
+            icon: "warning"
+        });
         return;
     }
-
-    if(data[0].contrasena != passwordProfesor.value){
-        console.error("Contrasena incorrecta");
-        alert('Contrasena incorrecta')
+    
+    if (psychologistsExist && dataPsychologists[0].password === passwordProfesor.value) {
+        localStorage.setItem("teacher",dataPsychologists[0].id);
+        window.location.href = "../Teachers/HomeTeachers/indexTeachersHome.html";
         return;
     }
-
-    localStorage.setItem("teacher",JSON.stringify(data[0].id));
-    window.location.href = "../Teachers/HomeTeachers/indexTeachersHome.html"
-};
-
-/* LOGIN ADMIN */
-async function validateFormLoginAdmin(){
-    const response = await fetch(`${URL_ADMIN}?cedula=${cedulaProfesor.value}`);
-    const data = await response.json();
-
-
-    if (!data){
-        console.error("Cedula no registrado");
-        alert('Cedula no registrado');
+    
+    if (adminsExist && dataAdmins[0].password === passwordProfesor.value) {
+        localStorage.setItem("admin", dataAdmins[0].id);
+        window.location.href = "./administrador/index.html";
         return;
     }
-
-    if(data[0].contrasena != passwordProfesor.value){
-        console.error("Contrasena incorrecta");
-        alert('Contrasena incorrecta')
-        return;
-    }
-
-    localStorage.setItem("admin",JSON.stringify(data[0].id));
-    window.location.href = "./administrador/index.html"
-};
+    
+    console.error("Contraseña incorrecta");
+    Swal.fire({
+        title: "Contraseña incorrecta",
+        icon: "error"
+    });
+}
