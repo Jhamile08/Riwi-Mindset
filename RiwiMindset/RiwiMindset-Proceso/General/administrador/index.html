@@ -35,8 +35,18 @@
                 </div>
                 <div class="containerForms2 mb-3">
                     <div class="form-floating">
+                        <input type="number" id="idStudent" class="form-control" required>
+                        <label for="idStudent">Cedula</label>
+                    </div>
+                </div>
+                <div class="containerForms1 mb-3">
+                    <div class="form-floating">
                         <input type="email" id="emailStudent" class="form-control" required>
                         <label for="emailStudent">Email</label>
+                    </div>
+                    <div class="form-floating">
+                        <input type="number" id="celStudent" class="form-control" required>
+                        <label for="celStudent">Telefono</label>
                     </div>
                 </div>
                 <div class="containerForms1 mb-3">
@@ -57,10 +67,18 @@
                 </div>
                 <div class="containerForms2 mb-3">
                     <div class="form-floating">
-                        <input type="text" id="clan" class="form-control" required>
+                        <select id="clan" class="form-control" required>
+                            <option value="">Seleccione un clan</option>
+                            <option value="Van Rossum">Van Rossum</option>
+                            <option value="Meta">Meta</option>
+                            <option value="Gosling">Gosling</option>
+                            <option value="Jobs">Jobs</option>
+                            <option value="Lovelace">Lovelace</option>
+                        </select>
                         <label for="clan">Clan</label>
                     </div>
                 </div>
+                
                 <div class="containerForms2 mb-3 button">
                     <button class="btn">Registrar</button>
                 </div>
@@ -89,6 +107,12 @@
                 </div>
                 <div class="containerForms2 mb-3">
                     <div class="form-floating">
+                        <input type="number" id="idPsychologist" class="form-control" required>
+                        <label for="idPsychologist">Cedula</label>
+                    </div>
+                </div>
+                <div class="containerForms2 mb-3">
+                    <div class="form-floating">
                         <input type="text" id="emailPsychologists" class="form-control" required>
                         <label for="emailPsychologists">Email</label>
                     </div>
@@ -101,12 +125,6 @@
                     <div class="form-floating">
                         <input type="password" id="confirmPasswordPsychologists" class="form-control" required>
                         <label for="confirmPasswordPsychologists">Validar Contraseña</label>
-                    </div>
-                </div>
-                <div class="containerForms2 mb-3">
-                    <div class="form-floating">
-                        <input type="date" id="bornDatePsychologists" class="form-control" required>
-                        <label for="bornDatePsychologists">Fecha Nacimiento</label>
                     </div>
                 </div>
                 <div class="containerForms2 mb-3 button">

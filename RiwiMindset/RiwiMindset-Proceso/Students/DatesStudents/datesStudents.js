@@ -1,5 +1,7 @@
 import { calendar, isTimeSlotOccupied } from "../../Teachers/SheduleTeachers/TeachersSchedule.js";
 
+/* Select NameStudent  */
+const nameStudent = document.querySelector("#nameStudent");
 
   /* Se selecciona el form */
 const eventForm = document.getElementById("eventForm");
@@ -8,7 +10,6 @@ eventForm.addEventListener("submit", async function (e) {
   /* Previene el comportamiento predeterminado del formulario, que es recargar la página cuando se envía. */
   e.preventDefault();
   /* Obtener valores de los inputs del formulario */
-  const eventName = document.getElementById("eventName").value;
   const eventDate = document.getElementById("eventDate").value;
   const eventTime = document.getElementById("eventTime").value;
   const reason = document.getElementById("reason").value;
@@ -31,10 +32,9 @@ eventForm.addEventListener("submit", async function (e) {
     if (
       !(await isTimeSlotOccupied(calendar, `${eventDate}T${formattedTime}`))
     ) {
-      console.log('entra al primer if');
       // creamos el evento con propiedades especificas del calendar
       const newEvent = {
-        title: eventName,
+        title: nameStudent.textContent,
         start: moment(`${eventDate}T${formattedTime}`).format(),
         end: moment(`${eventDate}T${formattedTime}`).add(1, "hour").format(),
         reason: reason,

@@ -29,7 +29,7 @@ buttonLoginStudent.addEventListener('click', (e)=>{
     validateFormLoginStudents()
 })
 async function validateFormLoginStudents(){
-    const response = await fetch(`${URL_STUDENTS}?cedula=${cedulaStudent.value}`);
+    const response = await fetch(`${URL_STUDENTS}?id=${cedulaStudent.value}`);
     const data = await response.json();
 
     if (!data || data.length === 0){
@@ -41,7 +41,7 @@ async function validateFormLoginStudents(){
         return;
     }
 
-    if(data[0].contrasena != passwordStudent.value){
+    if(data[0].password != passwordStudent.value){
         console.error("Contrasena incorrecta");
         Swal.fire({
             title: "Contraseña incorrecta",
@@ -50,7 +50,7 @@ async function validateFormLoginStudents(){
         return;
     }
 
-    localStorage.setItem("student",JSON.stringify(data[0].id));
+    localStorage.setItem("student",data[0].id);
     window.location.href = "../Students/HomeStudents/indexHomeEstudents.html"
 }
 
@@ -61,10 +61,10 @@ buttonLoginPyschologist.addEventListener('click', (e)=>{
 })
 
 async function validateLoginForm() {
-    const responsePsychologists = await fetch(`${URL_PSYCHOLOGISTS}?cedula=${cedulaProfesor.value}`);
+    const responsePsychologists = await fetch(`${URL_PSYCHOLOGISTS}?id=${cedulaProfesor.value}`);
     const dataPsychologists = await responsePsychologists.json();
     
-    const responseAdmins = await fetch(`${URL_ADMIN}?cedula=${cedulaProfesor.value}`);
+    const responseAdmins = await fetch(`${URL_ADMIN}?id=${cedulaProfesor.value}`);
     const dataAdmins = await responseAdmins.json();
     
     const psychologistsExist = dataPsychologists && dataPsychologists.length > 0;
@@ -79,14 +79,14 @@ async function validateLoginForm() {
         return;
     }
     
-    if (psychologistsExist && dataPsychologists[0].contrasena === passwordProfesor.value) {
-        localStorage.setItem("teacher", JSON.stringify(dataPsychologists[0].id));
+    if (psychologistsExist && dataPsychologists[0].password === passwordProfesor.value) {
+        localStorage.setItem("teacher",dataPsychologists[0].id);
         window.location.href = "../Teachers/HomeTeachers/indexTeachersHome.html";
         return;
     }
     
-    if (adminsExist && dataAdmins[0].contrasena === passwordProfesor.value) {
-        localStorage.setItem("admin", JSON.stringify(dataAdmins[0].id));
+    if (adminsExist && dataAdmins[0].password === passwordProfesor.value) {
+        localStorage.setItem("admin", dataAdmins[0].id);
         window.location.href = "./administrador/index.html";
         return;
     }
