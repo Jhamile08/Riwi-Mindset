@@ -6,7 +6,7 @@
       "edad": 20,
       "nombre": "Cristian Franco",
       "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
-      "cedula": 123,
+      "cedula": 1,
       "email": "franco@gmail.com",
       "admin": true,
       "fecha": [
@@ -155,7 +155,7 @@
       "edad": 20,
       "nombre": "Daniel Parra",
       "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
-      "cedula": 100636133,
+      "cedula": 3,
       "email": "",
       "admin": true,
       "fecha": [
@@ -228,7 +228,7 @@
       "edad": 20,
       "nombre": "Camilo Tejada",
       "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
-      "cedula": 123,
+      "cedula": 4,
       "email": "lili",
       "admin": true,
       "fecha": [
@@ -304,7 +304,7 @@
       "edad": 20,
       "nombre": "Juan Pablo Sanabria",
       "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
-      "cedula": 2,
+      "cedula": 5,
       "email": "",
       "admin": true,
       "fecha": [
@@ -377,7 +377,7 @@
       "edad": 20,
       "nombre": "Carlos Sebastian Rivera",
       "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
-      "cedula": 100636133,
+      "cedula": 6,
       "email": "",
       "admin": true,
       "fecha": [
@@ -449,7 +449,7 @@
       "clan": "VanRossum",
       "edad": "2001-09-26",
       "nombre": "Ana  Maria",
-      "cedula": "123",
+      "cedula": 7,
       "email": "anamaria@vanegas.com",
       "admin": false,
       "fecha": [
@@ -524,7 +524,7 @@
       "clan": "VanRossum",
       "edad": "2001-09-26",
       "nombre": "Pablo Sanabria",
-      "cedula": "123",
+      "cedula": 8,
       "email": "pablo@sanabria.com",
       "admin": false,
       "fecha": [
@@ -599,7 +599,7 @@
       "clan": "Van Rossum",
       "edad": "2024-02-02",
       "nombre": "Samuel Valverde",
-      "cedula": "123",
+      "cedula": "9",
       "email": "samuel@gmail.com",
       "admin": false,
       "fecha": [
@@ -674,7 +674,7 @@
       "clan": "Meta",
       "edad": "2024-02-02",
       "nombre": "Samuelito perez",
-      "cedula": "123",
+      "cedula": 10,
       "email": "samuelperez@gmail.com",
       "admin": false,
       "fecha": [
@@ -754,6 +754,13 @@
       "email": "juanita@gmail.com",
       "contrasena": "123",
       "admin": false
+    }
+  ],
+  "admin" : [
+    {
+      "id": "e45b",
+      "cedula": "1234",
+      "contrasena": "1235"
     }
   ],
   "events": [],

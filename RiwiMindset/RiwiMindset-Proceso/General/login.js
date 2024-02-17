@@ -1,99 +1,98 @@
-import { estudiantes } from "./Data/bd.js"
-
+import {URL_STUDENTS, URL_PSYCHOLOGISTS, URL_ADMIN} from './apiConnection/URLS.js';
 // Selectors
 const container = document.getElementById('container')
 const inicioProfesor = document.getElementById('inicioProfesor');
 const inicioEstudiante = document.getElementById('inicioEstudiante');
-let buttonRegistrer = document.querySelector('#buttonRegistrer')
-let buttonLogin = document.querySelector('#buttonLogin')
+
+/* Select Students */
+let buttonLoginStudent = document.querySelector('#buttonLoginStudents');
+const cedulaStudent = document.querySelector("#cedulaEstudiante");
+const passwordStudent = document.querySelector("#passwordEstudiante");
+
+/* Select Psycologist */
+let buttonLoginPyschologist = document.querySelector('#buttonLoginPyschologist');
+const cedulaProfesor = document.querySelector("#cedulaProfesor");
+const passwordProfesor = document.querySelector("#passwordProfesor");
 
 //Script animation Login
-
 inicioProfesor.addEventListener('click',()=>{
     container.classList.add('active');
-})
-
+});
 inicioEstudiante.addEventListener('click',()=>{
     container.classList.remove('active');
-})
-buttonRegistrer.addEventListener('click', (e)=>{
+});
+
+
+/* ----------- LOGIN STUDENTS -------- */
+buttonLoginStudent.addEventListener('click', (e)=>{
     e.preventDefault()
-    console.log("hola");
-    validateFormRegistrer()
+    validateFormLoginStudents()
 })
+async function validateFormLoginStudents(){
+    const response = await fetch(`${URL_STUDENTS}?cedula=${cedulaStudent.value}`);
+    const data = await response.json();
 
-buttonLogin.addEventListener('click', (e)=>{
-    e.preventDefault()
-    validateFormLogin()
-    console.log("holalogin");
-})
-
-
-// Validate function
-// function validateFormRegistrer() {
-//     let name = document.querySelector("#name").value
-//     let cedula = document.querySelector("#cedula").value
-//     let email = document.querySelector("#email").value
-//     let password = document.querySelector("#password").value
-//     for (let i = 0; i < estudiantes.length; i++) {
-//         if (estudiantes[i].cedula === cedula && estudiantes[i].admin === true) {
-//             alert("profesor")
-//             console.log("hola")
-//             break
-//         } if (estudiantes[i].cedula == cedula && estudiantes[i].admin === false) {
-//             alert("es")
-//             console.log("hola2")
-//             break
-//         } 
-//     }
-// }
-
-function validateFormLogin(){
-    let cedula = document.querySelector("#cedulaIniciar").value
-    let password = document.querySelector("#passwordIniciar").value
-    console.log(cedula)
-    if(cedula == 1 && password == 1){
-        setTimeout(function() {
-            // Cambia la URL a la que quieres redirigirte
-            window.location.href = "/Teachers/HomeTeachers/indexTeachersHome.html"
-          }, 100); // 10000 milisegundos = 10 segundos
-        }else if(cedula == 2 && password == 2){
-            setTimeout(function() {
-                // Cambia la URL a la que quieres redirigirte
-                window.location.href = "/Students/HomeStudents/indexHomeEstudents.html"
-              }, 100); // 10000 milisegundos = 10 segundos
-            }
-        
+    if (!data){
+        console.error("Cedula no registrado");
+        alert('Cedula no registrado');
+        return;
     }
 
-    // for (let i = 0; i < estudiantes.length; i++) {
-    //     if (estudiantes[i].cedula == cedula && estudiantes[i].contrasena == password) {
-    //         if(estudiantes[i].admin == false ){
-    //             alert("estudent")
-    //             console.log("hola")
-    //             break
-    //         }
-    //     }else if (estudiantes[i].admin == true) {
-    //         if(estudiantes[i].cedula == cedula && estudiantes[i].contrasena == password){
-    //             alert("profesor")
-    //             console.log("hola")
-    //             break
-    //         }
-    //     } 
-    // }}
-    /* for (let i = 0; i < estudiantes.length; i++){
-        if (estudiantes[i].admin == true && Number(estudiantes[i].cedula) == Number(cedula) && Number(estudiantes[i].password) == Number(password)){
-            alert("Profe")
-            break
-        }else if(Number(estudiantes[i].cedula) == Number(cedula) && Number(estudiantes[i].password) == Number(password)){
-            alert("Estudent")
-            break
-        }else {
-            alert("Este usuario no está registrado")
-            break
-        }
-    } */
+    if(data[0].contrasena != passwordStudent.value){
+        console.error("Contrasena incorrecta");
+        alert('Contrasena incorrecta')
+        return;
+    }
+
+    localStorage.setItem("student",JSON.stringify(data[0].id));
+    window.location.href = "../Students/HomeStudents/indexHomeEstudents.html"
+}
+
+/* ----------- LOGIN Psicologas -------- */
+buttonLoginPyschologist.addEventListener('click', (e)=>{
+    e.preventDefault();
+    validateFormLoginPsycologist();
+    validateFormLoginAdmin()
+})
+
+async function validateFormLoginPsycologist(){
+    const response = await fetch(`${URL_PSYCHOLOGISTS}?cedula=${cedulaProfesor.value}`);
+    const data = await response.json();
+
+    if (!data){
+        console.error("Cedula no registrado");
+        alert('Cedula no registrado');
+        return;
+    }
+
+    if(data[0].contrasena != passwordProfesor.value){
+        console.error("Contrasena incorrecta");
+        alert('Contrasena incorrecta')
+        return;
+    }
+
+    localStorage.setItem("teacher",JSON.stringify(data[0].id));
+    window.location.href = "../Teachers/HomeTeachers/indexTeachersHome.html"
+};
+
+/* LOGIN ADMIN */
+async function validateFormLoginAdmin(){
+    const response = await fetch(`${URL_ADMIN}?cedula=${cedulaProfesor.value}`);
+    const data = await response.json();
 
 
+    if (!data){
+        console.error("Cedula no registrado");
+        alert('Cedula no registrado');
+        return;
+    }
 
-// Realizar la injeccion de los usuarios
+    if(data[0].contrasena != passwordProfesor.value){
+        console.error("Contrasena incorrecta");
+        alert('Contrasena incorrecta')
+        return;
+    }
+
+    localStorage.setItem("admin",JSON.stringify(data[0].id));
+    window.location.href = "./administrador/index.html"
+};
