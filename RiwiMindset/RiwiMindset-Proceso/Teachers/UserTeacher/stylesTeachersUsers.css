@@ -66,8 +66,9 @@
   
   .estudents{
     display: grid;
-    grid-template-columns: 65% 15% 15% 15%;
+    grid-template-columns: 40% 40% 15% 10%;
     align-items: center;
+    justify-content: center;
     padding: 15px;
     border-bottom: 1px solid grey;
     border-right: 1px solid grey;
@@ -75,9 +76,9 @@
   
   .estudents p{
     text-align: start;
-    padding: 0 0 0 35px;
     font-size: 17px;
     color: var(--letter-color-main-dark);
+    margin: 0;
   }
   
   .estudents a{
