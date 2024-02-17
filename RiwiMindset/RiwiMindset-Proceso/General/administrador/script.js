@@ -70,12 +70,9 @@ async function registerStudent () {
     cedula: passwordStudent.value,
     email: emailStudent.value,
     admin: false,
-    fecha: [20 / 30 / 2023, "drtdtr"],
-    recomendaciones: ['primera reco', 'segunda reco'],
-    observaciones: [
-      'mmmmmm Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor porro sapiente repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum',
-      'asdkaposdkaopsdkaopdssoapdk',
-    ],
+    fecha: [],
+    recomendaciones: [],
+    observaciones: [],
     contrasena: confirmPasswordStudent.value,
     puntaje: {
       ingles: {
@@ -138,9 +135,11 @@ async function registerStudent () {
 }
 
 
+
+
 /* ---------PSYCHOLOGISTS--------- */
 /* Select */
-const formPsychologists = document.querySelector ('#formStudents');
+const formPsychologists = document.querySelector ('#formPsychologists');
 const namePsychologists = document.querySelector ('#namePsychologists');
 const lastNamePsychologists = document.querySelector ('#lastNamePsychologists');
 const emailPsychologists = document.querySelector ('#emailPsychologists');

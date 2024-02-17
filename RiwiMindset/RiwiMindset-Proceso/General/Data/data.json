@@ -593,12 +593,170 @@
           }
         }
       }
+    },
+    {
+      "id": "b2a7",
+      "clan": "Van Rossum",
+      "edad": "2024-02-02",
+      "nombre": "Samuel Valverde",
+      "cedula": "123",
+      "email": "samuel@gmail.com",
+      "admin": false,
+      "fecha": [
+        0.00032954358213873783,
+        "drtdtr"
+      ],
+      "recomendaciones": [
+        "primera reco",
+        "segunda reco"
+      ],
+      "observaciones": [
+        "mmmmmm Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor porro sapiente repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum",
+        "asdkaposdkaopsdkaopdssoapdk"
+      ],
+      "contrasena": "123",
+      "puntaje": {
+        "ingles": {
+          "begginer": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "middle": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "advance": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          }
+        },
+        "logicas": {
+          "begginer": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "middle": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "advance": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          }
+        },
+        "mentales": {
+          "begginer": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "middle": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "advance": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          }
+        }
+      }
+    },
+    {
+      "id": "2f83",
+      "clan": "Meta",
+      "edad": "2024-02-02",
+      "nombre": "Samuelito perez",
+      "cedula": "123",
+      "email": "samuelperez@gmail.com",
+      "admin": false,
+      "fecha": [
+        0.00032954358213873783,
+        "drtdtr"
+      ],
+      "recomendaciones": [
+        "primera reco",
+        "segunda reco"
+      ],
+      "observaciones": [
+        "mmmmmm Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor porro sapiente repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum",
+        "asdkaposdkaopsdkaopdssoapdk"
+      ],
+      "contrasena": "123",
+      "puntaje": {
+        "ingles": {
+          "begginer": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "middle": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "advance": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          }
+        },
+        "logicas": {
+          "begginer": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "middle": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "advance": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          }
+        },
+        "mentales": {
+          "begginer": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "middle": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "advance": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          }
+        }
+      }
     }
   ],
-  "psychologists": [],
-  
+  "psychologists": [
+    {
+      "id": "e45a",
+      "edad": "2024-02-09",
+      "nombre": "Juanita Perez",
+      "cedula": "123",
+      "email": "juanita@gmail.com",
+      "contrasena": "123",
+      "admin": false
+    }
+  ],
   "events": [],
-
   "test": [
     {
       "preguntasIngles": {
