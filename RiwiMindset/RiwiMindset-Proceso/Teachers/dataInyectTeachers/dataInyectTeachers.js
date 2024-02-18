@@ -1,6 +1,7 @@
 import { URL_PSYCHOLOGISTS } from "../../General/apiConnection/URLS.js";
 
 /* SELECT */
+const fotoTeacher = document.querySelector("#fotoTeacher");
 const nameTeacher = document.querySelector("#nameTeacher");
 
 // Obtener el ID del estudiante del localStorage
@@ -15,6 +16,7 @@ async function getTeacher(TeacherId) {
 async function inyect() {
     const teacher = await getTeacher(selectedTeacherId);
 
+    fotoTeacher.src = teacher.foto;
     nameTeacher.textContent = teacher.nombre;
 };
 

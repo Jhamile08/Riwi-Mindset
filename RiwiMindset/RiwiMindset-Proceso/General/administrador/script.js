@@ -4,8 +4,6 @@ import { post } from '../apiConnection/apiConnection.js';
 /* img */
 let profilePicEstudents = document.getElementById('profilePictureEstudents');
 let inputFileEstudents = document.getElementById('inputFileEstudents');
-let profilePicturePsychologists = document.getElementById('profilePicturepsychologists');
-let inputFileTeachers = document.getElementById('inputFilePsychologists');
 
 let newStudent = {}; // Objeto para almacenar los datos del nuevo estudiante
 
@@ -16,17 +14,6 @@ inputFileEstudents.onchange = function () {
 
   reader.onload = function () {
     profilePicEstudents.src = reader.result; // Asigna la imagen al elemento img
-    newStudent.foto = reader.result; // Asigna la URL base64 al objeto newStudent
-  };
-};
-
-inputFileTeachers.onchange = function () {
-  const file = inputFileTeachers.files[0];
-  const reader = new FileReader();
-  reader.readAsDataURL(file);
-
-  reader.onload = function () {
-    profilePicturePsychologists.src = reader.result; // Asigna la imagen al elemento img
     newStudent.foto = reader.result; // Asigna la URL base64 al objeto newStudent
   };
 };
@@ -152,6 +139,23 @@ async function registerStudent() {
 
 
 /* ---------PSYCHOLOGISTS--------- */
+
+let profilePicturePsychologists = document.getElementById('profilePicturepsychologists');
+let inputFileTeachers = document.getElementById('inputFilePsychologists');
+
+let newPsychologue = {};
+
+inputFileTeachers.onchange = function () {
+  const file = inputFileTeachers.files[0];
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+
+  reader.onload = function () {
+    profilePicturePsychologists.src = reader.result; // Asigna la imagen al elemento img
+    newPsychologue.foto = reader.result; // Asigna la URL base64 al objeto newPsychologue 
+  };
+};
+
 /* Select */
 const formPsychologists = document.querySelector('#formPsychologists');
 const namePsychologists = document.querySelector('#namePsychologists');
@@ -194,12 +198,12 @@ async function registerPsychologists() {
     return;
   }
 
-  const newPsychologue = {
+  newPsychologue = {
     id: cedulaPsychologist.value,
     nombre: `${namePsychologists.value} ${lastNamePsychologists.value}`,
     email: emailPsychologists.value,
     password: passwordPsychologists.value,
-    foto: profilePicturePsychologists.value,
+    foto: [newPsychologue.foto],
   };
 
   /* Si todos los datos son correctos, se agrega el objeto al json */
