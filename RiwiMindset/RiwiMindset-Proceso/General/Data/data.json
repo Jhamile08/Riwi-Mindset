@@ -1,15 +1,4 @@
 {
-  "events": [
-    {
-      "id": "d632",
-      "title": "Bloqueado",
-      "start": "2024-02-09T14:00:00-05:00",
-      "end": "2024-02-09T18:00:00-05:00",
-      "reason": "Bloqueado",
-      "date": "2024-02-09",
-      "time": "14:00 - 18:00"
-    }
-  ],
   "students": [
     {
       "id": "1",
@@ -17,20 +6,20 @@
       "edad": 20,
       "nombre": "Cristian Franco",
       "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
-      "cedula": 123,
-      "correo": "franco@gmail.com",
+      "cedula": 1,
+      "email": "franco@gmail.com",
       "admin": true,
       "fecha": [
         "20/30/2023",
         "drtdtr"
       ],
       "recomendaciones": [
-        "cristian",
-        "sframnco"
+        "primera recomendacion",
+        "segunda recomendacion"
       ],
       "observaciones": [
-        "mmmmmm Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor porro sapiente repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum",
-        "asdkaposdkaopsdkaopdssoapdk"
+        "primera observacion",
+        "segunda observacion"
       ],
       "contrasena": 333,
       "puntaje": {
@@ -94,7 +83,7 @@
       "nombre": "Jhamile Andrea Dominguez Rendon",
       "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
       "cedula": 2,
-      "correo": "",
+      "email": "",
       "admin": true,
       "fecha": [
         "asdadadas"
@@ -166,8 +155,8 @@
       "edad": 20,
       "nombre": "Daniel Parra",
       "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
-      "cedula": 100636133,
-      "correo": "",
+      "cedula": 3,
+      "email": "",
       "admin": true,
       "fecha": [
         "asdadadas"
@@ -239,8 +228,8 @@
       "edad": 20,
       "nombre": "Camilo Tejada",
       "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
-      "cedula": 123,
-      "correo": "lili",
+      "cedula": 4,
+      "email": "lili",
       "admin": true,
       "fecha": [
         "20/30/2023",
@@ -315,8 +304,8 @@
       "edad": 20,
       "nombre": "Juan Pablo Sanabria",
       "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
-      "cedula": 2,
-      "correo": "",
+      "cedula": 5,
+      "email": "",
       "admin": true,
       "fecha": [
         "asdadadas"
@@ -388,8 +377,8 @@
       "edad": 20,
       "nombre": "Carlos Sebastian Rivera",
       "foto": "/General/Images/ImagesTeachers/fondoLogin1.png",
-      "cedula": 100636133,
-      "correo": "",
+      "cedula": 6,
+      "email": "",
       "admin": true,
       "fecha": [
         "asdadadas"
@@ -454,8 +443,327 @@
           }
         }
       }
+    },
+    {
+      "id": "912d",
+      "clan": "VanRossum",
+      "edad": "2001-09-26",
+      "nombre": "Ana  Maria",
+      "cedula": 7,
+      "email": "anamaria@vanegas.com",
+      "admin": false,
+      "fecha": [
+        0.00032954358213873783,
+        "drtdtr"
+      ],
+      "recomendaciones": [
+        "primera reco",
+        "segunda reco"
+      ],
+      "observaciones": [
+        "mmmmmm Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor porro sapiente repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum",
+        "asdkaposdkaopsdkaopdssoapdk"
+      ],
+      "contrasena": "123",
+      "puntaje": {
+        "ingles": {
+          "begginer": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "middle": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "advance": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          }
+        },
+        "logicas": {
+          "begginer": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "middle": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "advance": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          }
+        },
+        "mentales": {
+          "begginer": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "middle": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "advance": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          }
+        }
+      }
+    },
+    {
+      "id": "80e6",
+      "clan": "VanRossum",
+      "edad": "2001-09-26",
+      "nombre": "Pablo Sanabria",
+      "cedula": 8,
+      "email": "pablo@sanabria.com",
+      "admin": false,
+      "fecha": [
+        0.00032954358213873783,
+        "drtdtr"
+      ],
+      "recomendaciones": [
+        "primera reco",
+        "segunda reco"
+      ],
+      "observaciones": [
+        "mmmmmm Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor porro sapiente repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum",
+        "asdkaposdkaopsdkaopdssoapdk"
+      ],
+      "contrasena": "123",
+      "puntaje": {
+        "ingles": {
+          "begginer": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "middle": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "advance": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          }
+        },
+        "logicas": {
+          "begginer": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "middle": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "advance": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          }
+        },
+        "mentales": {
+          "begginer": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "middle": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "advance": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          }
+        }
+      }
+    },
+    {
+      "id": "b2a7",
+      "clan": "Van Rossum",
+      "edad": "2024-02-02",
+      "nombre": "Samuel Valverde",
+      "cedula": "9",
+      "email": "samuel@gmail.com",
+      "admin": false,
+      "fecha": [
+        0.00032954358213873783,
+        "drtdtr"
+      ],
+      "recomendaciones": [
+        "primera reco",
+        "segunda reco"
+      ],
+      "observaciones": [
+        "mmmmmm Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor porro sapiente repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum",
+        "asdkaposdkaopsdkaopdssoapdk"
+      ],
+      "contrasena": "123",
+      "puntaje": {
+        "ingles": {
+          "begginer": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "middle": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "advance": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          }
+        },
+        "logicas": {
+          "begginer": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "middle": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "advance": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          }
+        },
+        "mentales": {
+          "begginer": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "middle": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "advance": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          }
+        }
+      }
+    },
+    {
+      "id": "2f83",
+      "clan": "Meta",
+      "edad": "2024-02-02",
+      "nombre": "Samuelito perez",
+      "cedula": 10,
+      "email": "samuelperez@gmail.com",
+      "admin": false,
+      "fecha": [
+        0.00032954358213873783,
+        "drtdtr"
+      ],
+      "recomendaciones": [
+        "primera reco",
+        "segunda reco"
+      ],
+      "observaciones": [
+        "mmmmmm Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, debitis explicabo. Dolor porro sapiente repudiandae eligendi non nostrum ad aliquid, ratione dignissimos expedita eos reiciendis, inventore illum",
+        "asdkaposdkaopsdkaopdssoapdk"
+      ],
+      "contrasena": "123",
+      "puntaje": {
+        "ingles": {
+          "begginer": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "middle": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "advance": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          }
+        },
+        "logicas": {
+          "begginer": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "middle": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "advance": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          }
+        },
+        "mentales": {
+          "begginer": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "middle": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          },
+          "advance": {
+            "intentos": [],
+            "fecha": [],
+            "puntaje": []
+          }
+        }
+      }
     }
   ],
+  "psychologists": [
+    {
+      "id": "e45a",
+      "edad": "2024-02-09",
+      "nombre": "Juanita Perez",
+      "cedula": "123",
+      "email": "juanita@gmail.com",
+      "contrasena": "123",
+      "admin": false
+    }
+  ],
+  "admin" : [
+    {
+      "id": "e45b",
+      "cedula": "1234",
+      "contrasena": "1235"
+    }
+  ],
+  "events": [],
   "test": [
     {
       "preguntasIngles": {
@@ -721,17 +1029,20 @@
         ]
       },
       "ingles": {
-        "nombre": "Test de ingles",
+        "nombre": "ingles",
+        "titulo": "Test de ingles",
         "preguntas": "20 preguntas",
         "duracion": "20 min"
       },
       "mentales": {
-        "nombre": "Test de logicas",
+        "nombre": "mentales",
+        "titulo": "Test de logicas",
         "preguntas": "20 preguntas",
         "duracion": "40 min"
       },
       "logicas": {
-        "nombre": "Test de mentales",
+        "nombre": "logicas",
+        "titulo": "Test de mentales",
         "preguntas": "20 preguntas",
         "duracion": "30 min"
       },
@@ -739,21 +1050,27 @@
         "fecha": "",
         "buenas": 0,
         "malas": 0,
-        "porcentaje": 0
+        "porcentaje": 0,
+        "acumulado": 0,
+        "level": ""
       },
       "resultadosLogicas": {
         "fecha": "",
         "buenas": 0,
         "malas": 0,
-        "porcentaje": 0
+        "porcentaje": 0,
+        "acumulado": 0,
+        "level": ""
       },
       "resultadosMentales": {
         "fecha": "",
         "buenas": 0,
         "malas": 0,
-        "porcentaje": 0
-      },
-      "id": "e561"
+        "porcentaje": 0,
+        "acumulado": 0,
+        "level": ""
+      }
+      
     }
   ]
 }

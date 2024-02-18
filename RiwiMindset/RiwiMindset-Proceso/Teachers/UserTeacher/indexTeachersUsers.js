@@ -20,7 +20,7 @@ async function renderStudents() {
             <p id="">${student.nombre} </p>
             <p class="borrar" id="nombre">${student.nombre} ${student.clan}</p> 
             <p id="">${student.clan} </p>
-            <a href="/Teachers/UserTeacher/Registrer/IndexTeachersUsers-register.html" type="submit" id ="${student.id}" class= "actualizar">ver perfil</a>
+            <a href="/Teachers/UserTeacher/Registrer/IndexTeachersUsers-register.html" type="submit" id="${student.id}" class= "actualizar">ver perfil</a>
             <img src="${student.foto}" alt="" id="foto"></img>
         </div>
         `
@@ -51,14 +51,10 @@ async function renderStudents() {
     };
 
     studentsInjected.push(data);
-
-
   });
-
-  studentLocalStorage();
-
 };
 
+/* -------BUSCADOR------- */
 document.addEventListener("input", (e) => {
   let apellido = e.target.value;
   nombre(apellido);
@@ -66,7 +62,6 @@ document.addEventListener("input", (e) => {
 
 function nombre(apellido) {
   const name = document.querySelectorAll("#nombre");
-  console.log(name);
   name.forEach((e) => {
     if (
       e.textContent.toLocaleLowerCase().includes(apellido.toLocaleLowerCase())
@@ -78,22 +73,12 @@ function nombre(apellido) {
   });
 };
 
-function studentLocalStorage() {
-
-  const actualizar = document.querySelectorAll(".actualizar");
-
-  actualizar.forEach((student) => {
-    student.addEventListener("click", (e) => {
-      localStorage.setItem(
-        "gente",
-        JSON.stringify(studentsInjected[Number(e.target.getAttribute("id")) - 1])
-      );
-    });
-  });
-
-};
+/* -----GUARDAR EN EL LOCALSTORAGE EL ID SEGUN EL CLICK */
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("actualizar")) {
+    const studentId = e.target.getAttribute("id");
+    localStorage.setItem("selectedStudentId", studentId); // Almacenar ID del estudiante seleccionado
+  }
+});
 
 renderStudents();
-
-
-

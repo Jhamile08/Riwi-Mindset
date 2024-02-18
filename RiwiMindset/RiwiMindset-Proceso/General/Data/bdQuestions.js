@@ -291,12 +291,12 @@ export const preguntasIngles= [
   ]
 
 
-export  let ingles = {
+export let ingles = {
     "nombre": "Test de ingles",
     "preguntas": "20 preguntas",
     "duracion": "20 min"
   }
-export  let mentales = {
+export let mentales = {
     "nombre": "Test de logicas",
     "preguntas": "20 preguntas",
     "duracion": "40 min"

@@ -1,157 +1,138 @@
-
-//Generamos una url base
+// Generamos una url base
 const urlBase = "http://localhost:4002/";
-// Seleccionamos el contenedor principal donde vamos a inyectars los coders
-let inyeccionCoders = document.querySelector("#container-users");
-//Funcion que obtiene los datos desde el archivo json
-async function getStudent() {
-    const response = await fetch(`${urlBase}students`);
-    const data = response.json();
+// Obtener el ID del estudiante del localStorage
+const selectedStudentId = localStorage.getItem("selectedStudentId");
+
+async function getStudent(studentId) {
+    const response = await fetch(`${urlBase}students/${studentId}`);
+    const data = await response.json();
     return data;
 };
 
-
+//Inyeccion del perfil del menu
 async function inyect() {
-    const students = await getStudent();
-    /* inyectar foto y card */
+    const student = await getStudent(selectedStudentId);
+    // Inyectar foto y card 
     const user = document.querySelector('#data-user');
-    const coderUser = document.createElement('div')
+    const coderUser = document.createElement('div');
 
-    students.forEach(student => {
-        coderUser.innerHTML = `
-            <img src="${student.foto}" alt="" id="foto";></img>
-            <p id="nombre">${student.nombre}</p>
-            <p id="nombre">  edad: ${student.edad}</p>
-            
-        `;
-    })
+    coderUser.innerHTML = `
+        <img src="${student.foto}" alt="" id="foto"></img>
+        <p id="nombre">${student.nombre}</p>
+        <p id="nombre">  edad: ${student.edad}</p>
+    `;
+
     user.appendChild(coderUser);
-
-    /* inyectar fecha */
-
-
-}
-
-inyect();
-
-
+};
 
 async function inyectHistoria() {
-    const students = await getStudent();
-    const historial = document.querySelector("#registro")
+    const student = await getStudent(selectedStudentId);
+    const historial = document.querySelector("#registro");
 
-    const register = document.createElement('div')
-    students.forEach(student => {
+    // Iterar sobre el array de fechas (puede ser cualquier otro array)
+    for (let i = 0; i < student.fecha.length; i++) {
+        const register = document.createElement('div');
+        register.classList.add("registroEspecifico");
         register.innerHTML = `
-        <div class="registroEspecifico">
-        <p class="fechaEntrevista">
-        <b> fecha: </b> ${student.fecha}
-        </p>
-        <p class="registroInfo">
-            ${student.recomendaciones}
-        </p>
-        <button id="btnfuera btn" class="btnVerMas" onclick="mostrarVerMas()" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Ver más</button>
-        `
-
-    })
-    /* CAMBIO DE CLASE TN 2 */
-    /* EL BOTON 2  */
-    historial.appendChild(register);
-}
-improve()
-async function improve() {
-    const students = await getStudent();
-    students.forEach(student => {
-
-        inyectHistoria()
-
-        /* MODAL VER MAS */
-        async function mostrarVerMas(i) {
-            const students = await getStudent();
-
-            const btn1 = document.querySelector('.btn1');
-            btn1.innerText = "VER RECOMENDACIONES"; /* BOTONES DENTRO DEL MODAL */
-
-            const btn3 = document.querySelector('.btn3');
-            btn3.innerText = "BOTON 3";
-
-            const btn2 = document.querySelector('.btn2');
-            btn2.innerText = "VER OBSERVACIONES";
-
-            const btn4 = document.querySelector('.btn4');
-            btn4.innerText = "BOTON 4";
-
-            /* evento click para las funciones de editar */
-
-            const parrafoObservaciones = document.querySelector('.pObservaciones');
-            parrafoObservaciones.innerHTML = `
-        ${student.observaciones}
-        <br>
-        ${student.fecha}
-        `
-            const parrafoRecomendaciones = document.querySelector('.pRecomendaciones');
-            parrafoRecomendaciones.innerHTML = `
-        ${student.recomendaciones}
-        <br>
-        ${student.fecha}
-        `
-            btn3.addEventListener('click', mostrarEditar(i));
-            btn4.addEventListener('click', mostrarEditar(i));
-
-        }
-
-        function mostrarEditar(i) {
-
-            console.log("funcion editar ");
-            const parrafoObservaciones = document.querySelector('.pObservaciones');
-            parrafoObservaciones.innerHTML = `
-        <textarea style="width: 100%" id="textAreaObservaciones" oninput='${edicionObs()}'>${student.observaciones}</textarea>
-        <br>
-        <p> fecha: ${student.fecha}</p>
-        <br>
-        `
-            const parrafoRecomendaciones = document.querySelector('.pRecomendaciones');
-            parrafoRecomendaciones.innerHTML = `
-        <textarea style="width: 100%" id="textAreaRecomendaciones" oninput='${edicionReco()}'>${student.recomendaciones}</textarea>
-        <br>
-        <p>fecha: ${student.fecha}</p>
-        <br>
-        `
-        }
-
-    });
-
-}
+            <p class="fechaEntrevista">
+                <b> fecha: </b> ${student.fecha[i]}
+            </p>
+            <p class="registroInfo">
+                ${student.recomendaciones[i]}
+            </p>
+            <button id="btnfuera btn" class="btnVerMas" onclick="mostrarVerMas(${i})" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Ver más</button>
+        `;
+        historial.appendChild(register);
+    }
+};
 
 
 
+// MODAL VER MAS
+async function mostrarVerMas(i) {
+    const student = await getStudent(selectedStudentId);
 
-function edicionObs() {
-    const btn3 = document.querySelector('.btn3');
-    btn3.addEventListener('click', () => {
+    const parrafoRecomendaciones = document.querySelector('.pRecomendaciones');
+    parrafoRecomendaciones.innerHTML = `
+            <p>${student.recomendaciones[i]}</p>
+            <hr>
+            <p>${student.fecha[i]}</p>
+            `;
+
+    const parrafoObservaciones = document.querySelector('.pObservaciones');
+    parrafoObservaciones.innerHTML = `
+            <p>${student.observaciones[i]}</p>
+            <hr>
+            <p>${student.fecha[i]}</p>
+            `;
+
+
+
+    document.querySelector('#editarRecomendaciones').addEventListener('click', editar(i));
+
+    // Configurar el evento de clic del botón de edición
+    document.querySelector('#editarObservaciones').addEventListener('click', editar(i));
+};
+
+
+async function editar(i) {
+    const student = await getStudent(selectedStudentId);
+
+    const parrafoRecomendaciones = document.querySelector('.pRecomendaciones');
+        parrafoRecomendaciones.innerHTML= `
+            <textarea style="width: 100%" id="textAreaRecomendaciones" oninput='${edicionReco()}'>${student.recomendaciones[i]}</textarea>
+            <br>
+            <p>fecha: ${student.fecha[i]}</p>
+            <br>
+        `;
+
+        const parrafoObservaciones = document.querySelector('.pObservaciones');
+        parrafoObservaciones.innerHTML= `
+            <textarea style="width: 100%" id="textAreaObservaciones" oninput='${edicionObs()}'>${student.observaciones[i]}</textarea>
+            <br>
+            <p> fecha: ${student.fecha[i]}</p>
+            <br>
+        `;
+};
+
+
+async function edicionObs (){
+    const student = await getStudent(selectedStudentId);
+
+    const editarObservaciones = document.querySelector('#editarObservaciones');
+    editarObservaciones.addEventListener('click', ()=>{
         console.log("nada");
 
         const editObs = document.querySelector('#textAreaObservaciones')
 
         console.log(editObs.textContent);
 
-        students.observaciones[i] = editObs.textContent
+        student.observaciones = editObs.textContent
 
-        console.log(students.observaciones[i]);
-    });
+        console.log(student.observaciones);
+    });    
 }
 
-function edicionReco() {
-    const btn4 = document.querySelector('.btn4');
-    btn4.addEventListener('click', () => {
+async function edicionReco (){
+    const student = await getStudent(selectedStudentId);
+
+    const editarRecomendaciones = document.querySelector('#editarRecomendaciones');
+    editarRecomendaciones.addEventListener('click', ()=>{
         console.log("nada");
 
         const editReco = document.querySelector('#textAreaRecomendaciones')
 
-        console.log("no", editReco.textContent);
+        console.log("no",editReco.textContent);
 
-        students.recomendaciones[i] = editReco.textContent
+        student.recomendaciones = editReco.textContent
 
-        console.log(students.recomendaciones[i]);
-    });
+        console.log(student.recomendaciones);
+    });    
 }
+
+
+// Llamada a las funciones
+(async () => {
+    await inyect();
+    await inyectHistoria();
+})();
