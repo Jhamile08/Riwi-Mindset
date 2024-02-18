@@ -10,15 +10,14 @@ let modalTitle = document.querySelector(".modal-title")
 const btnSiguiente = document.querySelector(".btn-siguiente");
 const inputs = document.querySelector(".content-test input")
 
-import { get } from "./../../General/apiConnection/apiConnection.js";
-import { URL_STUDENTS } from "./../../General/apiConnection/URLS.js";
+import { get, post } from "./../../General/apiConnection/apiConnection.js";
+import { URL_STUDENTS, URL_TEST  } from "./../../General/apiConnection/URLS.js";
 
 // renderizar info del modal sobre el test
 let preguntaActual = 0; // pregunta actual
 export async function renderModal(cardId){
     const data = await get(URL_TEST)
  data.forEach(e => {
-   
         if (e.ingles.nombre === cardId) {
             modalTitle.textContent = `${e.ingles.nombre}`
             contentInfo.innerHTML = `
@@ -49,42 +48,109 @@ export async function renderModal(cardId){
         }
     });
 }
+// Función para inyectar preguntas en el HTML según el nivel del estudiante
+async function injectionPreguntaHtml(preguntas, resultado) {
+  const data = await get(URL_STUDENTS);
+  const studentActual = JSON.parse(localStorage.getItem("student"));
 
-// inyectar preguntas desde la bd
-async function injectionPreguntaHtml(pregunta, resultado) {
-    const data = await get(URL_STUDENTS)
-    console.log(pregunta, resultado)
-    console.log(pregunta.begginer[0].respuestas[0].contenido)
-    if (data.resultado.level == "begginer") {
-        let inyeccionPreguntas = document.querySelector(".containerHome");
-        inyeccionPreguntas.innerHTML = "";
-        
-        const coderHtml = document.createElement("div");
-        coderHtml.classList.add("content-test");
-        
-        // Recorremos todas las preguntas
-        pregunta.begginer.forEach((pregunta, index) => {
-            const preguntaHtml = document.createElement("p");
-            preguntaHtml.classList.add("pregunta-test");
-            preguntaHtml.textContent = pregunta.contenido;
-            
-            coderHtml.appendChild(preguntaHtml);
-            
-            // Recorremos todas las respuestas de cada pregunta
-            pregunta.respuestas.forEach(respuesta => {
-                const respuestaHtml = document.createElement("label");
-                respuestaHtml.innerHTML = `<input type="radio">${respuesta.contenido}`;
-                coderHtml.appendChild(respuestaHtml);
-            });
-        });
-        
-        inyeccionPreguntas.appendChild(coderHtml);
+  // Recorrer cada estudiante para encontrar el que inició sesión y verificar su nivel
+  data.forEach(student => {
+      if (studentActual == student.id && student.levelActual === "begginer") {
+          preguntaDependeNivel(preguntas.begginer, resultado, student);
+      }
+  });
+}
+
+// Función para inyectar preguntas según el nivel
+function preguntaDependeNivel(preguntas, resultado, student) {
+  let indicePreguntaActual = 0; // Variable para llevar el seguimiento del índice de la pregunta actual
+  console.log(preguntas);
+  // Función interna para procesar la respuesta seleccionada
+  async function procesarRespuestaSeleccionada(respuestaSeleccionada, resultado, student) {
+      if (respuestaSeleccionada == "true") {
+          resultado.buenas++;
+      } else if (respuestaSeleccionada == "false"){
+          resultado.malas++;
+      }
+      console.table(resultado);
+      console.log(student.puntaje);
+      
+      if (resultado.nombre == "ingles" && student.levelActual == "begginer") {
+        console.log(student.puntaje.ingles.begginer); 
+        let fechaActual = new Date();
+        // Crear un nuevo objeto con los datos actualizados
+        let actualizado = {
+            // nuevo intento
+            intentos: [...student.puntaje.ingles.begginer.intentos, 1],
+            //nueva fecha
+            fecha: [...student.puntaje.ingles.begginer.fecha, fechaActual],
+            // nuevo resultado
+            puntaje: [...student.puntaje.ingles.begginer.puntaje, resultado]
+        };
+        // Actualizar los resultados en la base de datos
+        const response = await post(`${URL_STUDENTS}/${student.id}`, actualizado);
+        console.log(response); 
     }
-
+    console.log(student);
   }
-  
-  function recomendacionTest() {
-    if(resultadosIngles.buenas >  resultadosIngles.malas){
+
+  const inyeccionPreguntas = document.querySelector(".containerHome");
+
+  // Función interna para mostrar la próxima pregunta
+  function mostrarSiguientePregunta() {
+      inyeccionPreguntas.innerHTML = ""; // Limpiar el contenedor antes de inyectar la siguiente pregunta
+
+      const coderHtml = document.createElement("div");
+      coderHtml.classList.add("content-test");
+
+      const pregunta = preguntas[Math.floor(Math.random() * preguntas.length)];
+      const preguntaHtml = document.createElement("p");
+      preguntaHtml.classList.add("pregunta-test");
+      preguntaHtml.textContent = pregunta.contenido;
+      coderHtml.appendChild(preguntaHtml);
+
+      pregunta.respuestas.forEach(respuesta => {
+          const respuestaHtml = document.createElement("label");
+          respuestaHtml.innerHTML = `<input type="radio" value="${respuesta.correcta}" name="respuesta">${respuesta.contenido}`;
+          coderHtml.appendChild(respuestaHtml);
+      });
+
+      inyeccionPreguntas.appendChild(coderHtml);
+  }
+
+  // Mostrar la primera pregunta
+  mostrarSiguientePregunta();
+
+  // Agregar un event listener al botón "Siguiente"
+  btnSiguiente.addEventListener("click", () => {
+      const inputs = document.querySelectorAll(".content-test input:checked");
+
+      if (inputs.length === 0) {
+          alert("Por favor, selecciona una respuesta antes de continuar.");
+          return;
+      }
+
+      // Obtener la respuesta seleccionada
+      const respuestaSeleccionada = inputs[0].value;
+
+      // Procesar la respuesta seleccionada
+      procesarRespuestaSeleccionada(respuestaSeleccionada, resultado, student);
+
+      // Incrementar el índice para pasar a la siguiente pregunta
+      indicePreguntaActual++;
+
+      if (indicePreguntaActual < preguntas.length) {
+          // Si hay más preguntas, mostrar la siguiente pregunta
+          mostrarSiguientePregunta();
+      } else {
+          console.log("¡Fin del cuestionario!");
+          recomendacionTest(resultado);
+      }
+  });
+}
+
+  function recomendacionTest(resultado) {
+    if(resultado.buenas >  resultado.malas){
       alert("muchasbuenas")
     }
   }

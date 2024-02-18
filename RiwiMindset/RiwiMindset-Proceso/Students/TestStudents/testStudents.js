@@ -7,6 +7,7 @@ let containerQuestions = document.querySelector('.container')
 let containerCards = document.querySelector('.container-cards')
 let CardsForEach = document.querySelectorAll('.cards')
 let containerTitle = document.querySelector('.title-test')
+const btnSiguiente = document.querySelector(".btn-siguiente");
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -18,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
     containerCards.style.display = "none"
     containerQuestions.style.display = 'flex'
     containerTitle.style.display = "none"
-    console.log(containerCards);
   }
  
 }); 
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
  });
 
 
-// boton de pasar a la siguiente pregunta en el test
+// // boton de pasar a la siguiente pregunta en el test
 //   btnSiguiente.addEventListener("click", () => {
 //     validateQuestion()
 //   });

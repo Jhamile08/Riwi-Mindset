@@ -22,6 +22,7 @@
         "segunda observacion"
       ],
       "contrasena": 333,
+      "levelActual" : "begginer",
       "puntaje": {
         "ingles": {
           "begginer": {
@@ -95,6 +96,7 @@
         "adasdada"
       ],
       "contrasena": 333,
+      "levelActual" : "begginer",
       "puntaje": {
         "ingles": {
           "begginer": {
@@ -168,6 +170,7 @@
         "adasdada"
       ],
       "contrasena": 333,
+      "levelActual" : "begginer",
       "puntaje": {
         "ingles": {
           "begginer": {
@@ -244,6 +247,7 @@
         "asdkaposdkaopsdkaopdssoapdk"
       ],
       "contrasena": 333,
+      "levelActual" : "begginer",
       "puntaje": {
         "ingles": {
           "begginer": {
@@ -317,6 +321,7 @@
         "adasdada"
       ],
       "contrasena": 333,
+      "levelActual":"begginer",
       "puntaje": {
         "ingles": {
           "begginer": {
@@ -390,6 +395,7 @@
         "adasdada"
       ],
       "contrasena": 333,
+      "levelActual":"begginer",
       "puntaje": {
         "ingles": {
           "begginer": {
@@ -465,6 +471,7 @@
         "asdkaposdkaopsdkaopdssoapdk"
       ],
       "contrasena": "123",
+      "levelActual" : "begginer",
       "puntaje": {
         "ingles": {
           "begginer": {
@@ -540,6 +547,7 @@
         "asdkaposdkaopsdkaopdssoapdk"
       ],
       "contrasena": "123",
+      "levelActual":"begginer",
       "puntaje": {
         "ingles": {
           "begginer": {
@@ -615,6 +623,7 @@
         "asdkaposdkaopsdkaopdssoapdk"
       ],
       "contrasena": "123",
+      "levelActual":"begginer",
       "puntaje": {
         "ingles": {
           "begginer": {
@@ -690,6 +699,7 @@
         "asdkaposdkaopsdkaopdssoapdk"
       ],
       "contrasena": "123",
+      "levelActual":"begginer",
       "puntaje": {
         "ingles": {
           "begginer": {
@@ -769,7 +779,7 @@
       "preguntasIngles": {
         "begginer": [
           {
-            "contenido": "- Can I park here?",
+            "contenido": "- 2. Can I park here?",
             "respuestas": [
               {
                 "contenido": "A. Sorry, I did that.",
@@ -787,6 +797,23 @@
           },
           {
             "contenido": "- Can I park here?",
+            "respuestas": [
+              {
+                "contenido": "A. Sorry, I did that.",
+                "correcta": false
+              },
+              {
+                "contenido": "B. It's the same place.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. Only for half an hour.",
+                "correcta": true
+              }
+            ]
+          },
+          {
+            "contenido": "- 2. Can I park here?",
             "respuestas": [
               {
                 "contenido": "A. Sorry, I did that.",
@@ -1047,7 +1074,8 @@
         "duracion": "30 min"
       },
       "resultadosIngles": {
-        "fecha": "",
+        "nombre" : "ingles",
+        "fecha": "1",
         "buenas": 0,
         "malas": 0,
         "porcentaje": 0,
@@ -1055,7 +1083,15 @@
         "level": ""
       },
       "resultadosLogicas": {
-        "fecha": "",
+        "fecha": "2",
+        "buenas": 0,
+        "malas": 0,
+        "porcentaje": 0,
+        "acumulado": 0,
+        "level": ""
+      },
+      "resultados": {
+        "fecha": "3",
         "buenas": 0,
         "malas": 0,
         "porcentaje": 0,
@@ -1063,7 +1099,7 @@
         "level": ""
       },
       "resultadosMentales": {
-        "fecha": "",
+        "fecha": "4",
         "buenas": 0,
         "malas": 0,
         "porcentaje": 0,
