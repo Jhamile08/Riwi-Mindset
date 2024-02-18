@@ -1,5 +1,5 @@
 import { URL_STUDENTS, URL_PSYCHOLOGISTS } from '../apiConnection/URLS.js';
-import { post } from '../apiConnection/apiConnection.js';
+import { post, get, update, deleteHttp } from '../apiConnection/apiConnection.js';
 
 /* img */
 let profilePicEstudents = document.getElementById('profilePictureEstudents');
@@ -30,6 +30,7 @@ const passwordStudent = document.querySelector('#passwordStudent');
 const confirmPasswordStudent = document.querySelector('#confirmPasswordStudent');
 const bornDateStudent = document.querySelector('#bornDateStudent');
 const clan = document.querySelector('#clan');
+const studentId = document.querySelector("#studentId");
 
 
 /* Events */
@@ -38,29 +39,10 @@ formStudents.addEventListener('submit', event => {
   registerStudent();
 });
 
+let num = 0;
+
 async function registerStudent() {
-  const response = await fetch(URL_STUDENTS);
-  const data = await response.json();
 
-  for (let i = 0; i < data.length; i++) {
-    if (data[i].id === cedulaStudent.value) {
-      alert('Cedula ya se encuentra registrada');
-      return;
-    }
-
-    if (data[i].email === emailStudent.value) {
-      alert('Email ya se encuentra registrado');
-      return;
-    }
-  }
-
-  if (
-    passwordStudent.value !== confirmPasswordStudent.value ||
-    confirmPasswordStudent.value !== passwordStudent.value
-  ) {
-    alert('Ambas contrasenas deben ser iguales');
-    return;
-  }
 
   const edad = calcularEdad(bornDateStudent.value);
 
@@ -131,8 +113,39 @@ async function registerStudent() {
     },
   };
 
-  post(URL_STUDENTS, newStudent);
-  alert('Registrado exitosamente');
+  if (num == 0) {
+    console.log(num);
+    console.log("hola");
+    await update(studentId.value, newStudent);
+
+  } else {
+
+    const response = await fetch(URL_STUDENTS);
+    const data = await response.json();
+
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].id === cedulaStudent.value) {
+        alert('Cedula ya se encuentra registrada');
+        return;
+      }
+
+      if (data[i].email === emailStudent.value) {
+        alert('Email ya se encuentra registrado');
+        return;
+      }
+    }
+
+    if (
+      passwordStudent.value !== confirmPasswordStudent.value ||
+      confirmPasswordStudent.value !== passwordStudent.value
+    ) {
+      alert('Ambas contrasenas deben ser iguales');
+      return;
+    }
+
+    post(URL_STUDENTS, newStudent);
+    alert('Registrado exitosamente');
+  }
 }
 
 
@@ -230,3 +243,64 @@ function calcularEdad(fechaNacimiento) {
 
   return edad;
 }
+
+
+
+
+
+/* INYECTAR USUARIOS */
+
+
+async function getStudentId(id) {
+  const response = await fetch(id);
+  const data = response.json();
+  return data;
+};
+
+async function fillStudent(id) {
+  const student = await getStudentId(id);
+
+  profilePicEstudents.src = student.foto
+  nameStudent.value = student.nombre;
+  lastNameStudent.value = student.nombre;
+  cedulaStudent.value = student.id;
+  emailStudent.value = student.email;
+  celStudent.value = student.phone;
+  passwordStudent.value = student.password;
+  confirmPasswordStudent.value = student.password;
+  bornDateStudent.value = bornDateStudent.value;
+  clan.value = student.clan
+
+}
+
+async function renderStudents() {
+  const students = await get(URL_STUDENTS);
+  tbody.innerHTML = '';
+  students.forEach(student => {
+    tbody.innerHTML += `
+      <tr>
+          <td><img src="${student.foto}" width="50px" height="50px" style="border-radius: 50%;"></td>
+          <td>${student.id}</td>
+          <td>${student.nombre}</td>
+          <td>${student.edad}</td>
+          <td>
+              <button class="btn btn-dark btn-edit" studentId="${student.id}">Edit</button>
+              <button class="btn btn-danger btn-delete" studentId="${student.id}">Delete</button>
+          </td>
+      </tr>
+      `
+  });
+};
+
+renderStudents();
+
+
+document.body.addEventListener('click', event => {
+  const id = event.target.getAttribute("studentId");
+  const studentToAction = `${URL_STUDENTS}/${id}`
+  if (event.target.classList.contains("btn-delete")) {
+    deleteHttp(studentToAction);
+  } if (event.target.classList.contains("btn-edit")) {
+    fillStudent(studentToAction);
+  }
+})
