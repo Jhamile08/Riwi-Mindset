@@ -194,71 +194,173 @@
       "preguntasIngles": {
         "begginer": [
           {
-            "contenido": "- Can I park here?",
+            "contenido": "Complete the sentence with the correct answer: ¨Can I park in this place?¨ ",
             "respuestas": [
               {
-                "contenido": "A. Sorry, I did that.",
+                "contenido": "A. Yes, you can't.",
                 "correcta": false
               },
               {
-                "contenido": "B. It's the same place.",
+                "contenido": "B.  No, this is my car.",
                 "correcta": false
               },
               {
-                "contenido": "C. Only for half an hour.",
+                "contenido": "C. Yes, you can park for an half hour.",
                 "correcta": true
               }
             ]
           },
           {
-            "contenido": "- Can I park here?",
+            "contenido": "What is the correct word to call to my mother's sister?",
             "respuestas": [
               {
-                "contenido": "A. Sorry, I did that.",
-                "correcta": false
-              },
-              {
-                "contenido": "B. It's the same place.",
-                "correcta": false
-              },
-              {
-                "contenido": "C. Only for half an hour.",
+                "contenido": "A. Aunt .",
                 "correcta": true
+              },
+              {
+                "contenido": "B. Uncle.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. Daughter.",
+                "correcta": false
+              }
+            ]
+          },
+          {
+            "contenido": "- What is the error in the following sentence?: Mine mom loves me",
+            "respuestas": [
+              {
+                "contenido": "A. the use of the word 'loves'.",
+                "correcta": false
+              },
+              {
+                "contenido": "B. the word mom doesn't exist.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. the use of 'mine' at the start of the sentence.",
+                "correcta": true
+              }
+            ]
+          },
+          {
+            "contenido": "- Complete the sentence with the correct word: The day ___ beautiful, I want to go to the beach",
+            "respuestas": [
+              {
+                "contenido": "A. Does.",
+                "correcta": false
+              },
+              {
+                "contenido": "B. Is.",
+                "correcta": true
+              },
+              {
+                "contenido": "C. Is.",
+                "correcta": false
+              }
+            ]
+          },
+          {
+            "contenido": "- indicate the correct tense of the following sentence: Mike likes to ride his bike on Mondays",
+            "respuestas": [
+              {
+                "contenido": "A. Future simple.",
+                "correcta": false
+              },
+              {
+                "contenido": "B. Presente perfecto.",
+                "correcta": true
+              },
+              {
+                "contenido": "C. Presente progresivo.",
+                "correcta": false
               }
             ]
           }
         ],
         "middle": [
           {
-            "contenido": "- What colour will you paint the children's bedroom??",
+            "contenido": "whats is the correct meaning of the expresion 'false cognate' ",
             "respuestas": [
               {
-                "contenido": "A. I hope it was right.",
+                "contenido": "A. words that are spelled the same in Spanish and English.",
                 "correcta": false
               },
               {
-                "contenido": "B. We can't decide.",
+                "contenido": "B.  words with the same meaning.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. words that seem similar but have a different meaning in Spanish and English.",
+                "correcta": true
+              }
+            ]
+          },
+          {
+            "contenido": "What is the correct way to write a question in English?",
+            "respuestas": [
+              {
+                "contenido": "A. Auxiliar/Verb/Complement .",
                 "correcta": true
               },
               {
-                "contenido": "C. It wasn't very difficult.",
+                "contenido": "B. Verb/Auxiliar/Complemente.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. Complement/Verb/Auxiliar.",
                 "correcta": false
               }
             ]
           },
           {
-            "contenido": "- What colour will you paint the children's bedroom??",
+            "contenido": "-  What is the error in the following sentence?: Yesterday I was on the beach and I will eat ice cream.",
             "respuestas": [
               {
-                "contenido": "A. I hope it was right.",
+                "contenido": "A. the use of the word 'I'.",
                 "correcta": false
               },
               {
-                "contenido": "B. We can't decide.",
+                "contenido": "B. the word beach doesn't exist.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. the use of 'will' in past time.",
+                "correcta": true
+              }
+            ]
+          },
+          {
+            "contenido": "- Complete the sentence with the correct wordThere was a lot of snow falling, we didn't ___ to class all week: ",
+            "respuestas": [
+              {
+                "contenido": "A. Goes.",
+                "correcta": false
+              },
+              {
+                "contenido": "B. Went.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. Go.",
+                "correcta": true
+              }
+            ]
+          },
+          {
+            "contenido": "- indicate the correct tense of the following sentence: I was swimming last Wednesday",
+            "respuestas": [
+              {
+                "contenido": "A. Progresive past.",
                 "correcta": true
               },
               {
-                "contenido": "C. It wasn't very difficult.",
+                "contenido": "B. Present perfect.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. Progresive present.",
                 "correcta": false
               }
             ]
@@ -266,35 +368,86 @@
         ],
         "advance": [
           {
-            "contenido": "- I can't understand this email.",
+            "contenido": "whats is th correct auxilir of the perfect past on first person? ",
             "respuestas": [
               {
-                "contenido": "A. Would you like some help?",
-                "correcta": true
-              },
-              {
-                "contenido": "B. Don't you know?",
+                "contenido": "A. Did ",
                 "correcta": false
               },
               {
-                "contenido": "C. I suppose you can.",
+                "contenido": "B. Was.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. Had",
+                "correcta": true
+              }
+            ]
+          },
+          {
+            "contenido": "Which of these is a good example of a future tense phrase?",
+            "respuestas": [
+              {
+                "contenido": "A. I would go to Medellin next year.",
+                "correcta": false
+              },
+              {
+                "contenido": "B. I went to Medellin a year ago.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. I will travel to Medellin next year.",
+                "correcta": true
+              }
+            ]
+          },
+          {
+            "contenido": "-  What is the error in the following sentence?: Diana had been in Australia on her birthday. She don't celebrate anything.",
+            "respuestas": [
+              {
+                "contenido": "A. the use of the word 'had'.",
+                "correcta": false
+              },
+              {
+                "contenido": "B. the use of the word 'don't'.",
+                "correcta": true
+              },
+              {
+                "contenido": "C. the use of 'had' in past time.",
                 "correcta": false
               }
             ]
           },
           {
-            "contenido": "- I can't understand this email.",
+            "contenido": "- Complete the sentence with the correct wordThere was a lot of snow falling, we didn't ___ to class all week: ",
             "respuestas": [
               {
-                "contenido": "A. Would you like some help?",
-                "correcta": true
-              },
-              {
-                "contenido": "B. Don't you know?",
+                "contenido": "A. Goes.",
                 "correcta": false
               },
               {
-                "contenido": "C. I suppose you can.",
+                "contenido": "B. Went.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. Go.",
+                "correcta": true
+              }
+            ]
+          },
+          {
+            "contenido": "- indicate the correct tense of the following sentence: I was swimming last Wednesday",
+            "respuestas": [
+              {
+                "contenido": "A. Progresive past.",
+                "correcta": true
+              },
+              {
+                "contenido": "B. Present perfect.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. Progresive present.",
                 "correcta": false
               }
             ]
@@ -321,18 +474,69 @@
             ]
           },
           {
-            "contenido": "- Si tienes una lista de números enteros en Python y quieres encontrar el número más grande, ¿cuál sería el enfoque más eficiente?",
+            "contenido": "Cual es la diferencia entre un objeto y un array en javascript?",
             "respuestas": [
               {
-                "contenido": "A. Recorrer la lista y comparar cada número con un valor máximo inicializado",
-                "correcta": true
-              },
-              {
-                "contenido": "B. Utilizar la función max() en la lista.",
+                "contenido": "A.  un objeto puede contener arrays y no al reves.",
                 "correcta": false
               },
               {
-                "contenido": "C. Ordenar la lista de forma ascendente y seleccionar el último elemento",
+                "contenido": "B. La lista no puede contener booleanos.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. El objeto puede contener propiedades y el array no.",
+                "correcta": true
+              }
+            ]
+          },
+          {
+            "contenido": "- Que significa que un lenguaje de progrmacion es fuertemente tipado? ",
+            "respuestas": [
+              {
+                "contenido": "A. Que lee todo tipo de datos.",
+                "correcta": false
+              },
+              {
+                "contenido": "B. Que no se debe especificar el tipo de dato que se esta usando.",
+                "correcta": true
+              },
+              {
+                "contenido": "C. Que se debe especificar el tipo de dato que se esta usando.",
+                "correcta": false
+              }
+            ]
+          },
+          {
+            "contenido": "- para que sirve el metodo (datos.leght) ? ",
+            "respuestas": [
+              {
+                "contenido": "A. para guardar la palabra 'leght' en la base de datos.",
+                "correcta": false
+              },
+              {
+                "contenido": "B. lee cuantas letras tiene la palabra 'datos'.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. para leer cuantos elementos esta en el array 'datos' .",
+                "correcta": true
+              }
+            ]
+          },
+          {
+            "contenido": "- Que uso se le da al local storage en javascript",
+            "respuestas": [
+              {
+                "contenido": "A. Para guardar datos en modo de texto y poder ser extraidos cuando sea necesario.",
+                "correcta": true
+              },
+              {
+                "contenido": "B. Para acceder al almacenamiento local del computador.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. Para usar bases de datos.",
                 "correcta": false
               }
             ]
@@ -340,18 +544,86 @@
         ],
         "middle": [
           {
-            "contenido": "- Si tienes una lista de números enteros en Python y quieres encontrar el número más grande, ¿cuál sería el enfoque más eficiente?",
+            "contenido": "- Cuantos argumentos puede recibir una funcion en Javasript",
             "respuestas": [
               {
-                "contenido": "A. Recorrer la lista y comparar cada número con un valor máximo inicializado",
+                "contenido": "A. Son ilimitadas dependiendo de la funcion. ",
                 "correcta": true
               },
               {
-                "contenido": "B. Utilizar la función max() en la lista.",
+                "contenido": "B. Solo una.",
                 "correcta": false
               },
               {
-                "contenido": "C. Ordenar la lista de forma ascendente y seleccionar el último elemento",
+                "contenido": "C. Las funciones no necesitan argumentos",
+                "correcta": false
+              }
+            ]
+          },
+          {
+            "contenido": "Para que se usan los selectores en javascript?",
+            "respuestas": [
+              {
+                "contenido": "A. Para iniciar un evento.",
+                "correcta": false
+              },
+              {
+                "contenido": "B. Para editar una imagen.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. Para asociar un elemento del html con una fucnionaidad de Js.",
+                "correcta": true
+              }
+            ]
+          },
+          {
+            "contenido": "- Para que se usa el metodo 'addeventlisstener'. ",
+            "respuestas": [
+              {
+                "contenido": "A. Para obtener archivos de una lista.",
+                "correcta": false
+              },
+              {
+                "contenido": "B. Para asociar una accion de javascript con un elemento seleccionado en html.",
+                "correcta": true
+              },
+              {
+                "contenido": "C. Para berificar el contenido de una variable.",
+                "correcta": false
+              }
+            ]
+          },
+          {
+            "contenido": "- Para que se usa el metodo 'export' ? ",
+            "respuestas": [
+              {
+                "contenido": "A. Para exportar un elemento de una base de datos.",
+                "correcta": false
+              },
+              {
+                "contenido": "B. Para eliminar un elemento de javascript .",
+                "correcta": false
+              },
+              {
+                "contenido": "C. Para hacer uso de elementos de un documento javascript en otro documento sin volver a definirlo .",
+                "correcta": true
+              }
+            ]
+          },
+          {
+            "contenido": "- Que es y para que se usa boostrap? ",
+            "respuestas": [
+              {
+                "contenido": "A. Es una libreria de estilos predeterminados para javascript.",
+                "correcta": true
+              },
+              {
+                "contenido": "B. Es una base de datos virtual.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. Es una funcion predetermianda de javascript.",
                 "correcta": false
               }
             ]
@@ -359,36 +631,87 @@
         ],
         "advance": [
           {
-            "contenido": "Si estás desarrollando un programa que necesita almacenar datos que deben persistir después de que el programa se cierre, ¿cuál de las siguientes opciones sería la más apropiada?",
+            "contenido": "- Para que se usa el comando en consola 'npx json-server data.json 4000' ",
             "respuestas": [
               {
-                "contenido": "A. Variables locales",
+                "contenido": "A. Para inicializar una base de datos falsa desde un archivo llamado 'data'. ",
+                "correcta": true
+              },
+              {
+                "contenido": "B. Para crear un archivo llamado data en el javascript.",
                 "correcta": false
               },
               {
-                "contenido": "B. Arreglos",
+                "contenido": "C. Para seleccionar un elemento de una base de datos",
+                "correcta": false
+              }
+            ]
+          },
+          {
+            "contenido": "Para que se usa el metodo preventDefault? .",
+            "respuestas": [
+              {
+                "contenido": "A. Para iniciar una ventana nueva en una pagina de html.",
                 "correcta": false
               },
               {
-                "contenido": "C. Archivos de texto",
+                "contenido": "B. Para prevenir la caida de un servidor.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. Para eliminar las funciones predeterminadas de un elemento de html.",
                 "correcta": true
               }
             ]
           },
           {
-            "contenido": "Si estás desarrollando un programa que necesita almacenar datos que deben persistir después de que el programa se cierre, ¿cuál de las siguientes opciones sería la más apropiada?",
+            "contenido": "- Para que se usan las promesas en javascript .",
             "respuestas": [
               {
-                "contenido": "A. Variables locales",
+                "contenido": "A. Para usar una funcion que todavia no esta declarada.",
                 "correcta": false
               },
               {
-                "contenido": "B. Arreglos",
-                "correcta": false
-              },
-              {
-                "contenido": "C. Archivos de texto",
+                "contenido": "B. Para garantizar la continuidad de la ejecucion aun si una funcion no se ejecuta.",
                 "correcta": true
+              },
+              {
+                "contenido": "C. Para usar una variable que aun no ha sido importada en el codigo.",
+                "correcta": false
+              }
+            ]
+          },
+          {
+            "contenido": "- Para que se usa el metodo HTTP 'get' ? ",
+            "respuestas": [
+              {
+                "contenido": "A. Para eliminar elementos de una base de datos en formato json.",
+                "correcta": false
+              },
+              {
+                "contenido": "B. Para editar elementos de una base de datos en formato json.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. Para obtener y leer elementos de una base de datos en formato json.",
+                "correcta": true
+              }
+            ]
+          },
+          {
+            "contenido": "- Cual es el error en la siguiente linea de codigo? : div.classList.add('lista , id') ",
+            "respuestas": [
+              {
+                "contenido": "A. las clases no deben ir separadas con una coma.",
+                "correcta": true
+              },
+              {
+                "contenido": "B. 'div' es una palabra reservada.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. el metodo 'classlist' no existe.",
+                "correcta": false
               }
             ]
           }
@@ -412,22 +735,158 @@
                 "correcta": false
               }
             ]
+          },
+          {
+            "contenido": " Cual es una forma efectiva de lidiar con la ansiedad?.",
+            "respuestas": [
+              {
+                "contenido": "A. Dejando que pase y esperando a que no me vuelva a pasar.",
+                "correcta": false
+              },
+              {
+                "contenido": "B. Tomar gaseosa, cafe o una bebida fuerte que me ayude a pensar en algo mas.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. Tomandome un momento para respirar o hablar con alguien sobre como me siento.",
+                "correcta": true
+              }
+            ]
+          },
+          {
+            "contenido": "- Mis amigos me dicen que estoy saliendo mucho de fiesta, que deberia responder?.",
+            "respuestas": [
+              {
+                "contenido": "A. Que es mi vida y que estoy disfrutando lo que pueda.",
+                "correcta": false
+              },
+              {
+                "contenido": "B. Que quizas tienen razon y que deberiamos planear actividades que sean mas sanas y divertidas.",
+                "correcta": true
+              },
+              {
+                "contenido": "C.Que si fueran mis amigos no me dirian eso y que buscare alguien que si quiera salir conmigo.",
+                "correcta": false
+              }
+            ]
+          },
+          {
+            "contenido": "- Tuve una discusion con mi madre anoche y he estado tenso todo el dia, que deberia hacer? ",
+            "respuestas": [
+              {
+                "contenido": "A. Evitar ir a mi casa para no verla.",
+                "correcta": false
+              },
+              {
+                "contenido": "B. Tratar de descargar mi tension con emociones fuertes que me hagan pensar en algo mas.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. Hablar con alguien al respeto y pensar en que decir para conciliar la discusion que tuvimos.",
+                "correcta": true
+              }
+            ]
+          },
+          {
+            "contenido": "- Al trabajar en equipo, que metodo es mejor? ",
+            "respuestas": [
+              {
+                "contenido": "A. Distribuir tareas y tener reuniones periodicas para comentar nuestros avances.",
+                "correcta": true
+              },
+              {
+                "contenido": "B. Que cada uno haga su parte y antes de la entrega unimos todo.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. Que todos puedan ser lideres y que se haga lo que el lider de turno quiera.",
+                "correcta": false
+              }
+            ]
           }
         ],
         "middle": [
           {
-            "contenido": "He recibido críticas negativas sobre mi código durante una revisión de código. ¿Cómo podría afectar esto a mi salud mental?",
+            "contenido": "Cual es el ritmo correcto del metodo pomodoro",
             "respuestas": [
               {
-                "contenido": "A. No afectará mi salud mental, ya que las críticas son parte del proceso de desarrollo.",
+                "contenido": "A. trabajar 4 horas y dormir 2.",
                 "correcta": false
               },
               {
-                "contenido": "B. Puede aumentar mi estrés y ansiedad, afectando negativamente mi bienestar emocional.",
+                "contenido": "B. Trabajar 25 minutos seguidos y descansar 5",
                 "correcta": true
               },
               {
-                "contenido": "C. Las críticas solo pueden tener un impacto positivo en mi salud mental al motivarme a mejorar.",
+                "contenido": "C. una hora y descasar una hora.",
+                "correcta": false
+              }
+            ]
+          },
+          {
+            "contenido": " Cual de las siguientes NO es una etapa del duelo.",
+            "respuestas": [
+              {
+                "contenido": "A. Aceptacion.",
+                "correcta": false
+              },
+              {
+                "contenido": "B. Rabia.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. Frustracion.",
+                "correcta": true
+              }
+            ]
+          },
+          {
+            "contenido": "- Cual es un metodo efectivo para lidiar con el insomnio?.",
+            "respuestas": [
+              {
+                "contenido": "A. No dormir en todo el dia para tener sueño en la noche.",
+                "correcta": false
+              },
+              {
+                "contenido": "B. tener un ritmo de sueño constante y reducir el tiempo en pantalla.",
+                "correcta": true
+              },
+              {
+                "contenido": "C. Cansarme lo mas posible antes de dormir.",
+                "correcta": false
+              }
+            ]
+          },
+          {
+            "contenido": "- Tengo un conflicto laboral con un compañero de trabajo. Que deberia hacer? ",
+            "respuestas": [
+              {
+                "contenido": "A. Evitar a toda costa trabajar con esa persona.",
+                "correcta": false
+              },
+              {
+                "contenido": "B. Esperar el momento para demostrarle que soy mejor trabajador y que me respete.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. Buscar un espacio neutro para hablar y resolver nuestros conflictos.",
+                "correcta": true
+              }
+            ]
+          },
+          {
+            "contenido": "- Cual es una buena definicion de liderazgo ",
+            "respuestas": [
+              {
+                "contenido": "A. Recibir y coordinar las ideas de los demas teniendo la iniciativa de proponer acciones.",
+                "correcta": true
+              },
+              {
+                "contenido": "B. Ser quien les diga a los demas que hacer.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. Dejar que lo demas hagan el trabajo por mi y encargarme de dirigirlos.",
                 "correcta": false
               }
             ]
@@ -435,18 +894,86 @@
         ],
         "advance": [
           {
-            "contenido": "Me siento abrumado por la presión de cumplir con plazos ajustados y múltiples tareas. ¿Cuál sería una estrategia saludable para manejar esta situación?",
+            "contenido": "Que papel cumple el scrum master en el metodo de trabajo scrum",
             "respuestas": [
               {
-                "contenido": "A. Ignorar mis sentimientos de estrés y continuar trabajando sin descanso.",
+                "contenido": "A. Es el profesor que les enseña a los demas que hacer",
                 "correcta": false
               },
               {
-                "contenido": "B. Comunicarme con el equipo sobre la carga de trabajo y explorar opciones para redistribuir tareas.",
+                "contenido": "B. Es quien lidera y coordina las reuniones de grupo",
                 "correcta": true
               },
               {
-                "contenido": "C. Ocultar mis sentimientos de abrumamiento para evitar ser percibido como incompetente.",
+                "contenido": "C. Es quen da las instrucciones al inicio del trabajo.",
+                "correcta": false
+              }
+            ]
+          },
+          {
+            "contenido": " Un amigo me dijo que tiene ideas suicidas, que deberia hacer?.",
+            "respuestas": [
+              {
+                "contenido": "A. Decirle que em siento igual y que se identifique conmigo.",
+                "correcta": false
+              },
+              {
+                "contenido": "B. Llamar a su familia para que lo confronten.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. Hacerlo sentir acompañado y recomendarle que busque ayuda profesional.",
+                "correcta": true
+              }
+            ]
+          },
+          {
+            "contenido": "- Que se debe hacer durante un ataque de panico?.",
+            "respuestas": [
+              {
+                "contenido": "A. Gritar y moverse rapido para aliminar el estres.",
+                "correcta": false
+              },
+              {
+                "contenido": "B. Buscar un espacio alejado del ruido donde pueda respirar aire fresco y pensar.",
+                "correcta": true
+              },
+              {
+                "contenido": "C. Tirarme al piso y tratar de llorar para liberar la tension.",
+                "correcta": false
+              }
+            ]
+          },
+          {
+            "contenido": "- Recibi un rumor sobre una compañera del trabajo, que debo hacer? ",
+            "respuestas": [
+              {
+                "contenido": "A. Contarle a mi grupo de amigos para saber mas informacion.",
+                "correcta": false
+              },
+              {
+                "contenido": "B. Guardarme la informacion para mi y averiguar por mi cuenta si es verdad.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. Cortar la cadena de comentarios y advertir a quien me conto que no deberia hacer eso.",
+                "correcta": true
+              }
+            ]
+          },
+          {
+            "contenido": "- Cual es un sintoma de alarma de la depresion",
+            "respuestas": [
+              {
+                "contenido": "A. Dormir mucho y no poder concentrarse.",
+                "correcta": true
+              },
+              {
+                "contenido": "B. Mentir sin ninguna razon.",
+                "correcta": false
+              },
+              {
+                "contenido": "C. Inventar cosas sobre los demas.",
                 "correcta": false
               }
             ]
@@ -454,39 +981,57 @@
         ]
       },
       "ingles": {
-        "nombre": "Test de ingles",
+        "nombre": "ingles",
+        "titulo": "Test de ingles",
         "preguntas": "20 preguntas",
         "duracion": "20 min"
       },
       "mentales": {
-        "nombre": "Test de logicas",
+        "nombre": "mentales",
+        "titulo": "Test de logicas",
         "preguntas": "20 preguntas",
         "duracion": "40 min"
       },
       "logicas": {
-        "nombre": "Test de mentales",
+        "nombre": "logicas",
+        "titulo": "Test de mentales",
         "preguntas": "20 preguntas",
         "duracion": "30 min"
       },
       "resultadosIngles": {
-        "fecha": "",
+        "nombre": "ingles",
+        "fecha": "1",
         "buenas": 0,
         "malas": 0,
-        "porcentaje": 0
+        "porcentaje": 0,
+        "acumulado": 0,
+        "level": ""
       },
       "resultadosLogicas": {
-        "fecha": "",
+        "fecha": "2",
         "buenas": 0,
         "malas": 0,
-        "porcentaje": 0
+        "porcentaje": 0,
+        "acumulado": 0,
+        "level": ""
+      },
+      "resultados": {
+        "fecha": "3",
+        "buenas": 0,
+        "malas": 0,
+        "porcentaje": 0,
+        "acumulado": 0,
+        "level": ""
       },
       "resultadosMentales": {
-        "fecha": "",
+        "fecha": "4",
         "buenas": 0,
         "malas": 0,
-        "porcentaje": 0
+        "porcentaje": 0,
+        "acumulado": 0,
+        "level": ""
       },
-      "id": "74c2"
+      "id": "3a21"
     }
   ]
 }
