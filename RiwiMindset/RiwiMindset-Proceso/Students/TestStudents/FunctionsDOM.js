@@ -10,7 +10,7 @@ let modalTitle = document.querySelector(".modal-title")
 const btnSiguiente = document.querySelector(".btn-siguiente");
 const inputs = document.querySelector(".content-test input")
 
-import { get, post } from "./../../General/apiConnection/apiConnection.js";
+import { get, post, update } from "./../../General/apiConnection/apiConnection.js";
 import { URL_STUDENTS, URL_TEST  } from "./../../General/apiConnection/URLS.js";
 
 // renderizar info del modal sobre el test
@@ -79,7 +79,7 @@ function preguntaDependeNivel(preguntas, resultado, student) {
         console.log(student.puntaje.ingles.begginer); 
         let fechaActual = new Date();
         // Crear un nuevo objeto con los datos actualizados
-        let actualizado = {
+        let begginer = {
             // nuevo intento
             intentos: [...student.puntaje.ingles.begginer.intentos, 1],
             //nueva fecha
@@ -88,10 +88,12 @@ function preguntaDependeNivel(preguntas, resultado, student) {
             puntaje: [...student.puntaje.ingles.begginer.puntaje, resultado]
         };
         // Actualizar los resultados en la base de datos
-        const response = await post(`${URL_STUDENTS}/${student.id}`, actualizado);
-        console.log(response); 
+        //  await update(`${URL_STUDENTS}/${student.id}?puntaje.ingles.begginer`, begginer);
+        // console.log(response); 
+        console.log(`${URL_STUDENTS}/[${(student.id)- 1}]?puntaje.ingles.begginer`);
+       
     }
-    console.log(student);
+    
   }
 
   const inyeccionPreguntas = document.querySelector(".containerHome");
@@ -108,11 +110,15 @@ function preguntaDependeNivel(preguntas, resultado, student) {
       preguntaHtml.classList.add("pregunta-test");
       preguntaHtml.textContent = pregunta.contenido;
       coderHtml.appendChild(preguntaHtml);
-
+      const containerRespuesta = document.createElement("div");
+      containerRespuesta.classList.add("container-label");
       pregunta.respuestas.forEach(respuesta => {
+        
           const respuestaHtml = document.createElement("label");
+          
           respuestaHtml.innerHTML = `<input type="radio" value="${respuesta.correcta}" name="respuesta">${respuesta.contenido}`;
-          coderHtml.appendChild(respuestaHtml);
+          containerRespuesta.appendChild(respuestaHtml);
+          coderHtml.appendChild(containerRespuesta);
       });
 
       inyeccionPreguntas.appendChild(coderHtml);
@@ -150,46 +156,35 @@ function preguntaDependeNivel(preguntas, resultado, student) {
 }
 
   function recomendacionTest(resultado) {
+    const inyeccionPreguntas = document.querySelector(".containerHome");
+    inyeccionPreguntas.innerHTML = ""; // Limpiar el contenedor antes de inyectar la siguiente pregunta
+
+    const coderHtml = document.createElement("div");
+    coderHtml.classList.add("content-test");
+
+    const preguntaHtml = document.createElement("h2");
+    preguntaHtml.classList.add("pregunta-test");
+    preguntaHtml.textContent ="Enhorabuena has finalizado"
+    coderHtml.appendChild(preguntaHtml);
+
+
+    inyeccionPreguntas.appendChild(coderHtml);
     if(resultado.buenas >  resultado.malas){
-      alert("muchasbuenas")
+      const respuestaHtml = document.createElement("p");
+      respuestaHtml.innerHTML = `<p>Preguntas correctas: ${resultado.buenas}  Preguntas incorrectas: ${resultado.malas}</p>
+      <p>haz superado el test, puedes seguir mejorando con</p>
+      <a href="https://www.freecodecamp.org/">https://www.freecodecamp.org/</a>
+      `;
+      coderHtml.appendChild(respuestaHtml);
+    }else{
+      const respuestaHtml = document.createElement("p");
+      respuestaHtml.innerHTML = `<p>Preguntas correctas: ${resultado.buenas}  Preguntas incorrectas: ${resultado.malas}</p>
+      <p>Sigue mejorando te recomendamos este material</p>
+      <a href="https://www.freecodecamp.org/">https://www.freecodecamp.org/</a>
+      `;
+      coderHtml.appendChild(respuestaHtml);
     }
   }
   
 
 // valida que el usuario haya respondido
-
-export function validateQuestion() {
-    btnSiguiente.addEventListener("click", () => {
-      
-    const inputs = document.querySelectorAll(".content-test input:checked");
-  
-    if (inputs.length === 0) {
-      alert("Por favor, selecciona una respuesta antes de continuar.");
-      return; // input vacio, lazar error
-    }
-    // Acceder a la respuesta seleccionada para guardar el valor
-    const respuestaSeleccionada = inputs[0].value
-
-    if (respuestaSeleccionada == "true") {
-      resultadosIngles.buenas++;
-    } else{
-      resultadosIngles.malas++;
-    }
-    console.log(resultadosIngles);
-    console.log(typeof resultadosIngles.buenas);
-
-    preguntaActual++;
-  
-    if (preguntaActual < preguntasIngles.length) {
-      injectionPreguntaHtml(preguntasIngles[preguntaActual]);
-    } else {
-      console.log("¡Fin del cuestionario!");
-      //funcion para recomendarle contenido
-      recomendacionTest()
-    }
-    let suma = resultadosIngles.buenas + resultadosIngles.malas
-    let porcentajOperacion = suma / resultadosIngles.buenas 
-    console.log(suma)
-});
-}
-

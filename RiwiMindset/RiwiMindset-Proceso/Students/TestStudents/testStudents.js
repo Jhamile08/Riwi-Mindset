@@ -1,4 +1,4 @@
-import { renderModal, validateQuestion } from "./FunctionsDOM.js";
+import { renderModal } from "./FunctionsDOM.js";
 
 // selectors
 // selector del boton del modal
@@ -32,12 +32,5 @@ document.addEventListener("DOMContentLoaded", () => {
   
    });
  });
-
-
-// // boton de pasar a la siguiente pregunta en el test
-//   btnSiguiente.addEventListener("click", () => {
-//     validateQuestion()
-//   });
-
 
 
