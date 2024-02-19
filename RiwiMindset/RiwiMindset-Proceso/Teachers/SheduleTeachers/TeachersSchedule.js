@@ -1,30 +1,7 @@
-/* -----------LISTA DE ESTUDIANTES--------- */
-
-const urlBase = "http://localhost:4002/";
-const listStudents = document.querySelector("#students");
-
-async function getStudent() {
-  const response = await fetch(`${urlBase}students`);
-  const data = response.json();
-  return data;
-};
-
-async function renderStudents() {
-  const students = await getStudent();
-  listStudents.innerHTML = '';
-  students.forEach(student => {
-    listStudents.innerHTML += `
-        <a href="">${student.nombre}</a>
-        `
-  });
-};
-
 /* ------------CALENDAR----------------- */
 let calendar;
 
 document.addEventListener("DOMContentLoaded", async function () {
-
-  renderStudents();
 
   let calendarEl = document.getElementById("calendar");
   /* inicializacion del calendario con dos argumentos "CalendarEl que es el contenedor y segundo un objeto de opciones para la config del calendario" */
