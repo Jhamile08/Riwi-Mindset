@@ -39,8 +39,6 @@ formStudents.addEventListener('submit', event => {
   registerStudent();
 });
 
-let num = 0;
-
 async function registerStudent() {
 
 
@@ -113,8 +111,7 @@ async function registerStudent() {
     },
   };
 
-  if (num == 0) {
-    console.log(num);
+  if (studentId.value) {
     console.log("hola");
     await update(studentId.value, newStudent);
 
@@ -284,11 +281,11 @@ async function renderStudents() {
           <td>${student.nombre}</td>
           <td>${student.edad}</td>
           <td>
-              <button class="btn btn-dark btn-edit" studentId="${student.id}">Edit</button>
               <button class="btn btn-danger btn-delete" studentId="${student.id}">Delete</button>
           </td>
       </tr>
       `
+/*       <button class="btn btn-dark btn-edit" studentId="${student.id}">Edit</button> */
   });
 };
 
