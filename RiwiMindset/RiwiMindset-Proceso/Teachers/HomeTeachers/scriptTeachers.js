@@ -161,3 +161,7 @@ function generateReport(events) {
 
 // Llamar a la función con los datos del evento
 generateReport(events);
+
+
+//Log out
+

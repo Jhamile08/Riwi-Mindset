@@ -17,8 +17,8 @@
 
     /* Dark Mode Styles */
 
-    --background-color-darkMode:#2c3e50;
-    --letter-color-darkMode: #ffff;
+    /* --background-color-darkMode:#2c3e50;
+    --letter-color-darkMode: #ffff; */
 };
 
 /* General Styles */
@@ -48,6 +48,7 @@
 .nav {
   flex-direction: column;
   align-items: center;
+  height: 100%;
 }
 
 .nav-bar .image {
@@ -98,6 +99,23 @@
   width: 100%;
 }
 
+.nav-bar .logOut{
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.nav-bar .logOut button{
+  width: 50%;
+  padding: 15px 10px;
+  text-decoration: none;
+  color: grey;
+  background-color: var(--background-color-nav-bar);
+  border: none;
+  font-size: 19px;
+  font-weight: 900;
+}
+
 .cap {
   color: var(--background-btn-primary);
 }
@@ -116,7 +134,7 @@ hr {
 
 /* Styles Mood*/
 
-.dark {
+/* .dark {
   background-color: var(--background-color-darkMode);
   color: var(--letter-color-darkMode);
 }
@@ -133,7 +151,7 @@ hr {
   opacity: 0;
   width: 0;
   height: 0;
-}
+} */
 
 .slider {
   position: absolute;
@@ -205,6 +223,7 @@ input:checked + .slider::before {
 }
 
 .headers h3 {
+  margin: 0;
   font-size: 23px;
   color: var(--letter-color-main-dark);
 }
