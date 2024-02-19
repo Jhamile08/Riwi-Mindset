@@ -33,9 +33,6 @@ body {
 
 .panel h1 {
     font-size: 35px;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
     margin: 0;
     opacity: 0;
 }

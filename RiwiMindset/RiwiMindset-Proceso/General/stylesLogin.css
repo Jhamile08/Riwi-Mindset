@@ -1,5 +1,3 @@
-@import url(generalStyles.css);
-
 /* Styles Login */
 
 * {
@@ -333,6 +331,15 @@ input:checked+.slider::before{
   transform: translateX(26px);
 }
 
+.container .sign-up button:hover{
+  background-color:#512da8;
+  transition: all ease 0.7s;
+}
+
+.container .sign-in button:hover{
+  background-color:#512da8;
+  transition: all ease 0.7s;
+}
 
 /* .container-right {
   display: flex;
