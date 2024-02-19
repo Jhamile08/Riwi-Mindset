@@ -30,9 +30,9 @@
       </span>
     </div>
     <div class="containerProfile">
-      <img src="/General/Images/ImagesStudents/estudent.jpeg" class="logo" />
-      <h3>Pedro</h3>
-      <p>@User</p>
+      <img id="fotoStudent" src="" class="logo" />
+      <h3 id="nameStudent"></h3>
+        <p id="cedulaStudent"></p>
     </div>
     <div class="navbarItems">
       <a href="/Students/HomeStudents/indexHomeEstudents.html"><svg xmlns="http://www.w3.org/2000/svg"
@@ -64,8 +64,6 @@
     <div id="reservationForm">
       <h4 class="titleForm">Reserva de Citas</h4>
       <form class="form-control" id="eventForm">
-        <label for="eventName">Nombre del Evento:</label>
-        <input class="form-control" type="text" id="eventName" required>
 
         <label for="eventDate">Fecha:</label>
         <input class="form-control" type="date" id="eventDate" required>
@@ -135,6 +133,7 @@
     integrity="sha512-4F1cxYdMiAW98oomSLaygEwmCnIP38pb4Kx70yQYqRwLVCs3DbRumfBq82T08g/4LJ/smbFGFpmeFlQgoDccgg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js'></script>
+  <script type="module" src="../dataInyectStudents/dataInyectStudents.js"></script>
   <script type="module" src="/Students/DatesStudents/datesStudents.js"></script>
   <script src="/Students/HomeStudents/scriptsHome.js"></script>
 </body>
